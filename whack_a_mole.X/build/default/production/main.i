@@ -18296,6 +18296,10 @@ typedef enum{
 } pins_t;
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+
+uint8_t readPin(pins_t read);
+
+void writePin(pins_t write, uint8_t value);
 # 14 "main.c" 2
 
 
@@ -18307,15 +18311,15 @@ void main(void) {
     defineGPIODirection(input, output, 1, 1);
 
     while(1) {
-        if(PORTBbits.RB7 == 0) {
+        if(readPin(PINB7) == 0) {
             led = 1;
         } else {
             led = 0;
         }
         if(led) {
-            LATCbits.LATC7 = 1;
+            writePin(PINC7, 1);
         } else {
-            LATCbits.LATC7 = 0;
+            writePin(PINC7, 0);
         }
     }
 }

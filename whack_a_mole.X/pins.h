@@ -30,4 +30,8 @@ typedef enum{
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
+uint8_t readPin(pins_t read);
+
+void writePin(pins_t write, uint8_t value);
+
 #endif

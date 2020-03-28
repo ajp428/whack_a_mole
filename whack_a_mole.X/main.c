@@ -21,15 +21,15 @@ void main(void) {
     defineGPIODirection(input, output, 1, 1);
     
     while(1) {
-        if(PORTBbits.RB7 == 0) {
+        if(readPin(PINB7) == 0) {
             led = true;
         } else {
             led = false;
         }
         if(led) {
-            LATCbits.LATC7 = 1;
+            writePin(PINC7, 1);
         } else {
-            LATCbits.LATC7 = 0;
+            writePin(PINC7, 0);
         }
     }
 }

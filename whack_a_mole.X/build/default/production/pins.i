@@ -18296,6 +18296,10 @@ typedef enum{
 } pins_t;
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+
+uint8_t readPin(pins_t read);
+
+void writePin(pins_t write, uint8_t value);
 # 14 "pins.c" 2
 
 
@@ -18444,5 +18448,100 @@ void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, u
             case PINC7 :
                 TRISCbits.TRISC7 = 0;
         }
+    }
+}
+
+uint8_t readPin(pins_t read) {
+    switch (read) {
+        case PINA0 :
+            return PORTAbits.RA0;
+        case PINA1 :
+            return PORTAbits.RA1;
+        case PINA2 :
+            return PORTAbits.RA2;
+        case PINA4 :
+            return PORTAbits.RA4;
+        case PINA5 :
+            return PORTAbits.RA5;
+        case PINB4 :
+            return PORTBbits.RB4;
+        case PINB5 :
+            return PORTBbits.RB5;
+        case PINB6 :
+            return PORTBbits.RB6;
+        case PINB7 :
+            return PORTBbits.RB7;
+        case PINC0 :
+            return PORTCbits.RC0;
+        case PINC1 :
+            return PORTCbits.RC1;
+        case PINC2 :
+            return PORTCbits.RC2;
+        case PINC3 :
+            return PORTCbits.RC3;
+        case PINC4 :
+            return PORTCbits.RC4;
+        case PINC5 :
+            return PORTCbits.RC5;
+        case PINC6:
+            return PORTCbits.RC6;
+        case PINC7:
+            return PORTCbits.RC7;
+    }
+}
+
+void writePin(pins_t write, uint8_t value) {
+    switch(write) {
+        case PINA0 :
+            LATAbits.LATA0 = value;
+            break;
+        case PINA1 :
+            LATAbits.LATA1 = value;
+            break;
+        case PINA2 :
+            LATAbits.LATA2 = value;
+            break;
+        case PINA4 :
+            LATAbits.LATA4 = value;
+            break;
+        case PINA5 :
+            LATAbits.LATA5 = value;
+            break;
+        case PINB4 :
+            LATBbits.LATB4 = value;
+            break;
+        case PINB5 :
+            LATBbits.LATB5 = value;
+            break;
+        case PINB6 :
+            LATBbits.LATB6 = value;
+            break;
+        case PINB7 :
+            LATBbits.LATB7 = value;
+            break;
+        case PINC0 :
+            LATCbits.LATC0 = value;
+            break;
+        case PINC1 :
+            LATCbits.LATC1 = value;
+            break;
+        case PINC2 :
+            LATCbits.LATC2 = value;
+            break;
+        case PINC3 :
+            LATCbits.LATC3 = value;
+            break;
+        case PINC4 :
+            LATCbits.LATC4 = value;
+            break;
+        case PINC5 :
+            LATCbits.LATC5 = value;
+            break;
+        case PINC6 :
+            LATCbits.LATC6 = value;
+            break;
+        case PINC7 :
+            LATCbits.LATC7 = value;
+            break;
     }
 }

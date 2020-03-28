@@ -102,6 +102,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31339
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31339: extern volatile WPUCbits_t WPUCbits __attribute__((address(0x1F4F)));
 [v _WPUCbits `VS1477 ~T0 @X0 0 e@8015 ]
+"452
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 452:     struct {
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+"451
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 451: typedef union {
+[u S34 `S35 1 ]
+[n S34 . . ]
+"461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 461: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
+[v _PORTAbits `VS34 ~T0 @X0 0 e@12 ]
+"502
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 502:     struct {
+[s S37 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . . RB4 RB5 RB6 RB7 ]
+"501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 501: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"510
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 510: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS36 ~T0 @X0 0 e@13 ]
+"541
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 541:     struct {
+[s S39 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S39 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"540
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 540: typedef union {
+[u S38 `S39 1 ]
+[n S38 . . ]
+"552
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 552: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
+[v _PORTCbits `VS38 ~T0 @X0 0 e@14 ]
+"754
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 754:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 ]
+"753
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 753: typedef union {
+[u S46 `S47 1 ]
+[n S46 . . ]
+"763
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 763: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
+[v _LATAbits `VS46 ~T0 @X0 0 e@24 ]
+"804
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 804:     struct {
+[s S49 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S49 . . LATB4 LATB5 LATB6 LATB7 ]
+"803
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 803: typedef union {
+[u S48 `S49 1 ]
+[n S48 . . ]
+"812
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 812: extern volatile LATBbits_t LATBbits __attribute__((address(0x019)));
+[v _LATBbits `VS48 ~T0 @X0 0 e@25 ]
+"843
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 843:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"842
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 842: typedef union {
+[u S50 `S51 1 ]
+[n S50 . . ]
+"854
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
+[v _LATCbits `VS50 ~T0 @X0 0 e@26 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1971,4 +2037,355 @@ Version 4.0 HI-TECH Software Intermediate Code
 "162
 [; ;pins.c: 162: }
 [e :UE 1515 ]
+}
+"164
+[; ;pins.c: 164: uint8_t readPin(pins_t read) {
+[v _readPin `(uc ~T0 @X0 1 ef1`E11183 ]
+{
+[e :U _readPin ]
+[v _read `E11183 ~T0 @X0 1 r1 ]
+[f ]
+"165
+[; ;pins.c: 165:     switch (read) {
+[e $U 1564  ]
+{
+"166
+[; ;pins.c: 166:         case PINA0 :
+[e :U 1565 ]
+"167
+[; ;pins.c: 167:             return PORTAbits.RA0;
+[e ) . . _PORTAbits 0 0 ]
+[e $UE 1562  ]
+"168
+[; ;pins.c: 168:         case PINA1 :
+[e :U 1566 ]
+"169
+[; ;pins.c: 169:             return PORTAbits.RA1;
+[e ) . . _PORTAbits 0 1 ]
+[e $UE 1562  ]
+"170
+[; ;pins.c: 170:         case PINA2 :
+[e :U 1567 ]
+"171
+[; ;pins.c: 171:             return PORTAbits.RA2;
+[e ) . . _PORTAbits 0 2 ]
+[e $UE 1562  ]
+"172
+[; ;pins.c: 172:         case PINA4 :
+[e :U 1568 ]
+"173
+[; ;pins.c: 173:             return PORTAbits.RA4;
+[e ) . . _PORTAbits 0 4 ]
+[e $UE 1562  ]
+"174
+[; ;pins.c: 174:         case PINA5 :
+[e :U 1569 ]
+"175
+[; ;pins.c: 175:             return PORTAbits.RA5;
+[e ) . . _PORTAbits 0 5 ]
+[e $UE 1562  ]
+"176
+[; ;pins.c: 176:         case PINB4 :
+[e :U 1570 ]
+"177
+[; ;pins.c: 177:             return PORTBbits.RB4;
+[e ) . . _PORTBbits 0 1 ]
+[e $UE 1562  ]
+"178
+[; ;pins.c: 178:         case PINB5 :
+[e :U 1571 ]
+"179
+[; ;pins.c: 179:             return PORTBbits.RB5;
+[e ) . . _PORTBbits 0 2 ]
+[e $UE 1562  ]
+"180
+[; ;pins.c: 180:         case PINB6 :
+[e :U 1572 ]
+"181
+[; ;pins.c: 181:             return PORTBbits.RB6;
+[e ) . . _PORTBbits 0 3 ]
+[e $UE 1562  ]
+"182
+[; ;pins.c: 182:         case PINB7 :
+[e :U 1573 ]
+"183
+[; ;pins.c: 183:             return PORTBbits.RB7;
+[e ) . . _PORTBbits 0 4 ]
+[e $UE 1562  ]
+"184
+[; ;pins.c: 184:         case PINC0 :
+[e :U 1574 ]
+"185
+[; ;pins.c: 185:             return PORTCbits.RC0;
+[e ) . . _PORTCbits 0 0 ]
+[e $UE 1562  ]
+"186
+[; ;pins.c: 186:         case PINC1 :
+[e :U 1575 ]
+"187
+[; ;pins.c: 187:             return PORTCbits.RC1;
+[e ) . . _PORTCbits 0 1 ]
+[e $UE 1562  ]
+"188
+[; ;pins.c: 188:         case PINC2 :
+[e :U 1576 ]
+"189
+[; ;pins.c: 189:             return PORTCbits.RC2;
+[e ) . . _PORTCbits 0 2 ]
+[e $UE 1562  ]
+"190
+[; ;pins.c: 190:         case PINC3 :
+[e :U 1577 ]
+"191
+[; ;pins.c: 191:             return PORTCbits.RC3;
+[e ) . . _PORTCbits 0 3 ]
+[e $UE 1562  ]
+"192
+[; ;pins.c: 192:         case PINC4 :
+[e :U 1578 ]
+"193
+[; ;pins.c: 193:             return PORTCbits.RC4;
+[e ) . . _PORTCbits 0 4 ]
+[e $UE 1562  ]
+"194
+[; ;pins.c: 194:         case PINC5 :
+[e :U 1579 ]
+"195
+[; ;pins.c: 195:             return PORTCbits.RC5;
+[e ) . . _PORTCbits 0 5 ]
+[e $UE 1562  ]
+"196
+[; ;pins.c: 196:         case PINC6:
+[e :U 1580 ]
+"197
+[; ;pins.c: 197:             return PORTCbits.RC6;
+[e ) . . _PORTCbits 0 6 ]
+[e $UE 1562  ]
+"198
+[; ;pins.c: 198:         case PINC7:
+[e :U 1581 ]
+"199
+[; ;pins.c: 199:             return PORTCbits.RC7;
+[e ) . . _PORTCbits 0 7 ]
+[e $UE 1562  ]
+"200
+[; ;pins.c: 200:     }
+}
+[e $U 1563  ]
+[e :U 1564 ]
+[e [\ -> _read `ui , $ -> . `E11183 0 `ui 1565
+ , $ -> . `E11183 1 `ui 1566
+ , $ -> . `E11183 2 `ui 1567
+ , $ -> . `E11183 3 `ui 1568
+ , $ -> . `E11183 4 `ui 1569
+ , $ -> . `E11183 5 `ui 1570
+ , $ -> . `E11183 6 `ui 1571
+ , $ -> . `E11183 7 `ui 1572
+ , $ -> . `E11183 8 `ui 1573
+ , $ -> . `E11183 9 `ui 1574
+ , $ -> . `E11183 10 `ui 1575
+ , $ -> . `E11183 11 `ui 1576
+ , $ -> . `E11183 12 `ui 1577
+ , $ -> . `E11183 13 `ui 1578
+ , $ -> . `E11183 14 `ui 1579
+ , $ -> . `E11183 15 `ui 1580
+ , $ -> . `E11183 16 `ui 1581
+ 1563 ]
+[e :U 1563 ]
+"201
+[; ;pins.c: 201: }
+[e :UE 1562 ]
+}
+"203
+[; ;pins.c: 203: void writePin(pins_t write, uint8_t value) {
+[v _writePin `(v ~T0 @X0 1 ef2`E11183`uc ]
+{
+[e :U _writePin ]
+[v _write `E11183 ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
+[f ]
+"204
+[; ;pins.c: 204:     switch(write) {
+[e $U 1584  ]
+{
+"205
+[; ;pins.c: 205:         case PINA0 :
+[e :U 1585 ]
+"206
+[; ;pins.c: 206:             LATAbits.LATA0 = value;
+[e = . . _LATAbits 0 0 _value ]
+"207
+[; ;pins.c: 207:             break;
+[e $U 1583  ]
+"208
+[; ;pins.c: 208:         case PINA1 :
+[e :U 1586 ]
+"209
+[; ;pins.c: 209:             LATAbits.LATA1 = value;
+[e = . . _LATAbits 0 1 _value ]
+"210
+[; ;pins.c: 210:             break;
+[e $U 1583  ]
+"211
+[; ;pins.c: 211:         case PINA2 :
+[e :U 1587 ]
+"212
+[; ;pins.c: 212:             LATAbits.LATA2 = value;
+[e = . . _LATAbits 0 2 _value ]
+"213
+[; ;pins.c: 213:             break;
+[e $U 1583  ]
+"214
+[; ;pins.c: 214:         case PINA4 :
+[e :U 1588 ]
+"215
+[; ;pins.c: 215:             LATAbits.LATA4 = value;
+[e = . . _LATAbits 0 4 _value ]
+"216
+[; ;pins.c: 216:             break;
+[e $U 1583  ]
+"217
+[; ;pins.c: 217:         case PINA5 :
+[e :U 1589 ]
+"218
+[; ;pins.c: 218:             LATAbits.LATA5 = value;
+[e = . . _LATAbits 0 5 _value ]
+"219
+[; ;pins.c: 219:             break;
+[e $U 1583  ]
+"220
+[; ;pins.c: 220:         case PINB4 :
+[e :U 1590 ]
+"221
+[; ;pins.c: 221:             LATBbits.LATB4 = value;
+[e = . . _LATBbits 0 1 _value ]
+"222
+[; ;pins.c: 222:             break;
+[e $U 1583  ]
+"223
+[; ;pins.c: 223:         case PINB5 :
+[e :U 1591 ]
+"224
+[; ;pins.c: 224:             LATBbits.LATB5 = value;
+[e = . . _LATBbits 0 2 _value ]
+"225
+[; ;pins.c: 225:             break;
+[e $U 1583  ]
+"226
+[; ;pins.c: 226:         case PINB6 :
+[e :U 1592 ]
+"227
+[; ;pins.c: 227:             LATBbits.LATB6 = value;
+[e = . . _LATBbits 0 3 _value ]
+"228
+[; ;pins.c: 228:             break;
+[e $U 1583  ]
+"229
+[; ;pins.c: 229:         case PINB7 :
+[e :U 1593 ]
+"230
+[; ;pins.c: 230:             LATBbits.LATB7 = value;
+[e = . . _LATBbits 0 4 _value ]
+"231
+[; ;pins.c: 231:             break;
+[e $U 1583  ]
+"232
+[; ;pins.c: 232:         case PINC0 :
+[e :U 1594 ]
+"233
+[; ;pins.c: 233:             LATCbits.LATC0 = value;
+[e = . . _LATCbits 0 0 _value ]
+"234
+[; ;pins.c: 234:             break;
+[e $U 1583  ]
+"235
+[; ;pins.c: 235:         case PINC1 :
+[e :U 1595 ]
+"236
+[; ;pins.c: 236:             LATCbits.LATC1 = value;
+[e = . . _LATCbits 0 1 _value ]
+"237
+[; ;pins.c: 237:             break;
+[e $U 1583  ]
+"238
+[; ;pins.c: 238:         case PINC2 :
+[e :U 1596 ]
+"239
+[; ;pins.c: 239:             LATCbits.LATC2 = value;
+[e = . . _LATCbits 0 2 _value ]
+"240
+[; ;pins.c: 240:             break;
+[e $U 1583  ]
+"241
+[; ;pins.c: 241:         case PINC3 :
+[e :U 1597 ]
+"242
+[; ;pins.c: 242:             LATCbits.LATC3 = value;
+[e = . . _LATCbits 0 3 _value ]
+"243
+[; ;pins.c: 243:             break;
+[e $U 1583  ]
+"244
+[; ;pins.c: 244:         case PINC4 :
+[e :U 1598 ]
+"245
+[; ;pins.c: 245:             LATCbits.LATC4 = value;
+[e = . . _LATCbits 0 4 _value ]
+"246
+[; ;pins.c: 246:             break;
+[e $U 1583  ]
+"247
+[; ;pins.c: 247:         case PINC5 :
+[e :U 1599 ]
+"248
+[; ;pins.c: 248:             LATCbits.LATC5 = value;
+[e = . . _LATCbits 0 5 _value ]
+"249
+[; ;pins.c: 249:             break;
+[e $U 1583  ]
+"250
+[; ;pins.c: 250:         case PINC6 :
+[e :U 1600 ]
+"251
+[; ;pins.c: 251:             LATCbits.LATC6 = value;
+[e = . . _LATCbits 0 6 _value ]
+"252
+[; ;pins.c: 252:             break;
+[e $U 1583  ]
+"253
+[; ;pins.c: 253:         case PINC7 :
+[e :U 1601 ]
+"254
+[; ;pins.c: 254:             LATCbits.LATC7 = value;
+[e = . . _LATCbits 0 7 _value ]
+"255
+[; ;pins.c: 255:             break;
+[e $U 1583  ]
+"256
+[; ;pins.c: 256:     }
+}
+[e $U 1583  ]
+[e :U 1584 ]
+[e [\ -> _write `ui , $ -> . `E11183 0 `ui 1585
+ , $ -> . `E11183 1 `ui 1586
+ , $ -> . `E11183 2 `ui 1587
+ , $ -> . `E11183 3 `ui 1588
+ , $ -> . `E11183 4 `ui 1589
+ , $ -> . `E11183 5 `ui 1590
+ , $ -> . `E11183 6 `ui 1591
+ , $ -> . `E11183 7 `ui 1592
+ , $ -> . `E11183 8 `ui 1593
+ , $ -> . `E11183 9 `ui 1594
+ , $ -> . `E11183 10 `ui 1595
+ , $ -> . `E11183 11 `ui 1596
+ , $ -> . `E11183 12 `ui 1597
+ , $ -> . `E11183 13 `ui 1598
+ , $ -> . `E11183 14 `ui 1599
+ , $ -> . `E11183 15 `ui 1600
+ , $ -> . `E11183 16 `ui 1601
+ 1583 ]
+[e :U 1583 ]
+"257
+[; ;pins.c: 257: }
+[e :UE 1582 ]
 }
