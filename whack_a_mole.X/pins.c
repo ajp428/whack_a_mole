@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include "pins.h"
 
+pins_t pinStates[17] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
     uint8_t i;
     for(i = 0; i < inputLength; i++) {
@@ -205,54 +207,71 @@ void writePin(pins_t write, uint8_t value) {
     switch(write) {
         case PINA0 :
             LATAbits.LATA0 = value;
+            pinStates[PINA0] = value;
             break;
         case PINA1 :
             LATAbits.LATA1 = value;
+            pinStates[PINA1] = value;
             break;
         case PINA2 :
             LATAbits.LATA2 = value;
+            pinStates[PINA2] = value;
             break;
         case PINA4 :
             LATAbits.LATA4 = value;
+            pinStates[PINA4] = value;
             break;
         case PINA5 :
             LATAbits.LATA5 = value;
+            pinStates[PINA5] = value;
             break;
         case PINB4 :
             LATBbits.LATB4 = value;
+            pinStates[PINB4] = value;
             break;
         case PINB5 :
             LATBbits.LATB5 = value;
+            pinStates[PINB5] = value;
             break;
         case PINB6 :
             LATBbits.LATB6 = value;
+            pinStates[PINB6] = value;
             break;
         case PINB7 :
             LATBbits.LATB7 = value;
+            pinStates[PINB7] = value;
             break;
         case PINC0 :
             LATCbits.LATC0 = value;
+            pinStates[PINC0] = value;
             break;
         case PINC1 :
             LATCbits.LATC1 = value;
+            pinStates[PINC1] = value;
             break;
         case PINC2 :
             LATCbits.LATC2 = value;
+            pinStates[PINC2] = value;
             break;
         case PINC3 :
             LATCbits.LATC3 = value;
+            pinStates[PINC3] = value;
             break;
         case PINC4 :
             LATCbits.LATC4 = value;
+            pinStates[PINC4] = value;
             break;
         case PINC5 :
             LATCbits.LATC5 = value;
+            pinStates[PINC5] = value;
             break;
         case PINC6 :
             LATCbits.LATC6 = value;
+            pinStates[PINC6] = value;
             break;
         case PINC7 :
             LATCbits.LATC7 = value;
+            pinStates[PINC7] = value;
             break;
     }
 }

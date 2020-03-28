@@ -18276,24 +18276,26 @@ typedef uint32_t uint_fast32_t;
 # 1 "./pins.h" 1
 # 11 "./pins.h"
 typedef enum{
-    PINA0,
-    PINA1,
-    PINA2,
-    PINA4,
-    PINA5,
-    PINB4,
-    PINB5,
-    PINB6,
-    PINB7,
-    PINC0,
-    PINC1,
-    PINC2,
-    PINC3,
-    PINC4,
-    PINC5,
-    PINC6,
-    PINC7
+    PINA0 = 0,
+    PINA1 = 1,
+    PINA2 = 2,
+    PINA4 = 3,
+    PINA5 = 4,
+    PINB4 = 5,
+    PINB5 = 6,
+    PINB6 = 7,
+    PINB7 = 8,
+    PINC0 = 9,
+    PINC1 = 10,
+    PINC2 = 11,
+    PINC3 = 12,
+    PINC4 = 13,
+    PINC5 = 14,
+    PINC6 = 15,
+    PINC7 = 16
 } pins_t;
+
+pins_t pinStates[17];
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
@@ -18302,21 +18304,29 @@ uint8_t readPin(pins_t read);
 void writePin(pins_t write, uint8_t value);
 # 14 "main.c" 2
 
+# 1 "./timer0.h" 1
+# 13 "./timer0.h"
+uint32_t count;
+
+void timer0_config();
+
+uint32_t getCount();
+# 15 "main.c" 2
+
+
+
+#pragma config WDTE = OFF
+
+uint32_t timeTurnedOn;
 
 void main(void) {
     pins_t input[] = {PINB7};
     pins_t output[] = {PINC7};
-    _Bool led = 0;
 
     defineGPIODirection(input, output, 1, 1);
 
     while(1) {
         if(readPin(PINB7) == 0) {
-            led = 1;
-        } else {
-            led = 0;
-        }
-        if(led) {
             writePin(PINC7, 1);
         } else {
             writePin(PINC7, 0);

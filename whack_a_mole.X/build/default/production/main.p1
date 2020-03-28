@@ -1,17 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"17 main.c
-[; ;main.c: 17:     pins_t input[] = {PINB7};
+"31 ./pins.h
+[; ;./pins.h: 31: pins_t pinStates[17];
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
-"31 ./pins.h
-[; ;./pins.h: 31: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
-[v _defineGPIODirection `(v ~T0 @X0 0 ef4`*E11183`*E11183`uc`uc ]
+[p mainexit ]
 "33
-[; ;./pins.h: 33: uint8_t readPin(pins_t read);
-[v _readPin `(uc ~T0 @X0 0 ef1`E11183 ]
+[; ;./pins.h: 33: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+[v _defineGPIODirection `(v ~T0 @X0 0 ef4`*E11183`*E11183`uc`uc ]
 "35
-[; ;./pins.h: 35: void writePin(pins_t write, uint8_t value);
+[; ;./pins.h: 35: uint8_t readPin(pins_t read);
+[v _readPin `(uc ~T0 @X0 0 ef1`E11183 ]
+"37
+[; ;./pins.h: 37: void writePin(pins_t write, uint8_t value);
 [v _writePin `(v ~T0 @X0 0 ef2`E11183`uc ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
@@ -1375,91 +1375,65 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"31 ./pins.h
+[; ;./pins.h: 31: pins_t pinStates[17];
+[v _pinStates `E11183 ~T0 @X0 -> 17 `i e ]
+"13 ./timer0.h
+[; ;./timer0.h: 13: uint32_t count;
+[v _count `ul ~T0 @X0 1 e ]
+"18 main.c
+[p x WDTE = OFF ]
+"20
+[v _timeTurnedOn `ul ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"16 main.c
-[; ;main.c: 16: void main(void) {
+"22
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-[v F11213 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11213
+[v F11218 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
+[i F11218
 :U ..
-"17
-[; ;main.c: 17:     pins_t input[] = {PINB7};
+"23
 . `E11183 8
 ..
 ]
 [v _input `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _input F11213 ]
-[v F11215 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11215
+[e = _input F11218 ]
+[v F11220 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
+[i F11220
 :U ..
-"18
-[; ;main.c: 18:     pins_t output[] = {PINC7};
+"24
 . `E11183 16
 ..
 ]
 [v _output `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _output F11215 ]
-"19
-[; ;main.c: 19:     _Bool led = 0;
-[v _led `a ~T0 @X0 1 a ]
-[e = _led -> -> 0 `i `a ]
-"21
-[; ;main.c: 21:     defineGPIODirection(input, output, 1, 1);
+[e = _output F11220 ]
+"26
 [e ( _defineGPIODirection (4 , , , &U _input &U _output -> -> 1 `i `uc -> -> 1 `i `uc ]
-"23
-[; ;main.c: 23:     while(1) {
+"28
 [e :U 1517 ]
 {
-"24
-[; ;main.c: 24:         if(readPin(PINB7) == 0) {
+"29
 [e $ ! == -> ( _readPin (1 . `E11183 8 `i -> 0 `i 1519  ]
 {
-"25
-[; ;main.c: 25:             led = 1;
-[e = _led -> -> 1 `i `a ]
-"26
-[; ;main.c: 26:         } else {
+"30
+[e ( _writePin (2 , . `E11183 16 -> -> 1 `i `uc ]
+"31
 }
 [e $U 1520  ]
 [e :U 1519 ]
 {
-"27
-[; ;main.c: 27:             led = 0;
-[e = _led -> -> 0 `i `a ]
-"28
-[; ;main.c: 28:         }
-}
-[e :U 1520 ]
-"29
-[; ;main.c: 29:         if(led) {
-[e $ ! != -> _led `i -> 0 `i 1521  ]
-{
-"30
-[; ;main.c: 30:             writePin(PINC7, 1);
-[e ( _writePin (2 , . `E11183 16 -> -> 1 `i `uc ]
-"31
-[; ;main.c: 31:         } else {
-}
-[e $U 1522  ]
-[e :U 1521 ]
-{
 "32
-[; ;main.c: 32:             writePin(PINC7, 0);
 [e ( _writePin (2 , . `E11183 16 -> -> 0 `i `uc ]
 "33
-[; ;main.c: 33:         }
 }
-[e :U 1522 ]
+[e :U 1520 ]
 "34
-[; ;main.c: 34:     }
 }
 [e :U 1516 ]
 [e $U 1517  ]
 [e :U 1518 ]
 "35
-[; ;main.c: 35: }
 [e :UE 1515 ]
 }
