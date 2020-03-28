@@ -8,23 +8,26 @@
 #ifndef PINS_H
 #define	PINS_H
 
-enum pins {
-    RA0,
-    RA1,
-    RA2,
-    RA4,
-    RA5,
-    RB4,
-    RB5,
-    RB6,
-    RB7,
-    RC0,
-    RC1,
-    RC2,
-    RC3,
-    RC4,
-    RC5,
-    RC6,
-    RC7
+typedef enum{
+    PINA0,
+    PINA1,
+    PINA2,
+    PINA4,
+    PINA5,
+    PINB4,
+    PINB5,
+    PINB6,
+    PINB7,
+    PINC0,
+    PINC1,
+    PINC2,
+    PINC3,
+    PINC4,
+    PINC5,
+    PINC6,
+    PINC7
 } pins_t;
 
+void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+
+#endif

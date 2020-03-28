@@ -1,34 +1,107 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"17 main.c
-[; ;main.c: 17:     pins_t input[] = {PINB7};
+"16 pins.c
+[; ;pins.c: 16: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
-"31 ./pins.h
-[; ;./pins.h: 31: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
-[v _defineGPIODirection `(v ~T0 @X0 0 ef4`*E11183`*E11183`uc`uc ]
-"502 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 502:     struct {
-[s S37 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . . RB4 RB5 RB6 RB7 ]
-"501
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 501: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"510
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 510: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
-[v _PORTBbits `VS36 ~T0 @X0 0 e@13 ]
-"843
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 843:     struct {
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"842
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 842: typedef union {
-[u S50 `S51 1 ]
-[n S50 . . ]
-"854
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
-[v _LATCbits `VS50 ~T0 @X0 0 e@26 ]
+"603 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 603:     struct {
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
+"602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 602: typedef union {
+[u S40 `S41 1 ]
+[n S40 . . ]
+"612
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 612: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
+[v _TRISAbits `VS40 ~T0 @X0 0 e@18 ]
+"30569
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30569:     struct {
+[s S1444 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1444 . ANSA0 ANSA1 ANSA2 . ANSA4 ANSA5 ]
+"30568
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30568: typedef union {
+[u S1443 `S1444 1 ]
+[n S1443 . . ]
+"30578
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30578: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0x1F38)));
+[v _ANSELAbits `VS1443 ~T0 @X0 0 e@7992 ]
+"30614
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30614:     struct {
+[s S1446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1446 . WPUA0 WPUA1 WPUA2 WPUA3 WPUA4 WPUA5 ]
+"30613
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30613: typedef union {
+[u S1445 `S1446 1 ]
+[n S1445 . . ]
+"30623
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30623: extern volatile WPUAbits_t WPUAbits __attribute__((address(0x1F39)));
+[v _WPUAbits `VS1445 ~T0 @X0 0 e@7993 ]
+"653
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 653:     struct {
+[s S43 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S43 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
+"652
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 652: typedef union {
+[u S42 `S43 1 ]
+[n S42 . . ]
+"661
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 661: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x013)));
+[v _TRISBbits `VS42 ~T0 @X0 0 e@19 ]
+"30954
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30954:     struct {
+[s S1460 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1460 . . ANSB4 ANSB5 ANSB6 ANSB7 ]
+"30953
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30953: typedef union {
+[u S1459 `S1460 1 ]
+[n S1459 . . ]
+"30962
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30962: extern volatile ANSELBbits_t ANSELBbits __attribute__((address(0x1F43)));
+[v _ANSELBbits `VS1459 ~T0 @X0 0 e@8003 ]
+"30993
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30993:     struct {
+[s S1462 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1462 . . WPUB4 WPUB5 WPUB6 WPUB7 ]
+"30992
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 30992: typedef union {
+[u S1461 `S1462 1 ]
+[n S1461 . . ]
+"31001
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31001: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x1F44)));
+[v _WPUBbits `VS1461 ~T0 @X0 0 e@8004 ]
+"692
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 692:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"691
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 691: typedef union {
+[u S44 `S45 1 ]
+[n S44 . . ]
+"703
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 703: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x014)));
+[v _TRISCbits `VS44 ~T0 @X0 0 e@20 ]
+"31266
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31266:     struct {
+[s S1476 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1476 . ANSC0 ANSC1 ANSC2 ANSC3 ANSC4 ANSC5 ANSC6 ANSC7 ]
+"31265
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31265: typedef union {
+[u S1475 `S1476 1 ]
+[n S1475 . . ]
+"31277
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31277: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0x1F4E)));
+[v _ANSELCbits `VS1475 ~T0 @X0 0 e@8014 ]
+"31328
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31328:     struct {
+[s S1478 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1478 . WPUC0 WPUC1 WPUC2 WPUC3 WPUC4 WPUC5 WPUC6 WPUC7 ]
+"31327
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31327: typedef union {
+[u S1477 `S1478 1 ]
+[n S1477 . . ]
+"31339
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 31339: extern volatile WPUCbits_t WPUCbits __attribute__((address(0x1F4F)));
+[v _WPUCbits `VS1477 ~T0 @X0 0 e@8015 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1391,91 +1464,511 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"16 main.c
-[; ;main.c: 16: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"16 pins.c
+[; ;pins.c: 16: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
+[v _defineGPIODirection `(v ~T0 @X0 1 ef4`*E11183`*E11183`uc`uc ]
 {
-[e :U _main ]
+[e :U _defineGPIODirection ]
+[v _input `*E11183 ~T0 @X0 1 r1 ]
+[v _output `*E11183 ~T0 @X0 1 r2 ]
+[v _inputLength `uc ~T0 @X0 1 r3 ]
+[v _outputLength `uc ~T0 @X0 1 r4 ]
 [f ]
-[v F11208 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11208
-:U ..
 "17
-[; ;main.c: 17:     pins_t input[] = {PINB7};
-. `E11183 8
-..
-]
-[v _input `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _input F11208 ]
-[v F11210 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11210
-:U ..
+[; ;pins.c: 17:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
 "18
-[; ;main.c: 18:     pins_t output[] = {PINC7};
-. `E11183 16
-..
-]
-[v _output `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _output F11210 ]
+[; ;pins.c: 18:     for(i = 0; i < inputLength; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 1519  ]
+[e :U 1516 ]
+{
 "19
-[; ;main.c: 19:     _Bool led = 0;
-[v _led `a ~T0 @X0 1 a ]
-[e = _led -> -> 0 `i `a ]
+[; ;pins.c: 19:         switch(input[i]) {
+[e $U 1521  ]
+{
+"20
+[; ;pins.c: 20:             case PINA0 :
+[e :U 1522 ]
 "21
-[; ;main.c: 21:     defineGPIODirection(input, output, 1, 1);
-[e ( _defineGPIODirection (4 , , , &U _input &U _output -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;pins.c: 21:                 TRISAbits.TRISA0 = 1;
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+"22
+[; ;pins.c: 22:                 ANSELAbits.ANSA0 = 0;
+[e = . . _ANSELAbits 0 0 -> -> 0 `i `uc ]
 "23
-[; ;main.c: 23:     while(1) {
-[e :U 1517 ]
-{
+[; ;pins.c: 23:                 WPUAbits.WPUA0 = 1;
+[e = . . _WPUAbits 0 0 -> -> 1 `i `uc ]
 "24
-[; ;main.c: 24:         if(PORTBbits.RB7 == 0) {
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 1519  ]
-{
+[; ;pins.c: 24:                 break;
+[e $U 1520  ]
 "25
-[; ;main.c: 25:             led = 1;
-[e = _led -> -> 1 `i `a ]
+[; ;pins.c: 25:             case PINA1 :
+[e :U 1523 ]
 "26
-[; ;main.c: 26:         } else {
+[; ;pins.c: 26:                 TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+"27
+[; ;pins.c: 27:                 ANSELAbits.ANSA1 = 0;
+[e = . . _ANSELAbits 0 1 -> -> 0 `i `uc ]
+"28
+[; ;pins.c: 28:                 WPUAbits.WPUA1 = 1;
+[e = . . _WPUAbits 0 1 -> -> 1 `i `uc ]
+"29
+[; ;pins.c: 29:                 break;
+[e $U 1520  ]
+"30
+[; ;pins.c: 30:             case PINA2 :
+[e :U 1524 ]
+"31
+[; ;pins.c: 31:                 TRISAbits.TRISA2 = 1;
+[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
+"32
+[; ;pins.c: 32:                 ANSELAbits.ANSA2 = 0;
+[e = . . _ANSELAbits 0 2 -> -> 0 `i `uc ]
+"33
+[; ;pins.c: 33:                 WPUAbits.WPUA2 = 1;
+[e = . . _WPUAbits 0 2 -> -> 1 `i `uc ]
+"34
+[; ;pins.c: 34:                 break;
+[e $U 1520  ]
+"35
+[; ;pins.c: 35:             case PINA4 :
+[e :U 1525 ]
+"36
+[; ;pins.c: 36:                 TRISAbits.TRISA4 = 1;
+[e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
+"37
+[; ;pins.c: 37:                 ANSELAbits.ANSA4 = 0;
+[e = . . _ANSELAbits 0 4 -> -> 0 `i `uc ]
+"38
+[; ;pins.c: 38:                 WPUAbits.WPUA4 = 1;
+[e = . . _WPUAbits 0 4 -> -> 1 `i `uc ]
+"39
+[; ;pins.c: 39:                 break;
+[e $U 1520  ]
+"40
+[; ;pins.c: 40:             case PINA5 :
+[e :U 1526 ]
+"41
+[; ;pins.c: 41:                 TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+"42
+[; ;pins.c: 42:                 ANSELAbits.ANSA5 = 0;
+[e = . . _ANSELAbits 0 5 -> -> 0 `i `uc ]
+"43
+[; ;pins.c: 43:                 WPUAbits.WPUA5 = 1;
+[e = . . _WPUAbits 0 5 -> -> 1 `i `uc ]
+"44
+[; ;pins.c: 44:                 break;
+[e $U 1520  ]
+"45
+[; ;pins.c: 45:             case PINB4 :
+[e :U 1527 ]
+"46
+[; ;pins.c: 46:                 TRISBbits.TRISB4 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"47
+[; ;pins.c: 47:                 ANSELBbits.ANSB4 = 0;
+[e = . . _ANSELBbits 0 1 -> -> 0 `i `uc ]
+"48
+[; ;pins.c: 48:                 WPUBbits.WPUB4 = 1;
+[e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
+"49
+[; ;pins.c: 49:                 break;
+[e $U 1520  ]
+"50
+[; ;pins.c: 50:             case PINB5 :
+[e :U 1528 ]
+"51
+[; ;pins.c: 51:                 TRISBbits.TRISB5 = 1;
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+"52
+[; ;pins.c: 52:                 ANSELBbits.ANSB5 = 0;
+[e = . . _ANSELBbits 0 2 -> -> 0 `i `uc ]
+"53
+[; ;pins.c: 53:                 WPUBbits.WPUB5 = 1;
+[e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
+"54
+[; ;pins.c: 54:                 break;
+[e $U 1520  ]
+"55
+[; ;pins.c: 55:             case PINB6 :
+[e :U 1529 ]
+"56
+[; ;pins.c: 56:                 TRISBbits.TRISB6 = 1;
+[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+"57
+[; ;pins.c: 57:                 ANSELBbits.ANSB6 = 0;
+[e = . . _ANSELBbits 0 3 -> -> 0 `i `uc ]
+"58
+[; ;pins.c: 58:                 WPUBbits.WPUB6 = 1;
+[e = . . _WPUBbits 0 3 -> -> 1 `i `uc ]
+"59
+[; ;pins.c: 59:                 break;
+[e $U 1520  ]
+"60
+[; ;pins.c: 60:             case PINB7 :
+[e :U 1530 ]
+"61
+[; ;pins.c: 61:                 TRISBbits.TRISB7 = 1;
+[e = . . _TRISBbits 0 4 -> -> 1 `i `uc ]
+"62
+[; ;pins.c: 62:                 ANSELBbits.ANSB7 = 0;
+[e = . . _ANSELBbits 0 4 -> -> 0 `i `uc ]
+"63
+[; ;pins.c: 63:                 WPUBbits.WPUB7 = 1;
+[e = . . _WPUBbits 0 4 -> -> 1 `i `uc ]
+"64
+[; ;pins.c: 64:                 break;
+[e $U 1520  ]
+"65
+[; ;pins.c: 65:             case PINC0 :
+[e :U 1531 ]
+"66
+[; ;pins.c: 66:                 TRISCbits.TRISC0 = 1;
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+"67
+[; ;pins.c: 67:                 ANSELCbits.ANSC0 = 0;
+[e = . . _ANSELCbits 0 0 -> -> 0 `i `uc ]
+"68
+[; ;pins.c: 68:                 WPUCbits.WPUC0 = 1;
+[e = . . _WPUCbits 0 0 -> -> 1 `i `uc ]
+"69
+[; ;pins.c: 69:                 break;
+[e $U 1520  ]
+"70
+[; ;pins.c: 70:             case PINC1 :
+[e :U 1532 ]
+"71
+[; ;pins.c: 71:                 TRISCbits.TRISC1 = 1;
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+"72
+[; ;pins.c: 72:                 ANSELCbits.ANSC1 = 0;
+[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
+"73
+[; ;pins.c: 73:                 WPUCbits.WPUC1 = 1;
+[e = . . _WPUCbits 0 1 -> -> 1 `i `uc ]
+"74
+[; ;pins.c: 74:                 break;
+[e $U 1520  ]
+"75
+[; ;pins.c: 75:             case PINC2 :
+[e :U 1533 ]
+"76
+[; ;pins.c: 76:                 TRISCbits.TRISC2 = 1;
+[e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
+"77
+[; ;pins.c: 77:                 ANSELCbits.ANSC2 = 0;
+[e = . . _ANSELCbits 0 2 -> -> 0 `i `uc ]
+"78
+[; ;pins.c: 78:                 WPUCbits.WPUC2 = 1;
+[e = . . _WPUCbits 0 2 -> -> 1 `i `uc ]
+"79
+[; ;pins.c: 79:                 break;
+[e $U 1520  ]
+"80
+[; ;pins.c: 80:             case PINC3 :
+[e :U 1534 ]
+"81
+[; ;pins.c: 81:                 TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"82
+[; ;pins.c: 82:                 ANSELCbits.ANSC3 = 0;
+[e = . . _ANSELCbits 0 3 -> -> 0 `i `uc ]
+"83
+[; ;pins.c: 83:                 WPUCbits.WPUC3 = 1;
+[e = . . _WPUCbits 0 3 -> -> 1 `i `uc ]
+"84
+[; ;pins.c: 84:                 break;
+[e $U 1520  ]
+"85
+[; ;pins.c: 85:             case PINC4 :
+[e :U 1535 ]
+"86
+[; ;pins.c: 86:                 TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"87
+[; ;pins.c: 87:                 ANSELCbits.ANSC4 = 0;
+[e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
+"88
+[; ;pins.c: 88:                 WPUCbits.WPUC4 = 1;
+[e = . . _WPUCbits 0 4 -> -> 1 `i `uc ]
+"89
+[; ;pins.c: 89:                 break;
+[e $U 1520  ]
+"90
+[; ;pins.c: 90:             case PINC5 :
+[e :U 1536 ]
+"91
+[; ;pins.c: 91:                 TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+"92
+[; ;pins.c: 92:                 ANSELCbits.ANSC5 = 0;
+[e = . . _ANSELCbits 0 5 -> -> 0 `i `uc ]
+"93
+[; ;pins.c: 93:                 WPUCbits.WPUC5 = 1;
+[e = . . _WPUCbits 0 5 -> -> 1 `i `uc ]
+"94
+[; ;pins.c: 94:                 break;
+[e $U 1520  ]
+"95
+[; ;pins.c: 95:             case PINC6 :
+[e :U 1537 ]
+"96
+[; ;pins.c: 96:                 TRISCbits.TRISC6 = 1;
+[e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
+"97
+[; ;pins.c: 97:                 ANSELCbits.ANSC6 = 0;
+[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
+"98
+[; ;pins.c: 98:                 WPUCbits.WPUC6 = 1;
+[e = . . _WPUCbits 0 6 -> -> 1 `i `uc ]
+"99
+[; ;pins.c: 99:                 break;
+[e $U 1520  ]
+"100
+[; ;pins.c: 100:             case PINC7 :
+[e :U 1538 ]
+"101
+[; ;pins.c: 101:                 TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+"102
+[; ;pins.c: 102:                 ANSELCbits.ANSC7 = 0;
+[e = . . _ANSELCbits 0 7 -> -> 0 `i `uc ]
+"103
+[; ;pins.c: 103:                 WPUCbits.WPUC7 = 1;
+[e = . . _WPUCbits 0 7 -> -> 1 `i `uc ]
+"104
+[; ;pins.c: 104:                 break;
+[e $U 1520  ]
+"105
+[; ;pins.c: 105:         }
 }
 [e $U 1520  ]
-[e :U 1519 ]
-{
-"27
-[; ;main.c: 27:             led = 0;
-[e = _led -> -> 0 `i `a ]
-"28
-[; ;main.c: 28:         }
-}
-[e :U 1520 ]
-"29
-[; ;main.c: 29:         if(led) {
-[e $ ! != -> _led `i -> 0 `i 1521  ]
-{
-"30
-[; ;main.c: 30:             LATCbits.LATC7 = 1;
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-"31
-[; ;main.c: 31:         } else {
-}
-[e $U 1522  ]
 [e :U 1521 ]
+[e [\ -> *U + _input * -> _i `ux -> -> # *U _input `ui `ux `ui , $ -> . `E11183 0 `ui 1522
+ , $ -> . `E11183 1 `ui 1523
+ , $ -> . `E11183 2 `ui 1524
+ , $ -> . `E11183 3 `ui 1525
+ , $ -> . `E11183 4 `ui 1526
+ , $ -> . `E11183 5 `ui 1527
+ , $ -> . `E11183 6 `ui 1528
+ , $ -> . `E11183 7 `ui 1529
+ , $ -> . `E11183 8 `ui 1530
+ , $ -> . `E11183 9 `ui 1531
+ , $ -> . `E11183 10 `ui 1532
+ , $ -> . `E11183 11 `ui 1533
+ , $ -> . `E11183 12 `ui 1534
+ , $ -> . `E11183 13 `ui 1535
+ , $ -> . `E11183 14 `ui 1536
+ , $ -> . `E11183 15 `ui 1537
+ , $ -> . `E11183 16 `ui 1538
+ 1520 ]
+[e :U 1520 ]
+"106
+[; ;pins.c: 106:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1519 ]
+[e $ < -> _i `i -> _inputLength `i 1516  ]
+[e :U 1517 ]
+}
+"108
+[; ;pins.c: 108:     for(i = 0; i < outputLength; i++) {
 {
-"32
-[; ;main.c: 32:             LATCbits.LATC7 = 0;
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-"33
-[; ;main.c: 33:         }
+[e = _i -> -> 0 `i `uc ]
+[e $U 1542  ]
+[e :U 1539 ]
+{
+"109
+[; ;pins.c: 109:         switch(output[i]) {
+[e $U 1544  ]
+{
+"110
+[; ;pins.c: 110:             case PINA0 :
+[e :U 1545 ]
+"111
+[; ;pins.c: 111:                 TRISAbits.TRISA0 = 0;
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+"112
+[; ;pins.c: 112:                 break;
+[e $U 1543  ]
+"113
+[; ;pins.c: 113:             case PINA1 :
+[e :U 1546 ]
+"114
+[; ;pins.c: 114:                 TRISAbits.TRISA1 = 0;
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+"115
+[; ;pins.c: 115:                 break;
+[e $U 1543  ]
+"116
+[; ;pins.c: 116:             case PINA2 :
+[e :U 1547 ]
+"117
+[; ;pins.c: 117:                 TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"118
+[; ;pins.c: 118:                 break;
+[e $U 1543  ]
+"119
+[; ;pins.c: 119:             case PINA4 :
+[e :U 1548 ]
+"120
+[; ;pins.c: 120:                 TRISAbits.TRISA4 = 0;
+[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
+"121
+[; ;pins.c: 121:                 break;
+[e $U 1543  ]
+"122
+[; ;pins.c: 122:             case PINA5 :
+[e :U 1549 ]
+"123
+[; ;pins.c: 123:                 TRISAbits.TRISA5 = 0;
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
+"124
+[; ;pins.c: 124:                 break;
+[e $U 1543  ]
+"125
+[; ;pins.c: 125:             case PINB4 :
+[e :U 1550 ]
+"126
+[; ;pins.c: 126:                 TRISBbits.TRISB4 = 0;
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+"127
+[; ;pins.c: 127:                 break;
+[e $U 1543  ]
+"128
+[; ;pins.c: 128:             case PINB5 :
+[e :U 1551 ]
+"129
+[; ;pins.c: 129:                 TRISBbits.TRISB5 = 0;
+[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
+"130
+[; ;pins.c: 130:                 break;
+[e $U 1543  ]
+"131
+[; ;pins.c: 131:             case PINB6 :
+[e :U 1552 ]
+"132
+[; ;pins.c: 132:                 TRISBbits.TRISB6 = 0;
+[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+"133
+[; ;pins.c: 133:                 break;
+[e $U 1543  ]
+"134
+[; ;pins.c: 134:             case PINB7 :
+[e :U 1553 ]
+"135
+[; ;pins.c: 135:                 TRISBbits.TRISB7 = 0;
+[e = . . _TRISBbits 0 4 -> -> 0 `i `uc ]
+"136
+[; ;pins.c: 136:                 break;
+[e $U 1543  ]
+"137
+[; ;pins.c: 137:             case PINC0 :
+[e :U 1554 ]
+"138
+[; ;pins.c: 138:                 TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+"139
+[; ;pins.c: 139:                 break;
+[e $U 1543  ]
+"140
+[; ;pins.c: 140:             case PINC1 :
+[e :U 1555 ]
+"141
+[; ;pins.c: 141:                 TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"142
+[; ;pins.c: 142:                 break;
+[e $U 1543  ]
+"143
+[; ;pins.c: 143:             case PINC2 :
+[e :U 1556 ]
+"144
+[; ;pins.c: 144:                 TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"145
+[; ;pins.c: 145:                 break;
+[e $U 1543  ]
+"146
+[; ;pins.c: 146:             case PINC3 :
+[e :U 1557 ]
+"147
+[; ;pins.c: 147:                 TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"148
+[; ;pins.c: 148:                 break;
+[e $U 1543  ]
+"149
+[; ;pins.c: 149:             case PINC4 :
+[e :U 1558 ]
+"150
+[; ;pins.c: 150:                 TRISCbits.TRISC4 = 0;
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+"151
+[; ;pins.c: 151:                 break;
+[e $U 1543  ]
+"152
+[; ;pins.c: 152:             case PINC5 :
+[e :U 1559 ]
+"153
+[; ;pins.c: 153:                 TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"154
+[; ;pins.c: 154:                 break;
+[e $U 1543  ]
+"155
+[; ;pins.c: 155:             case PINC6 :
+[e :U 1560 ]
+"156
+[; ;pins.c: 156:                 TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+"157
+[; ;pins.c: 157:                 break;
+[e $U 1543  ]
+"158
+[; ;pins.c: 158:             case PINC7 :
+[e :U 1561 ]
+"159
+[; ;pins.c: 159:                 TRISCbits.TRISC7 = 0;
+[e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
+"160
+[; ;pins.c: 160:         }
 }
-[e :U 1522 ]
-"34
-[; ;main.c: 34:     }
+[e $U 1543  ]
+[e :U 1544 ]
+[e [\ -> *U + _output * -> _i `ux -> -> # *U _output `ui `ux `ui , $ -> . `E11183 0 `ui 1545
+ , $ -> . `E11183 1 `ui 1546
+ , $ -> . `E11183 2 `ui 1547
+ , $ -> . `E11183 3 `ui 1548
+ , $ -> . `E11183 4 `ui 1549
+ , $ -> . `E11183 5 `ui 1550
+ , $ -> . `E11183 6 `ui 1551
+ , $ -> . `E11183 7 `ui 1552
+ , $ -> . `E11183 8 `ui 1553
+ , $ -> . `E11183 9 `ui 1554
+ , $ -> . `E11183 10 `ui 1555
+ , $ -> . `E11183 11 `ui 1556
+ , $ -> . `E11183 12 `ui 1557
+ , $ -> . `E11183 13 `ui 1558
+ , $ -> . `E11183 14 `ui 1559
+ , $ -> . `E11183 15 `ui 1560
+ , $ -> . `E11183 16 `ui 1561
+ 1543 ]
+[e :U 1543 ]
+"161
+[; ;pins.c: 161:     }
 }
-[e :U 1516 ]
-[e $U 1517  ]
-[e :U 1518 ]
-"35
-[; ;main.c: 35: }
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1542 ]
+[e $ < -> _i `i -> _outputLength `i 1539  ]
+[e :U 1540 ]
+}
+"162
+[; ;pins.c: 162: }
 [e :UE 1515 ]
 }

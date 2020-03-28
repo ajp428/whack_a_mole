@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "pins.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "pins.c" 2
 
 
 
@@ -169,7 +169,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "main.c" 2
+# 8 "pins.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
@@ -232,7 +232,7 @@ udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 104 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 size_t __ctype_get_mb_cur_max(void);
-# 9 "main.c" 2
+# 9 "pins.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
@@ -18182,7 +18182,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 10 "main.c" 2
+# 10 "pins.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
@@ -18267,55 +18267,183 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 11 "main.c" 2
+# 11 "pins.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 13 "main.c" 2
+# 13 "pins.c" 2
 
 # 1 "./pins.h" 1
 # 11 "./pins.h"
 typedef enum{
-    PINA0,
-    PINA1,
-    PINA2,
-    PINA4,
-    PINA5,
-    PINB4,
-    PINB5,
-    PINB6,
-    PINB7,
-    PINC0,
-    PINC1,
-    PINC2,
-    PINC3,
-    PINC4,
-    PINC5,
-    PINC6,
-    PINC7
+    RA0,
+    RA1,
+    RA2,
+    RA4,
+    RA5,
+    RB4,
+    RB5,
+    RB6,
+    RB7,
+    RC0,
+    RC1,
+    RC2,
+    RC3,
+    RC4,
+    RC5,
+    RC6,
+    RC7
 } pins_t;
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
-# 14 "main.c" 2
+# 14 "pins.c" 2
 
 
-void main(void) {
-    pins_t input[] = {PINB7};
-    pins_t output[] = {PINC7};
-    _Bool led = 0;
-
-    defineGPIODirection(input, output, 1, 1);
-
-    while(1) {
-        if(PORTBbits.RB7 == 0) {
-            led = 1;
-        } else {
-            led = 0;
+void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
+    uint8_t i;
+    for(i = 0; i < inputLength; i++) {
+        switch(input[i]) {
+            case RA0 :
+                TRISAbits.TRISA0 = 1;
+                ANSELAbits.ANSA0 = 0;
+                WPUAbits.WPUA0 = 1;
+                break;
+            case RA1 :
+                TRISAbits.TRISA1 = 1;
+                ANSELAbits.ANSA1 = 0;
+                WPUAbits.WPUA1 = 1;
+                break;
+            case RA2 :
+                TRISAbits.TRISA2 = 1;
+                ANSELAbits.ANSA2 = 0;
+                WPUAbits.WPUA2 = 1;
+                break;
+            case RA4 :
+                TRISAbits.TRISA4 = 1;
+                ANSELAbits.ANSA4 = 0;
+                WPUAbits.WPUA4 = 1;
+                break;
+            case RA5 :
+                TRISAbits.TRISA5 = 1;
+                ANSELAbits.ANSA5 = 0;
+                WPUAbits.WPUA5 = 1;
+                break;
+            case RB4 :
+                TRISBbits.TRISB4 = 1;
+                ANSELBbits.ANSB4 = 0;
+                WPUBbits.WPUB4 = 1;
+                break;
+            case RB5 :
+                TRISBbits.TRISB5 = 1;
+                ANSELBbits.ANSB5 = 0;
+                WPUBbits.WPUB5 = 1;
+                break;
+            case RB6 :
+                TRISBbits.TRISB6 = 1;
+                ANSELBbits.ANSB6 = 0;
+                WPUBbits.WPUB6 = 1;
+                break;
+            case RB7 :
+                TRISBbits.TRISB7 = 1;
+                ANSELBbits.ANSB7 = 0;
+                WPUBbits.WPUB7 = 1;
+                break;
+            case RC0 :
+                TRISCbits.TRISC0 = 1;
+                ANSELCbits.ANSC0 = 0;
+                WPUCbits.WPUC0 = 1;
+                break;
+            case RC1 :
+                TRISCbits.TRISC1 = 1;
+                ANSELCbits.ANSC1 = 0;
+                WPUCbits.WPUC1 = 1;
+                break;
+            case RC2 :
+                TRISCbits.TRISC2 = 1;
+                ANSELCbits.ANSC2 = 0;
+                WPUCbits.WPUC2 = 1;
+                break;
+            case RC3 :
+                TRISCbits.TRISC3 = 1;
+                ANSELCbits.ANSC3 = 0;
+                WPUCbits.WPUC3 = 1;
+                break;
+            case RC4 :
+                TRISCbits.TRISC4 = 1;
+                ANSELCbits.ANSC4 = 0;
+                WPUCbits.WPUC4 = 1;
+                break;
+            case RC5 :
+                TRISCbits.TRISC5 = 1;
+                ANSELCbits.ANSC5 = 0;
+                WPUCbits.WPUC5 = 1;
+                break;
+            case RC6 :
+                TRISCbits.TRISC6 = 1;
+                ANSELCbits.ANSC6 = 0;
+                WPUCbits.WPUC6 = 1;
+                break;
+            case RC7 :
+                TRISCbits.TRISC7 = 1;
+                ANSELCbits.ANSC7 = 0;
+                WPUCbits.WPUC7 = 1;
+                break;
+            default :
         }
-        if(led) {
-            LATCbits.LATC7 = 1;
-        } else {
-            LATCbits.LATC7 = 0;
+    }
+
+    for(i = 0; i < outputLength; i++) {
+        switch(output[i]) {
+            case RA0 :
+                TRISAbits.TRISA0 = 0;
+                break;
+            case RA1 :
+                TRISAbits.TRISA1 = 0;
+                break;
+            case RA2 :
+                TRISAbits.TRISA2 = 0;
+                break;
+            case RA4 :
+                TRISAbits.TRISA4 = 0;
+                break;
+            case RA5 :
+                TRISAbits.TRISA5 = 0;
+                break;
+            case RB4 :
+                TRISBbits.TRISB4 = 0;
+                break;
+            case RB5 :
+                TRISBbits.TRISB5 = 0;
+                break;
+            case RB6 :
+                TRISBbits.TRISB6 = 0;
+                break;
+            case RB7 :
+                TRISBbits.TRISB7 = 0;
+                break;
+            case RC0 :
+                TRISCbits.TRISC0 = 0;
+                break;
+            case RC1 :
+                TRISCbits.TRISC1 = 0;
+                break;
+            case RC2 :
+                TRISCbits.TRISC2 = 0;
+                break;
+            case RC3 :
+                TRISCbits.TRISC3 = 0;
+                break;
+            case RC4 :
+                TRISCbits.TRISC4 = 0;
+                break;
+            case RC5 :
+                TRISCbits.TRISC5 = 0;
+                break;
+            case RC6 :
+                TRISCbits.TRISC6 = 0;
+                break;
+            case RC7 :
+                TRISCbits.TRISC7 = 0;
         }
     }
 }

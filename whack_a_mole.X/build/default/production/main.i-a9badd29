@@ -18275,24 +18275,24 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "./pins.h" 1
 # 11 "./pins.h"
-typedef enum{
-    PINA0,
-    PINA1,
-    PINA2,
-    PINA4,
-    PINA5,
-    PINB4,
-    PINB5,
-    PINB6,
-    PINB7,
-    PINC0,
-    PINC1,
-    PINC2,
-    PINC3,
-    PINC4,
-    PINC5,
-    PINC6,
-    PINC7
+enum pins {
+    RA0,
+    RA1,
+    RA2,
+    RA4,
+    RA5,
+    RB4,
+    RB5,
+    RB6,
+    RB7,
+    RC0,
+    RC1,
+    RC2,
+    RC3,
+    RC4,
+    RC5,
+    RC6,
+    RC7
 } pins_t;
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
@@ -18300,9 +18300,8 @@ void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, u
 
 
 void main(void) {
-    pins_t input[] = {PINB7};
-    pins_t output[] = {PINC7};
-    _Bool led = 0;
+    pins_t input[] = {RB7};
+    pins_t output[] = {RC7};
 
     defineGPIODirection(input, output, 1, 1);
 

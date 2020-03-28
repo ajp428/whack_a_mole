@@ -11,13 +11,14 @@
 #include <stdint.h>
 #include <pic16f18446.h>
 #include <stdbool.h>
+#include "pins.h"
 
 void main(void) {
-    TRISCbits.TRISC7 = 0;   // Configure pin C7 at LED output
-    TRISBbits.TRISB7 = 1;   // Configure pin B7 as button input
-    ANSELBbits.ANSB7 = 0;   // Configure pin B7 for digital input
-    WPUBbits.WPUB7 = 1;     // Enable weak pull-up resistor for pin B7
+    pins_t input[] = {PINB7};
+    pins_t output[] = {PINC7};
     bool led = false;
+    
+    defineGPIODirection(input, output, 1, 1);
     
     while(1) {
         if(PORTBbits.RB7 == 0) {
