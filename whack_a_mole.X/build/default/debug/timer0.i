@@ -18290,7 +18290,7 @@ time_t time = 0;
 void timer0_config() {
     T0CON0bits.EN = 1;
     T0CON1bits.T0CS = 0b010;
-    T0CON1bits.CKPS = 0b0101;
+    T0CON1bits.CKPS = 0b0010;
     T0CON1bits.ASYNC = 0;
     TMR0H = 249;
     INTCONbits.GIE = 1;

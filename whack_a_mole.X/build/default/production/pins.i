@@ -18297,9 +18297,14 @@ typedef enum{
 
 
 typedef enum{
-    BUTTON_PRESSED,
-    BUTTON_UNPRESSED
+    STATE_PRESSED,
+    STATE_UNPRESSED
 } buttonState_t;
+
+typedef enum{
+    STATE_ON,
+    STATE_OFF
+} ledState_t;
 
 
 
@@ -18310,7 +18315,7 @@ pins_t pinStates[17];
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
 
-uint8_t readPin(pins_t read);
+_Bool readPin(pins_t read);
 
 
 void writePin(pins_t write, uint8_t value);
@@ -18468,42 +18473,110 @@ void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, u
     }
 }
 
-uint8_t readPin(pins_t read) {
+_Bool readPin(pins_t read) {
     switch (read) {
         case PINA0 :
-            return PORTAbits.RA0;
+            if(PORTAbits.RA0 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINA1 :
-            return PORTAbits.RA1;
+            if(PORTAbits.RA1 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINA2 :
-            return PORTAbits.RA2;
+            if(PORTAbits.RA2 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINA4 :
-            return PORTAbits.RA4;
+            if(PORTAbits.RA4 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINA5 :
-            return PORTAbits.RA5;
+            if(PORTAbits.RA5 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINB4 :
-            return PORTBbits.RB4;
+            if(PORTBbits.RB4 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINB5 :
-            return PORTBbits.RB5;
+            if(PORTBbits.RB5 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINB6 :
-            return PORTBbits.RB6;
+            if(PORTBbits.RB6 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINB7 :
-            return PORTBbits.RB7;
+            if(PORTBbits.RB7 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC0 :
-            return PORTCbits.RC0;
+            if(PORTCbits.RC0 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC1 :
-            return PORTCbits.RC1;
+            if(PORTCbits.RC1 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC2 :
-            return PORTCbits.RC2;
+            if(PORTCbits.RC2 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC3 :
-            return PORTCbits.RC3;
+            if(PORTCbits.RC3 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC4 :
-            return PORTCbits.RC4;
+            if(PORTCbits.RC4 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC5 :
-            return PORTCbits.RC5;
+            if(PORTCbits.RC5 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC6:
-            return PORTCbits.RC6;
+            if(PORTCbits.RC6 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         case PINC7:
-            return PORTCbits.RC7;
+            if(PORTCbits.RC7 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
     }
 }
 

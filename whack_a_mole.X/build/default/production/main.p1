@@ -14,7 +14,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49 ./pins.h
 [; ;./pins.h: 49: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 [v _defineGPIODirection `(v ~T0 @X0 0 ef4`*E11183`*E11183`uc`uc ]
-"52
+"17 ./timer0.h
+[; ;./timer0.h: 17: void timer0_config();
+[v _timer0_config `(v ~T0 @X0 0 e? ]
+"52 ./pins.h
 [; ;./pins.h: 52: _Bool readPin(pins_t read);
 [v _readPin `(a ~T0 @X0 0 ef1`E11183 ]
 "55
@@ -1435,6 +1438,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _output F11234 ]
 "31
 [e ( _defineGPIODirection (4 , , , &U _input &U _output -> -> 1 `i `uc -> -> 1 `i `uc ]
+"33
+[e ( _timer0_config ..  ]
 "35
 [e :U 1517 ]
 {
