@@ -1,4 +1,4 @@
-# 1 "timer0.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "timer0.c" 2
+# 1 "main.c" 2
 
 
 
@@ -169,7 +169,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "timer0.c" 2
+# 8 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
@@ -232,7 +232,7 @@ udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 104 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 size_t __ctype_get_mb_cur_max(void);
-# 9 "timer0.c" 2
+# 9 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
@@ -18182,7 +18182,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 10 "timer0.c" 2
+# 10 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
@@ -18267,11 +18267,59 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 11 "timer0.c" 2
+# 11 "main.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 13 "timer0.c" 2
+# 13 "main.c" 2
+
+# 1 "./pins.h" 1
+# 12 "./pins.h"
+typedef enum{
+    PINA0 = 0,
+    PINA1 = 1,
+    PINA2 = 2,
+    PINA4 = 3,
+    PINA5 = 4,
+    PINB4 = 5,
+    PINB5 = 6,
+    PINB6 = 7,
+    PINB7 = 8,
+    PINC0 = 9,
+    PINC1 = 10,
+    PINC2 = 11,
+    PINC3 = 12,
+    PINC4 = 13,
+    PINC5 = 14,
+    PINC6 = 15,
+    PINC7 = 16
+} pins_t;
+
+
+typedef enum{
+    STATE_PRESSED,
+    STATE_UNPRESSED
+} buttonState_t;
+
+typedef enum{
+    STATE_ON,
+    STATE_OFF
+} ledState_t;
+
+
+
+pins_t pinStates[17];
+
+
+
+void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+
+
+_Bool readPin(pins_t read);
+
+
+void writePin(pins_t write, uint8_t value);
+# 14 "main.c" 2
 
 # 1 "./timer0.h" 1
 # 13 "./timer0.h"
@@ -18282,25 +18330,32 @@ time_t time;
 void timer0_config();
 
 uint32_t getTime();
-# 14 "timer0.c" 2
+# 15 "main.c" 2
 
 
-time_t time = 0;
 
-void timer0_config() {
-    T0CON0bits.EN = 1;
-    T0CON1bits.T0CS = 0b010;
-    T0CON1bits.CKPS = 0b0101;
-    T0CON1bits.ASYNC = 0;
-    TMR0H = 249;
-    INTCONbits.GIE = 1;
-    PIE0bits.TMR0IE = 1;
-}
+#pragma config WDTE = OFF
 
-void __attribute__((picinterrupt(("")))) timer0ISR() {
-    time++;
-}
+time_t timeTurnedOff = 0;
+time_t timeButtonReleased;
+buttonState_t buttonState;
+buttonState_t buttonLastState;
+ledState_t ledState;
+ledState_t ledLasteState;
 
-uint32_t getTime() {
-    return time;
+void main(void) {
+    pins_t input[] = {PINB7};
+    pins_t output[] = {PINC7};
+
+    defineGPIODirection(input, output, 1, 1);
+
+    timer0_config();
+
+    while(1) {
+        if(readPin(PINB7) == 0) {
+            writePin(PINC7, 1);
+        } else {
+            writePin(PINC7, 0);
+        }
+    }
 }

@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"40 ./pins.h
-[; ;./pins.h: 40: pins_t pinStates[17];
+"45 ./pins.h
+[; ;./pins.h: 45: pins_t pinStates[17];
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
 "603 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
@@ -1530,8 +1530,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"40 ./pins.h
-[; ;./pins.h: 40: pins_t pinStates[17];
+"45 ./pins.h
+[; ;./pins.h: 45: pins_t pinStates[17];
 [v _pinStates `E11183 ~T0 @X0 -> 17 `i e ]
 "16 pins.c
 [; ;pins.c: 16: pins_t pinStates[17] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -2069,8 +2069,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1515 ]
 }
 "167
-[; ;pins.c: 167: uint8_t readPin(pins_t read) {
-[v _readPin `(uc ~T0 @X0 1 ef1`E11183 ]
+[; ;pins.c: 167: _Bool readPin(pins_t read) {
+[v _readPin `(a ~T0 @X0 1 ef1`E11183 ]
 {
 [e :U _readPin ]
 [v _read `E11183 ~T0 @X0 1 r1 ]
@@ -2083,389 +2083,696 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pins.c: 169:         case PINA0 :
 [e :U 1565 ]
 "170
-[; ;pins.c: 170:             return PORTAbits.RA0;
-[e ) . . _PORTAbits 0 0 ]
-[e $UE 1562  ]
+[; ;pins.c: 170:             if(PORTAbits.RA0 == 0) {
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 1566  ]
+{
 "171
-[; ;pins.c: 171:         case PINA1 :
-[e :U 1566 ]
+[; ;pins.c: 171:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
 "172
-[; ;pins.c: 172:             return PORTAbits.RA1;
-[e ) . . _PORTAbits 0 1 ]
-[e $UE 1562  ]
+[; ;pins.c: 172:             } else {
+}
+[e $U 1567  ]
+[e :U 1566 ]
+{
 "173
-[; ;pins.c: 173:         case PINA2 :
-[e :U 1567 ]
-"174
-[; ;pins.c: 174:             return PORTAbits.RA2;
-[e ) . . _PORTAbits 0 2 ]
+[; ;pins.c: 173:                 return 1;
+[e ) -> -> 1 `i `a ]
 [e $UE 1562  ]
+"174
+[; ;pins.c: 174:             }
+}
+[e :U 1567 ]
 "175
-[; ;pins.c: 175:         case PINA4 :
+[; ;pins.c: 175:         case PINA1 :
 [e :U 1568 ]
 "176
-[; ;pins.c: 176:             return PORTAbits.RA4;
-[e ) . . _PORTAbits 0 4 ]
-[e $UE 1562  ]
+[; ;pins.c: 176:             if(PORTAbits.RA1 == 0) {
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 0 `i 1569  ]
+{
 "177
-[; ;pins.c: 177:         case PINA5 :
-[e :U 1569 ]
+[; ;pins.c: 177:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
 "178
-[; ;pins.c: 178:             return PORTAbits.RA5;
-[e ) . . _PORTAbits 0 5 ]
-[e $UE 1562  ]
+[; ;pins.c: 178:             } else {
+}
+[e $U 1570  ]
+[e :U 1569 ]
+{
 "179
-[; ;pins.c: 179:         case PINB4 :
-[e :U 1570 ]
-"180
-[; ;pins.c: 180:             return PORTBbits.RB4;
-[e ) . . _PORTBbits 0 1 ]
+[; ;pins.c: 179:                 return 1;
+[e ) -> -> 1 `i `a ]
 [e $UE 1562  ]
+"180
+[; ;pins.c: 180:             }
+}
+[e :U 1570 ]
 "181
-[; ;pins.c: 181:         case PINB5 :
+[; ;pins.c: 181:         case PINA2 :
 [e :U 1571 ]
 "182
-[; ;pins.c: 182:             return PORTBbits.RB5;
-[e ) . . _PORTBbits 0 2 ]
-[e $UE 1562  ]
+[; ;pins.c: 182:             if(PORTAbits.RA2 == 0) {
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 1572  ]
+{
 "183
-[; ;pins.c: 183:         case PINB6 :
-[e :U 1572 ]
+[; ;pins.c: 183:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
 "184
-[; ;pins.c: 184:             return PORTBbits.RB6;
-[e ) . . _PORTBbits 0 3 ]
-[e $UE 1562  ]
+[; ;pins.c: 184:             } else {
+}
+[e $U 1573  ]
+[e :U 1572 ]
+{
 "185
-[; ;pins.c: 185:         case PINB7 :
-[e :U 1573 ]
-"186
-[; ;pins.c: 186:             return PORTBbits.RB7;
-[e ) . . _PORTBbits 0 4 ]
+[; ;pins.c: 185:                 return 1;
+[e ) -> -> 1 `i `a ]
 [e $UE 1562  ]
+"186
+[; ;pins.c: 186:             }
+}
+[e :U 1573 ]
 "187
-[; ;pins.c: 187:         case PINC0 :
+[; ;pins.c: 187:         case PINA4 :
 [e :U 1574 ]
 "188
-[; ;pins.c: 188:             return PORTCbits.RC0;
-[e ) . . _PORTCbits 0 0 ]
-[e $UE 1562  ]
+[; ;pins.c: 188:             if(PORTAbits.RA4 == 0) {
+[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 1575  ]
+{
 "189
-[; ;pins.c: 189:         case PINC1 :
-[e :U 1575 ]
+[; ;pins.c: 189:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
 "190
-[; ;pins.c: 190:             return PORTCbits.RC1;
-[e ) . . _PORTCbits 0 1 ]
-[e $UE 1562  ]
+[; ;pins.c: 190:             } else {
+}
+[e $U 1576  ]
+[e :U 1575 ]
+{
 "191
-[; ;pins.c: 191:         case PINC2 :
-[e :U 1576 ]
-"192
-[; ;pins.c: 192:             return PORTCbits.RC2;
-[e ) . . _PORTCbits 0 2 ]
+[; ;pins.c: 191:                 return 1;
+[e ) -> -> 1 `i `a ]
 [e $UE 1562  ]
+"192
+[; ;pins.c: 192:             }
+}
+[e :U 1576 ]
 "193
-[; ;pins.c: 193:         case PINC3 :
+[; ;pins.c: 193:         case PINA5 :
 [e :U 1577 ]
 "194
-[; ;pins.c: 194:             return PORTCbits.RC3;
-[e ) . . _PORTCbits 0 3 ]
-[e $UE 1562  ]
+[; ;pins.c: 194:             if(PORTAbits.RA5 == 0) {
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 1578  ]
+{
 "195
-[; ;pins.c: 195:         case PINC4 :
-[e :U 1578 ]
+[; ;pins.c: 195:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
 "196
-[; ;pins.c: 196:             return PORTCbits.RC4;
-[e ) . . _PORTCbits 0 4 ]
-[e $UE 1562  ]
+[; ;pins.c: 196:             } else {
+}
+[e $U 1579  ]
+[e :U 1578 ]
+{
 "197
-[; ;pins.c: 197:         case PINC5 :
-[e :U 1579 ]
-"198
-[; ;pins.c: 198:             return PORTCbits.RC5;
-[e ) . . _PORTCbits 0 5 ]
+[; ;pins.c: 197:                 return 1;
+[e ) -> -> 1 `i `a ]
 [e $UE 1562  ]
+"198
+[; ;pins.c: 198:             }
+}
+[e :U 1579 ]
 "199
-[; ;pins.c: 199:         case PINC6:
+[; ;pins.c: 199:         case PINB4 :
 [e :U 1580 ]
 "200
-[; ;pins.c: 200:             return PORTCbits.RC6;
-[e ) . . _PORTCbits 0 6 ]
-[e $UE 1562  ]
+[; ;pins.c: 200:             if(PORTBbits.RB4 == 0) {
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 1581  ]
+{
 "201
-[; ;pins.c: 201:         case PINC7:
-[e :U 1581 ]
-"202
-[; ;pins.c: 202:             return PORTCbits.RC7;
+[; ;pins.c: 201:                 return 0;
+[e ) -> -> 0 `i `a ]
 [e $UE 1562  ]
+"202
+[; ;pins.c: 202:             } else {
+}
+[e $U 1582  ]
+[e :U 1581 ]
+{
 "203
-[; ;pins.c: 203:     }
+[; ;pins.c: 203:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"204
+[; ;pins.c: 204:             }
+}
+[e :U 1582 ]
+"205
+[; ;pins.c: 205:         case PINB5 :
+[e :U 1583 ]
+"206
+[; ;pins.c: 206:             if(PORTBbits.RB5 == 0) {
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 1584  ]
+{
+"207
+[; ;pins.c: 207:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"208
+[; ;pins.c: 208:             } else {
+}
+[e $U 1585  ]
+[e :U 1584 ]
+{
+"209
+[; ;pins.c: 209:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"210
+[; ;pins.c: 210:             }
+}
+[e :U 1585 ]
+"211
+[; ;pins.c: 211:         case PINB6 :
+[e :U 1586 ]
+"212
+[; ;pins.c: 212:             if(PORTBbits.RB6 == 0) {
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 1587  ]
+{
+"213
+[; ;pins.c: 213:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"214
+[; ;pins.c: 214:             } else {
+}
+[e $U 1588  ]
+[e :U 1587 ]
+{
+"215
+[; ;pins.c: 215:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"216
+[; ;pins.c: 216:             }
+}
+[e :U 1588 ]
+"217
+[; ;pins.c: 217:         case PINB7 :
+[e :U 1589 ]
+"218
+[; ;pins.c: 218:             if(PORTBbits.RB7 == 0) {
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 1590  ]
+{
+"219
+[; ;pins.c: 219:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"220
+[; ;pins.c: 220:             } else {
+}
+[e $U 1591  ]
+[e :U 1590 ]
+{
+"221
+[; ;pins.c: 221:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"222
+[; ;pins.c: 222:             }
+}
+[e :U 1591 ]
+"223
+[; ;pins.c: 223:         case PINC0 :
+[e :U 1592 ]
+"224
+[; ;pins.c: 224:             if(PORTCbits.RC0 == 0) {
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 1593  ]
+{
+"225
+[; ;pins.c: 225:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"226
+[; ;pins.c: 226:             } else {
+}
+[e $U 1594  ]
+[e :U 1593 ]
+{
+"227
+[; ;pins.c: 227:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"228
+[; ;pins.c: 228:             }
+}
+[e :U 1594 ]
+"229
+[; ;pins.c: 229:         case PINC1 :
+[e :U 1595 ]
+"230
+[; ;pins.c: 230:             if(PORTCbits.RC1 == 0) {
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 1596  ]
+{
+"231
+[; ;pins.c: 231:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"232
+[; ;pins.c: 232:             } else {
+}
+[e $U 1597  ]
+[e :U 1596 ]
+{
+"233
+[; ;pins.c: 233:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"234
+[; ;pins.c: 234:             }
+}
+[e :U 1597 ]
+"235
+[; ;pins.c: 235:         case PINC2 :
+[e :U 1598 ]
+"236
+[; ;pins.c: 236:             if(PORTCbits.RC2 == 0) {
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 0 `i 1599  ]
+{
+"237
+[; ;pins.c: 237:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"238
+[; ;pins.c: 238:             } else {
+}
+[e $U 1600  ]
+[e :U 1599 ]
+{
+"239
+[; ;pins.c: 239:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"240
+[; ;pins.c: 240:             }
+}
+[e :U 1600 ]
+"241
+[; ;pins.c: 241:         case PINC3 :
+[e :U 1601 ]
+"242
+[; ;pins.c: 242:             if(PORTCbits.RC3 == 0) {
+[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 1602  ]
+{
+"243
+[; ;pins.c: 243:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"244
+[; ;pins.c: 244:             } else {
+}
+[e $U 1603  ]
+[e :U 1602 ]
+{
+"245
+[; ;pins.c: 245:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"246
+[; ;pins.c: 246:             }
+}
+[e :U 1603 ]
+"247
+[; ;pins.c: 247:         case PINC4 :
+[e :U 1604 ]
+"248
+[; ;pins.c: 248:             if(PORTCbits.RC4 == 0) {
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1605  ]
+{
+"249
+[; ;pins.c: 249:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"250
+[; ;pins.c: 250:             } else {
+}
+[e $U 1606  ]
+[e :U 1605 ]
+{
+"251
+[; ;pins.c: 251:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"252
+[; ;pins.c: 252:             }
+}
+[e :U 1606 ]
+"253
+[; ;pins.c: 253:         case PINC5 :
+[e :U 1607 ]
+"254
+[; ;pins.c: 254:             if(PORTCbits.RC5 == 0) {
+[e $ ! == -> . . _PORTCbits 0 5 `i -> 0 `i 1608  ]
+{
+"255
+[; ;pins.c: 255:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"256
+[; ;pins.c: 256:             } else {
+}
+[e $U 1609  ]
+[e :U 1608 ]
+{
+"257
+[; ;pins.c: 257:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"258
+[; ;pins.c: 258:             }
+}
+[e :U 1609 ]
+"259
+[; ;pins.c: 259:         case PINC6:
+[e :U 1610 ]
+"260
+[; ;pins.c: 260:             if(PORTCbits.RC6 == 0) {
+[e $ ! == -> . . _PORTCbits 0 6 `i -> 0 `i 1611  ]
+{
+"261
+[; ;pins.c: 261:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"262
+[; ;pins.c: 262:             } else {
+}
+[e $U 1612  ]
+[e :U 1611 ]
+{
+"263
+[; ;pins.c: 263:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"264
+[; ;pins.c: 264:             }
+}
+[e :U 1612 ]
+"265
+[; ;pins.c: 265:         case PINC7:
+[e :U 1613 ]
+"266
+[; ;pins.c: 266:             if(PORTCbits.RC7 == 0) {
+[e $ ! == -> . . _PORTCbits 0 7 `i -> 0 `i 1614  ]
+{
+"267
+[; ;pins.c: 267:                 return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1562  ]
+"268
+[; ;pins.c: 268:             } else {
+}
+[e $U 1615  ]
+[e :U 1614 ]
+{
+"269
+[; ;pins.c: 269:                 return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1562  ]
+"270
+[; ;pins.c: 270:             }
+}
+[e :U 1615 ]
+"271
+[; ;pins.c: 271:     }
 }
 [e $U 1563  ]
 [e :U 1564 ]
 [e [\ -> _read `ui , $ -> . `E11183 0 `ui 1565
- , $ -> . `E11183 1 `ui 1566
- , $ -> . `E11183 2 `ui 1567
- , $ -> . `E11183 3 `ui 1568
- , $ -> . `E11183 4 `ui 1569
- , $ -> . `E11183 5 `ui 1570
- , $ -> . `E11183 6 `ui 1571
- , $ -> . `E11183 7 `ui 1572
- , $ -> . `E11183 8 `ui 1573
- , $ -> . `E11183 9 `ui 1574
- , $ -> . `E11183 10 `ui 1575
- , $ -> . `E11183 11 `ui 1576
- , $ -> . `E11183 12 `ui 1577
- , $ -> . `E11183 13 `ui 1578
- , $ -> . `E11183 14 `ui 1579
- , $ -> . `E11183 15 `ui 1580
- , $ -> . `E11183 16 `ui 1581
+ , $ -> . `E11183 1 `ui 1568
+ , $ -> . `E11183 2 `ui 1571
+ , $ -> . `E11183 3 `ui 1574
+ , $ -> . `E11183 4 `ui 1577
+ , $ -> . `E11183 5 `ui 1580
+ , $ -> . `E11183 6 `ui 1583
+ , $ -> . `E11183 7 `ui 1586
+ , $ -> . `E11183 8 `ui 1589
+ , $ -> . `E11183 9 `ui 1592
+ , $ -> . `E11183 10 `ui 1595
+ , $ -> . `E11183 11 `ui 1598
+ , $ -> . `E11183 12 `ui 1601
+ , $ -> . `E11183 13 `ui 1604
+ , $ -> . `E11183 14 `ui 1607
+ , $ -> . `E11183 15 `ui 1610
+ , $ -> . `E11183 16 `ui 1613
  1563 ]
 [e :U 1563 ]
-"204
-[; ;pins.c: 204: }
+"272
+[; ;pins.c: 272: }
 [e :UE 1562 ]
 }
-"206
-[; ;pins.c: 206: void writePin(pins_t write, uint8_t value) {
+"274
+[; ;pins.c: 274: void writePin(pins_t write, uint8_t value) {
 [v _writePin `(v ~T0 @X0 1 ef2`E11183`uc ]
 {
 [e :U _writePin ]
 [v _write `E11183 ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
 [f ]
-"207
-[; ;pins.c: 207:     switch(write) {
-[e $U 1584  ]
-{
-"208
-[; ;pins.c: 208:         case PINA0 :
-[e :U 1585 ]
-"209
-[; ;pins.c: 209:             LATAbits.LATA0 = value;
-[e = . . _LATAbits 0 0 _value ]
-"210
-[; ;pins.c: 210:             pinStates[PINA0] = value;
-[e = *U + &U _pinStates * -> . `E11183 0 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"211
-[; ;pins.c: 211:             break;
-[e $U 1583  ]
-"212
-[; ;pins.c: 212:         case PINA1 :
-[e :U 1586 ]
-"213
-[; ;pins.c: 213:             LATAbits.LATA1 = value;
-[e = . . _LATAbits 0 1 _value ]
-"214
-[; ;pins.c: 214:             pinStates[PINA1] = value;
-[e = *U + &U _pinStates * -> . `E11183 1 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"215
-[; ;pins.c: 215:             break;
-[e $U 1583  ]
-"216
-[; ;pins.c: 216:         case PINA2 :
-[e :U 1587 ]
-"217
-[; ;pins.c: 217:             LATAbits.LATA2 = value;
-[e = . . _LATAbits 0 2 _value ]
-"218
-[; ;pins.c: 218:             pinStates[PINA2] = value;
-[e = *U + &U _pinStates * -> . `E11183 2 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"219
-[; ;pins.c: 219:             break;
-[e $U 1583  ]
-"220
-[; ;pins.c: 220:         case PINA4 :
-[e :U 1588 ]
-"221
-[; ;pins.c: 221:             LATAbits.LATA4 = value;
-[e = . . _LATAbits 0 4 _value ]
-"222
-[; ;pins.c: 222:             pinStates[PINA4] = value;
-[e = *U + &U _pinStates * -> . `E11183 3 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"223
-[; ;pins.c: 223:             break;
-[e $U 1583  ]
-"224
-[; ;pins.c: 224:         case PINA5 :
-[e :U 1589 ]
-"225
-[; ;pins.c: 225:             LATAbits.LATA5 = value;
-[e = . . _LATAbits 0 5 _value ]
-"226
-[; ;pins.c: 226:             pinStates[PINA5] = value;
-[e = *U + &U _pinStates * -> . `E11183 4 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"227
-[; ;pins.c: 227:             break;
-[e $U 1583  ]
-"228
-[; ;pins.c: 228:         case PINB4 :
-[e :U 1590 ]
-"229
-[; ;pins.c: 229:             LATBbits.LATB4 = value;
-[e = . . _LATBbits 0 1 _value ]
-"230
-[; ;pins.c: 230:             pinStates[PINB4] = value;
-[e = *U + &U _pinStates * -> . `E11183 5 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"231
-[; ;pins.c: 231:             break;
-[e $U 1583  ]
-"232
-[; ;pins.c: 232:         case PINB5 :
-[e :U 1591 ]
-"233
-[; ;pins.c: 233:             LATBbits.LATB5 = value;
-[e = . . _LATBbits 0 2 _value ]
-"234
-[; ;pins.c: 234:             pinStates[PINB5] = value;
-[e = *U + &U _pinStates * -> . `E11183 6 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"235
-[; ;pins.c: 235:             break;
-[e $U 1583  ]
-"236
-[; ;pins.c: 236:         case PINB6 :
-[e :U 1592 ]
-"237
-[; ;pins.c: 237:             LATBbits.LATB6 = value;
-[e = . . _LATBbits 0 3 _value ]
-"238
-[; ;pins.c: 238:             pinStates[PINB6] = value;
-[e = *U + &U _pinStates * -> . `E11183 7 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"239
-[; ;pins.c: 239:             break;
-[e $U 1583  ]
-"240
-[; ;pins.c: 240:         case PINB7 :
-[e :U 1593 ]
-"241
-[; ;pins.c: 241:             LATBbits.LATB7 = value;
-[e = . . _LATBbits 0 4 _value ]
-"242
-[; ;pins.c: 242:             pinStates[PINB7] = value;
-[e = *U + &U _pinStates * -> . `E11183 8 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"243
-[; ;pins.c: 243:             break;
-[e $U 1583  ]
-"244
-[; ;pins.c: 244:         case PINC0 :
-[e :U 1594 ]
-"245
-[; ;pins.c: 245:             LATCbits.LATC0 = value;
-[e = . . _LATCbits 0 0 _value ]
-"246
-[; ;pins.c: 246:             pinStates[PINC0] = value;
-[e = *U + &U _pinStates * -> . `E11183 9 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"247
-[; ;pins.c: 247:             break;
-[e $U 1583  ]
-"248
-[; ;pins.c: 248:         case PINC1 :
-[e :U 1595 ]
-"249
-[; ;pins.c: 249:             LATCbits.LATC1 = value;
-[e = . . _LATCbits 0 1 _value ]
-"250
-[; ;pins.c: 250:             pinStates[PINC1] = value;
-[e = *U + &U _pinStates * -> . `E11183 10 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"251
-[; ;pins.c: 251:             break;
-[e $U 1583  ]
-"252
-[; ;pins.c: 252:         case PINC2 :
-[e :U 1596 ]
-"253
-[; ;pins.c: 253:             LATCbits.LATC2 = value;
-[e = . . _LATCbits 0 2 _value ]
-"254
-[; ;pins.c: 254:             pinStates[PINC2] = value;
-[e = *U + &U _pinStates * -> . `E11183 11 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"255
-[; ;pins.c: 255:             break;
-[e $U 1583  ]
-"256
-[; ;pins.c: 256:         case PINC3 :
-[e :U 1597 ]
-"257
-[; ;pins.c: 257:             LATCbits.LATC3 = value;
-[e = . . _LATCbits 0 3 _value ]
-"258
-[; ;pins.c: 258:             pinStates[PINC3] = value;
-[e = *U + &U _pinStates * -> . `E11183 12 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"259
-[; ;pins.c: 259:             break;
-[e $U 1583  ]
-"260
-[; ;pins.c: 260:         case PINC4 :
-[e :U 1598 ]
-"261
-[; ;pins.c: 261:             LATCbits.LATC4 = value;
-[e = . . _LATCbits 0 4 _value ]
-"262
-[; ;pins.c: 262:             pinStates[PINC4] = value;
-[e = *U + &U _pinStates * -> . `E11183 13 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"263
-[; ;pins.c: 263:             break;
-[e $U 1583  ]
-"264
-[; ;pins.c: 264:         case PINC5 :
-[e :U 1599 ]
-"265
-[; ;pins.c: 265:             LATCbits.LATC5 = value;
-[e = . . _LATCbits 0 5 _value ]
-"266
-[; ;pins.c: 266:             pinStates[PINC5] = value;
-[e = *U + &U _pinStates * -> . `E11183 14 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"267
-[; ;pins.c: 267:             break;
-[e $U 1583  ]
-"268
-[; ;pins.c: 268:         case PINC6 :
-[e :U 1600 ]
-"269
-[; ;pins.c: 269:             LATCbits.LATC6 = value;
-[e = . . _LATCbits 0 6 _value ]
-"270
-[; ;pins.c: 270:             pinStates[PINC6] = value;
-[e = *U + &U _pinStates * -> . `E11183 15 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
-"271
-[; ;pins.c: 271:             break;
-[e $U 1583  ]
-"272
-[; ;pins.c: 272:         case PINC7 :
-[e :U 1601 ]
-"273
-[; ;pins.c: 273:             LATCbits.LATC7 = value;
-[e = . . _LATCbits 0 7 _value ]
-"274
-[; ;pins.c: 274:             pinStates[PINC7] = value;
-[e = *U + &U _pinStates * -> . `E11183 16 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "275
-[; ;pins.c: 275:             break;
-[e $U 1583  ]
+[; ;pins.c: 275:     switch(write) {
+[e $U 1618  ]
+{
 "276
-[; ;pins.c: 276:     }
-}
-[e $U 1583  ]
-[e :U 1584 ]
-[e [\ -> _write `ui , $ -> . `E11183 0 `ui 1585
- , $ -> . `E11183 1 `ui 1586
- , $ -> . `E11183 2 `ui 1587
- , $ -> . `E11183 3 `ui 1588
- , $ -> . `E11183 4 `ui 1589
- , $ -> . `E11183 5 `ui 1590
- , $ -> . `E11183 6 `ui 1591
- , $ -> . `E11183 7 `ui 1592
- , $ -> . `E11183 8 `ui 1593
- , $ -> . `E11183 9 `ui 1594
- , $ -> . `E11183 10 `ui 1595
- , $ -> . `E11183 11 `ui 1596
- , $ -> . `E11183 12 `ui 1597
- , $ -> . `E11183 13 `ui 1598
- , $ -> . `E11183 14 `ui 1599
- , $ -> . `E11183 15 `ui 1600
- , $ -> . `E11183 16 `ui 1601
- 1583 ]
-[e :U 1583 ]
+[; ;pins.c: 276:         case PINA0 :
+[e :U 1619 ]
 "277
-[; ;pins.c: 277: }
-[e :UE 1582 ]
+[; ;pins.c: 277:             LATAbits.LATA0 = value;
+[e = . . _LATAbits 0 0 _value ]
+"278
+[; ;pins.c: 278:             pinStates[PINA0] = value;
+[e = *U + &U _pinStates * -> . `E11183 0 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"279
+[; ;pins.c: 279:             break;
+[e $U 1617  ]
+"280
+[; ;pins.c: 280:         case PINA1 :
+[e :U 1620 ]
+"281
+[; ;pins.c: 281:             LATAbits.LATA1 = value;
+[e = . . _LATAbits 0 1 _value ]
+"282
+[; ;pins.c: 282:             pinStates[PINA1] = value;
+[e = *U + &U _pinStates * -> . `E11183 1 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"283
+[; ;pins.c: 283:             break;
+[e $U 1617  ]
+"284
+[; ;pins.c: 284:         case PINA2 :
+[e :U 1621 ]
+"285
+[; ;pins.c: 285:             LATAbits.LATA2 = value;
+[e = . . _LATAbits 0 2 _value ]
+"286
+[; ;pins.c: 286:             pinStates[PINA2] = value;
+[e = *U + &U _pinStates * -> . `E11183 2 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"287
+[; ;pins.c: 287:             break;
+[e $U 1617  ]
+"288
+[; ;pins.c: 288:         case PINA4 :
+[e :U 1622 ]
+"289
+[; ;pins.c: 289:             LATAbits.LATA4 = value;
+[e = . . _LATAbits 0 4 _value ]
+"290
+[; ;pins.c: 290:             pinStates[PINA4] = value;
+[e = *U + &U _pinStates * -> . `E11183 3 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"291
+[; ;pins.c: 291:             break;
+[e $U 1617  ]
+"292
+[; ;pins.c: 292:         case PINA5 :
+[e :U 1623 ]
+"293
+[; ;pins.c: 293:             LATAbits.LATA5 = value;
+[e = . . _LATAbits 0 5 _value ]
+"294
+[; ;pins.c: 294:             pinStates[PINA5] = value;
+[e = *U + &U _pinStates * -> . `E11183 4 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"295
+[; ;pins.c: 295:             break;
+[e $U 1617  ]
+"296
+[; ;pins.c: 296:         case PINB4 :
+[e :U 1624 ]
+"297
+[; ;pins.c: 297:             LATBbits.LATB4 = value;
+[e = . . _LATBbits 0 1 _value ]
+"298
+[; ;pins.c: 298:             pinStates[PINB4] = value;
+[e = *U + &U _pinStates * -> . `E11183 5 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"299
+[; ;pins.c: 299:             break;
+[e $U 1617  ]
+"300
+[; ;pins.c: 300:         case PINB5 :
+[e :U 1625 ]
+"301
+[; ;pins.c: 301:             LATBbits.LATB5 = value;
+[e = . . _LATBbits 0 2 _value ]
+"302
+[; ;pins.c: 302:             pinStates[PINB5] = value;
+[e = *U + &U _pinStates * -> . `E11183 6 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"303
+[; ;pins.c: 303:             break;
+[e $U 1617  ]
+"304
+[; ;pins.c: 304:         case PINB6 :
+[e :U 1626 ]
+"305
+[; ;pins.c: 305:             LATBbits.LATB6 = value;
+[e = . . _LATBbits 0 3 _value ]
+"306
+[; ;pins.c: 306:             pinStates[PINB6] = value;
+[e = *U + &U _pinStates * -> . `E11183 7 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"307
+[; ;pins.c: 307:             break;
+[e $U 1617  ]
+"308
+[; ;pins.c: 308:         case PINB7 :
+[e :U 1627 ]
+"309
+[; ;pins.c: 309:             LATBbits.LATB7 = value;
+[e = . . _LATBbits 0 4 _value ]
+"310
+[; ;pins.c: 310:             pinStates[PINB7] = value;
+[e = *U + &U _pinStates * -> . `E11183 8 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"311
+[; ;pins.c: 311:             break;
+[e $U 1617  ]
+"312
+[; ;pins.c: 312:         case PINC0 :
+[e :U 1628 ]
+"313
+[; ;pins.c: 313:             LATCbits.LATC0 = value;
+[e = . . _LATCbits 0 0 _value ]
+"314
+[; ;pins.c: 314:             pinStates[PINC0] = value;
+[e = *U + &U _pinStates * -> . `E11183 9 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"315
+[; ;pins.c: 315:             break;
+[e $U 1617  ]
+"316
+[; ;pins.c: 316:         case PINC1 :
+[e :U 1629 ]
+"317
+[; ;pins.c: 317:             LATCbits.LATC1 = value;
+[e = . . _LATCbits 0 1 _value ]
+"318
+[; ;pins.c: 318:             pinStates[PINC1] = value;
+[e = *U + &U _pinStates * -> . `E11183 10 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"319
+[; ;pins.c: 319:             break;
+[e $U 1617  ]
+"320
+[; ;pins.c: 320:         case PINC2 :
+[e :U 1630 ]
+"321
+[; ;pins.c: 321:             LATCbits.LATC2 = value;
+[e = . . _LATCbits 0 2 _value ]
+"322
+[; ;pins.c: 322:             pinStates[PINC2] = value;
+[e = *U + &U _pinStates * -> . `E11183 11 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"323
+[; ;pins.c: 323:             break;
+[e $U 1617  ]
+"324
+[; ;pins.c: 324:         case PINC3 :
+[e :U 1631 ]
+"325
+[; ;pins.c: 325:             LATCbits.LATC3 = value;
+[e = . . _LATCbits 0 3 _value ]
+"326
+[; ;pins.c: 326:             pinStates[PINC3] = value;
+[e = *U + &U _pinStates * -> . `E11183 12 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"327
+[; ;pins.c: 327:             break;
+[e $U 1617  ]
+"328
+[; ;pins.c: 328:         case PINC4 :
+[e :U 1632 ]
+"329
+[; ;pins.c: 329:             LATCbits.LATC4 = value;
+[e = . . _LATCbits 0 4 _value ]
+"330
+[; ;pins.c: 330:             pinStates[PINC4] = value;
+[e = *U + &U _pinStates * -> . `E11183 13 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"331
+[; ;pins.c: 331:             break;
+[e $U 1617  ]
+"332
+[; ;pins.c: 332:         case PINC5 :
+[e :U 1633 ]
+"333
+[; ;pins.c: 333:             LATCbits.LATC5 = value;
+[e = . . _LATCbits 0 5 _value ]
+"334
+[; ;pins.c: 334:             pinStates[PINC5] = value;
+[e = *U + &U _pinStates * -> . `E11183 14 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"335
+[; ;pins.c: 335:             break;
+[e $U 1617  ]
+"336
+[; ;pins.c: 336:         case PINC6 :
+[e :U 1634 ]
+"337
+[; ;pins.c: 337:             LATCbits.LATC6 = value;
+[e = . . _LATCbits 0 6 _value ]
+"338
+[; ;pins.c: 338:             pinStates[PINC6] = value;
+[e = *U + &U _pinStates * -> . `E11183 15 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"339
+[; ;pins.c: 339:             break;
+[e $U 1617  ]
+"340
+[; ;pins.c: 340:         case PINC7 :
+[e :U 1635 ]
+"341
+[; ;pins.c: 341:             LATCbits.LATC7 = value;
+[e = . . _LATCbits 0 7 _value ]
+"342
+[; ;pins.c: 342:             pinStates[PINC7] = value;
+[e = *U + &U _pinStates * -> . `E11183 16 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
+"343
+[; ;pins.c: 343:             break;
+[e $U 1617  ]
+"344
+[; ;pins.c: 344:     }
+}
+[e $U 1617  ]
+[e :U 1618 ]
+[e [\ -> _write `ui , $ -> . `E11183 0 `ui 1619
+ , $ -> . `E11183 1 `ui 1620
+ , $ -> . `E11183 2 `ui 1621
+ , $ -> . `E11183 3 `ui 1622
+ , $ -> . `E11183 4 `ui 1623
+ , $ -> . `E11183 5 `ui 1624
+ , $ -> . `E11183 6 `ui 1625
+ , $ -> . `E11183 7 `ui 1626
+ , $ -> . `E11183 8 `ui 1627
+ , $ -> . `E11183 9 `ui 1628
+ , $ -> . `E11183 10 `ui 1629
+ , $ -> . `E11183 11 `ui 1630
+ , $ -> . `E11183 12 `ui 1631
+ , $ -> . `E11183 13 `ui 1632
+ , $ -> . `E11183 14 `ui 1633
+ , $ -> . `E11183 15 `ui 1634
+ , $ -> . `E11183 16 `ui 1635
+ 1617 ]
+[e :U 1617 ]
+"345
+[; ;pins.c: 345: }
+[e :UE 1616 ]
 }

@@ -1,4 +1,4 @@
-# 1 "timer0.c"
+# 1 "pins.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "timer0.c" 2
+# 1 "pins.c" 2
 
 
 
@@ -169,7 +169,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "timer0.c" 2
+# 8 "pins.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
@@ -232,7 +232,7 @@ udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 104 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 size_t __ctype_get_mb_cur_max(void);
-# 9 "timer0.c" 2
+# 9 "pins.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
@@ -18182,7 +18182,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 10 "timer0.c" 2
+# 10 "pins.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
@@ -18267,40 +18267,388 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 11 "timer0.c" 2
+# 11 "pins.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 13 "timer0.c" 2
+# 13 "pins.c" 2
 
-# 1 "./timer0.h" 1
-# 13 "./timer0.h"
-typedef uint16_t time_t;
+# 1 "./pins.h" 1
+# 12 "./pins.h"
+typedef enum{
+    PINA0 = 0,
+    PINA1 = 1,
+    PINA2 = 2,
+    PINA4 = 3,
+    PINA5 = 4,
+    PINB4 = 5,
+    PINB5 = 6,
+    PINB6 = 7,
+    PINB7 = 8,
+    PINC0 = 9,
+    PINC1 = 10,
+    PINC2 = 11,
+    PINC3 = 12,
+    PINC4 = 13,
+    PINC5 = 14,
+    PINC6 = 15,
+    PINC7 = 16
+} pins_t;
 
-time_t time;
 
-void timer0_config();
+typedef enum{
+    STATE_PRESSED,
+    STATE_UNPRESSED
+} buttonState_t;
 
-uint32_t getTime();
-# 14 "timer0.c" 2
+typedef enum{
+    STATE_ON,
+    STATE_OFF
+} ledState_t;
 
 
-time_t time = 0;
 
-void timer0_config() {
-    T0CON0bits.EN = 1;
-    T0CON1bits.T0CS = 0b010;
-    T0CON1bits.CKPS = 0b0101;
-    T0CON1bits.ASYNC = 0;
-    TMR0H = 249;
-    INTCONbits.GIE = 1;
-    PIE0bits.TMR0IE = 1;
+pins_t pinStates[17];
+
+
+
+void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+
+
+_Bool readPin(pins_t read);
+
+
+void writePin(pins_t write, uint8_t value);
+# 14 "pins.c" 2
+
+
+pins_t pinStates[17] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
+    uint8_t i;
+    for(i = 0; i < inputLength; i++) {
+        switch(input[i]) {
+            case PINA0 :
+                TRISAbits.TRISA0 = 1;
+                ANSELAbits.ANSA0 = 0;
+                WPUAbits.WPUA0 = 1;
+                break;
+            case PINA1 :
+                TRISAbits.TRISA1 = 1;
+                ANSELAbits.ANSA1 = 0;
+                WPUAbits.WPUA1 = 1;
+                break;
+            case PINA2 :
+                TRISAbits.TRISA2 = 1;
+                ANSELAbits.ANSA2 = 0;
+                WPUAbits.WPUA2 = 1;
+                break;
+            case PINA4 :
+                TRISAbits.TRISA4 = 1;
+                ANSELAbits.ANSA4 = 0;
+                WPUAbits.WPUA4 = 1;
+                break;
+            case PINA5 :
+                TRISAbits.TRISA5 = 1;
+                ANSELAbits.ANSA5 = 0;
+                WPUAbits.WPUA5 = 1;
+                break;
+            case PINB4 :
+                TRISBbits.TRISB4 = 1;
+                ANSELBbits.ANSB4 = 0;
+                WPUBbits.WPUB4 = 1;
+                break;
+            case PINB5 :
+                TRISBbits.TRISB5 = 1;
+                ANSELBbits.ANSB5 = 0;
+                WPUBbits.WPUB5 = 1;
+                break;
+            case PINB6 :
+                TRISBbits.TRISB6 = 1;
+                ANSELBbits.ANSB6 = 0;
+                WPUBbits.WPUB6 = 1;
+                break;
+            case PINB7 :
+                TRISBbits.TRISB7 = 1;
+                ANSELBbits.ANSB7 = 0;
+                WPUBbits.WPUB7 = 1;
+                break;
+            case PINC0 :
+                TRISCbits.TRISC0 = 1;
+                ANSELCbits.ANSC0 = 0;
+                WPUCbits.WPUC0 = 1;
+                break;
+            case PINC1 :
+                TRISCbits.TRISC1 = 1;
+                ANSELCbits.ANSC1 = 0;
+                WPUCbits.WPUC1 = 1;
+                break;
+            case PINC2 :
+                TRISCbits.TRISC2 = 1;
+                ANSELCbits.ANSC2 = 0;
+                WPUCbits.WPUC2 = 1;
+                break;
+            case PINC3 :
+                TRISCbits.TRISC3 = 1;
+                ANSELCbits.ANSC3 = 0;
+                WPUCbits.WPUC3 = 1;
+                break;
+            case PINC4 :
+                TRISCbits.TRISC4 = 1;
+                ANSELCbits.ANSC4 = 0;
+                WPUCbits.WPUC4 = 1;
+                break;
+            case PINC5 :
+                TRISCbits.TRISC5 = 1;
+                ANSELCbits.ANSC5 = 0;
+                WPUCbits.WPUC5 = 1;
+                break;
+            case PINC6 :
+                TRISCbits.TRISC6 = 1;
+                ANSELCbits.ANSC6 = 0;
+                WPUCbits.WPUC6 = 1;
+                break;
+            case PINC7 :
+                TRISCbits.TRISC7 = 1;
+                ANSELCbits.ANSC7 = 0;
+                WPUCbits.WPUC7 = 1;
+                break;
+        }
+    }
+
+    for(i = 0; i < outputLength; i++) {
+        switch(output[i]) {
+            case PINA0 :
+                TRISAbits.TRISA0 = 0;
+                break;
+            case PINA1 :
+                TRISAbits.TRISA1 = 0;
+                break;
+            case PINA2 :
+                TRISAbits.TRISA2 = 0;
+                break;
+            case PINA4 :
+                TRISAbits.TRISA4 = 0;
+                break;
+            case PINA5 :
+                TRISAbits.TRISA5 = 0;
+                break;
+            case PINB4 :
+                TRISBbits.TRISB4 = 0;
+                break;
+            case PINB5 :
+                TRISBbits.TRISB5 = 0;
+                break;
+            case PINB6 :
+                TRISBbits.TRISB6 = 0;
+                break;
+            case PINB7 :
+                TRISBbits.TRISB7 = 0;
+                break;
+            case PINC0 :
+                TRISCbits.TRISC0 = 0;
+                break;
+            case PINC1 :
+                TRISCbits.TRISC1 = 0;
+                break;
+            case PINC2 :
+                TRISCbits.TRISC2 = 0;
+                break;
+            case PINC3 :
+                TRISCbits.TRISC3 = 0;
+                break;
+            case PINC4 :
+                TRISCbits.TRISC4 = 0;
+                break;
+            case PINC5 :
+                TRISCbits.TRISC5 = 0;
+                break;
+            case PINC6 :
+                TRISCbits.TRISC6 = 0;
+                break;
+            case PINC7 :
+                TRISCbits.TRISC7 = 0;
+                break;
+        }
+    }
 }
 
-void __attribute__((picinterrupt(("")))) timer0ISR() {
-    time++;
+_Bool readPin(pins_t read) {
+    switch (read) {
+        case PINA0 :
+            if(PORTAbits.RA0 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINA1 :
+            if(PORTAbits.RA1 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINA2 :
+            if(PORTAbits.RA2 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINA4 :
+            if(PORTAbits.RA4 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINA5 :
+            if(PORTAbits.RA5 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINB4 :
+            if(PORTBbits.RB4 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINB5 :
+            if(PORTBbits.RB5 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINB6 :
+            if(PORTBbits.RB6 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINB7 :
+            if(PORTBbits.RB7 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC0 :
+            if(PORTCbits.RC0 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC1 :
+            if(PORTCbits.RC1 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC2 :
+            if(PORTCbits.RC2 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC3 :
+            if(PORTCbits.RC3 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC4 :
+            if(PORTCbits.RC4 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC5 :
+            if(PORTCbits.RC5 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC6:
+            if(PORTCbits.RC6 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+        case PINC7:
+            if(PORTCbits.RC7 == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
+    }
 }
 
-uint32_t getTime() {
-    return time;
+void writePin(pins_t write, uint8_t value) {
+    switch(write) {
+        case PINA0 :
+            LATAbits.LATA0 = value;
+            pinStates[PINA0] = value;
+            break;
+        case PINA1 :
+            LATAbits.LATA1 = value;
+            pinStates[PINA1] = value;
+            break;
+        case PINA2 :
+            LATAbits.LATA2 = value;
+            pinStates[PINA2] = value;
+            break;
+        case PINA4 :
+            LATAbits.LATA4 = value;
+            pinStates[PINA4] = value;
+            break;
+        case PINA5 :
+            LATAbits.LATA5 = value;
+            pinStates[PINA5] = value;
+            break;
+        case PINB4 :
+            LATBbits.LATB4 = value;
+            pinStates[PINB4] = value;
+            break;
+        case PINB5 :
+            LATBbits.LATB5 = value;
+            pinStates[PINB5] = value;
+            break;
+        case PINB6 :
+            LATBbits.LATB6 = value;
+            pinStates[PINB6] = value;
+            break;
+        case PINB7 :
+            LATBbits.LATB7 = value;
+            pinStates[PINB7] = value;
+            break;
+        case PINC0 :
+            LATCbits.LATC0 = value;
+            pinStates[PINC0] = value;
+            break;
+        case PINC1 :
+            LATCbits.LATC1 = value;
+            pinStates[PINC1] = value;
+            break;
+        case PINC2 :
+            LATCbits.LATC2 = value;
+            pinStates[PINC2] = value;
+            break;
+        case PINC3 :
+            LATCbits.LATC3 = value;
+            pinStates[PINC3] = value;
+            break;
+        case PINC4 :
+            LATCbits.LATC4 = value;
+            pinStates[PINC4] = value;
+            break;
+        case PINC5 :
+            LATCbits.LATC5 = value;
+            pinStates[PINC5] = value;
+            break;
+        case PINC6 :
+            LATCbits.LATC6 = value;
+            pinStates[PINC6] = value;
+            break;
+        case PINC7 :
+            LATCbits.LATC7 = value;
+            pinStates[PINC7] = value;
+            break;
+    }
 }

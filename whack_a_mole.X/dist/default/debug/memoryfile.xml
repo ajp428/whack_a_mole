@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\whack_a_mole.X.production.hex">
+  <executable name="dist/default/debug\whack_a_mole.X.debug.hex">
     <memory name="program">
       <units>words</units>
       <length>16384</length>
-<<<<<<< HEAD
-      <used>786</used>
-      <free>15598</free>
-=======
       <used>791</used>
       <free>15593</free>
->>>>>>> fuck_up
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-<<<<<<< HEAD
-      <used>41</used>
-      <free>2007</free>
-=======
       <used>42</used>
       <free>2006</free>
->>>>>>> fuck_up
     </memory>
   </executable>
 </project>

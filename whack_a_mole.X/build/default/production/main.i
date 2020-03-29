@@ -18297,6 +18297,7 @@ typedef enum{
 
 
 typedef enum{
+<<<<<<< HEAD
     BUTTON_PRESSED,
     BUTTON_UNPRESSED
 } buttonState_t;
@@ -18318,11 +18319,9 @@ void writePin(pins_t write, uint8_t value);
 
 # 1 "./timer0.h" 1
 # 13 "./timer0.h"
-uint32_t count;
 
 void timer0_config();
 
-uint32_t getCount();
 # 15 "main.c" 2
 
 
