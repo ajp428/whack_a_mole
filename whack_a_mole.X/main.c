@@ -26,7 +26,7 @@ void main(void) {
     
     defineGPIODirection(input, output, 1, 1);
     
-    timer0_config();
+    //timer0_config();
     
     while(1) {
         if(readPin(PINB7) == 0) {

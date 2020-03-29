@@ -18274,7 +18274,7 @@ typedef uint32_t uint_fast32_t;
 # 13 "main.c" 2
 
 # 1 "./pins.h" 1
-# 11 "./pins.h"
+# 12 "./pins.h"
 typedef enum{
     PINA0 = 0,
     PINA1 = 1,
@@ -18295,11 +18295,23 @@ typedef enum{
     PINC7 = 16
 } pins_t;
 
+
+typedef enum{
+    BUTTON_PRESSED,
+    BUTTON_UNPRESSED
+} buttonState_t;
+
+
+
 pins_t pinStates[17];
+
+
 
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
+
 uint8_t readPin(pins_t read);
+
 
 void writePin(pins_t write, uint8_t value);
 # 14 "main.c" 2
@@ -18317,13 +18329,16 @@ uint32_t getCount();
 
 #pragma config WDTE = OFF
 
-uint32_t timeTurnedOn;
+uint32_t timeTurnedOff = 0;
+buttonState_t state;
 
 void main(void) {
     pins_t input[] = {PINB7};
     pins_t output[] = {PINC7};
 
     defineGPIODirection(input, output, 1, 1);
+
+
 
     while(1) {
         if(readPin(PINB7) == 0) {

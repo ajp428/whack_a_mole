@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"31 ./pins.h
-[; ;./pins.h: 31: pins_t pinStates[17];
+"40 ./pins.h
+[; ;./pins.h: 40: pins_t pinStates[17];
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
 "603 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
@@ -1530,8 +1530,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"31 ./pins.h
-[; ;./pins.h: 31: pins_t pinStates[17];
+"40 ./pins.h
+[; ;./pins.h: 40: pins_t pinStates[17];
 [v _pinStates `E11183 ~T0 @X0 -> 17 `i e ]
 "16 pins.c
 [; ;pins.c: 16: pins_t pinStates[17] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
