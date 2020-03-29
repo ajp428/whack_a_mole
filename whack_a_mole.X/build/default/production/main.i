@@ -18297,10 +18297,14 @@ typedef enum{
 
 
 typedef enum{
-<<<<<<< HEAD
-    BUTTON_PRESSED,
-    BUTTON_UNPRESSED
+    STATE_PRESSED,
+    STATE_UNPRESSED
 } buttonState_t;
+
+typedef enum{
+    STATE_ON,
+    STATE_OFF
+} ledState_t;
 
 
 
@@ -18311,7 +18315,7 @@ pins_t pinStates[17];
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
 
-uint8_t readPin(pins_t read);
+_Bool readPin(pins_t read);
 
 
 void writePin(pins_t write, uint8_t value);
@@ -18319,17 +18323,25 @@ void writePin(pins_t write, uint8_t value);
 
 # 1 "./timer0.h" 1
 # 13 "./timer0.h"
+typedef uint16_t time_t;
+
+time_t time;
 
 void timer0_config();
 
+uint32_t getTime();
 # 15 "main.c" 2
 
 
 
 #pragma config WDTE = OFF
 
-uint32_t timeTurnedOff = 0;
-buttonState_t state;
+time_t timeTurnedOff = 0;
+time_t timeButtonReleased;
+buttonState_t buttonState;
+buttonState_t buttonLastState;
+ledState_t ledState;
+ledState_t ledLasteState;
 
 void main(void) {
     pins_t input[] = {PINB7};
