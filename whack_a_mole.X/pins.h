@@ -31,12 +31,17 @@ typedef enum{
 
 // Enumerated type created to keep track of a button's state for debouncing purposes
 typedef enum{
-    BUTTON_PRESSED,
-    BUTTON_UNPRESSED
+    STATE_PRESSED,
+    STATE_UNPRESSED
 } buttonState_t;
 
+typedef enum{
+    STATE_ON,
+    STATE_OFF
+} ledState_t;
 
-
+// Array that keeps track of the state of the pins (high vs. low) for the purpose
+// of determining how many moles might be on)
 pins_t pinStates[17];
 
 // Function that takes the pins in the input array, configures as inputs
@@ -44,7 +49,7 @@ pins_t pinStates[17];
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
 // Reads and returns a pin's value
-uint8_t readPin(pins_t read);
+bool readPin(pins_t read);
 
 // Writes a value to a pin
 void writePin(pins_t write, uint8_t value);

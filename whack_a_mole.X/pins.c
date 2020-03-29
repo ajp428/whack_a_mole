@@ -164,42 +164,110 @@ void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, u
     }
 }
 
-uint8_t readPin(pins_t read) {
+bool readPin(pins_t read) {
     switch (read) {
         case PINA0 :
-            return PORTAbits.RA0;
+            if(PORTAbits.RA0 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINA1 :
-            return PORTAbits.RA1;
+            if(PORTAbits.RA1 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINA2 :
-            return PORTAbits.RA2;
+            if(PORTAbits.RA2 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINA4 :
-            return PORTAbits.RA4;
+            if(PORTAbits.RA4 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINA5 :
-            return PORTAbits.RA5;
+            if(PORTAbits.RA5 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINB4 :
-            return PORTBbits.RB4;
+            if(PORTBbits.RB4 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINB5 :
-            return PORTBbits.RB5;
+            if(PORTBbits.RB5 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINB6 :
-            return PORTBbits.RB6;
+            if(PORTBbits.RB6 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINB7 :
-            return PORTBbits.RB7;
+            if(PORTBbits.RB7 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC0 :
-            return PORTCbits.RC0;
+            if(PORTCbits.RC0 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC1 :
-            return PORTCbits.RC1;
+            if(PORTCbits.RC1 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC2 :
-            return PORTCbits.RC2;
+            if(PORTCbits.RC2 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC3 :
-            return PORTCbits.RC3;
+            if(PORTCbits.RC3 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC4 :
-            return PORTCbits.RC4;
+            if(PORTCbits.RC4 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC5 :
-            return PORTCbits.RC5;
+            if(PORTCbits.RC5 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC6: 
-            return PORTCbits.RC6;
+            if(PORTCbits.RC6 == 0) {
+                return false;
+            } else {
+                return true;
+            }
         case PINC7:
-            return PORTCbits.RC7;
+            if(PORTCbits.RC7 == 0) {
+                return false;
+            } else {
+                return true;
+            }
     }
 }
 

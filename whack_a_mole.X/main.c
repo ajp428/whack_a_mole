@@ -17,8 +17,12 @@
 #define _XTAL_FREQ 4000000
 #pragma config WDTE = OFF
 
-uint32_t timeTurnedOff = 0;
-buttonState_t state;
+time_t timeTurnedOff = 0;
+time_t timeButtonReleased;
+buttonState_t buttonState;
+buttonState_t buttonLastState;
+ledState_t ledState;
+ledState_t ledLasteState;
 
 void main(void) {
     pins_t input[] = {PINB7};
@@ -29,7 +33,7 @@ void main(void) {
     timer0_config();
     
     while(1) {
-        if(readPin(PINB7) == 0) {
+        if(readPin(PINB7) == true) {
             writePin(PINC7, 1);
         } else {
             writePin(PINC7, 0);

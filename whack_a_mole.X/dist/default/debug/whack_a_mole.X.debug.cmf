@@ -11,11 +11,11 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\selk.o
+$C:\Users\User\AppData\Local\Temp\s2g4.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 D D 2 2
 config CONFIG 0 8007 8007 3 2
-$dist/default/production\whack_a_mole.X.production.o
+$dist/default/debug\whack_a_mole.X.debug.o
 cinit CODE 0 F F 14 2
 text1 CODE 0 157 157 FB 2
 text2 CODE 0 300 300 11 2
@@ -179,24 +179,24 @@ STRING 319-3FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/default/production\whack_a_mole.X.production.o
-F cinit CODE >3797:C:\Users\User\AppData\Local\Temp\selk.
-F cinit CODE >3800:C:\Users\User\AppData\Local\Temp\selk.
-F cinit CODE >3850:C:\Users\User\AppData\Local\Temp\selk.
-12 cinit CODE >3851:C:\Users\User\AppData\Local\Temp\selk.
-13 cinit CODE >3852:C:\Users\User\AppData\Local\Temp\selk.
-16 cinit CODE >3853:C:\Users\User\AppData\Local\Temp\selk.
-17 cinit CODE >3870:C:\Users\User\AppData\Local\Temp\selk.
-18 cinit CODE >3874:C:\Users\User\AppData\Local\Temp\selk.
-19 cinit CODE >3875:C:\Users\User\AppData\Local\Temp\selk.
-1A cinit CODE >3876:C:\Users\User\AppData\Local\Temp\selk.
-1B cinit CODE >3877:C:\Users\User\AppData\Local\Temp\selk.
-1C cinit CODE >3878:C:\Users\User\AppData\Local\Temp\selk.
-1D cinit CODE >3879:C:\Users\User\AppData\Local\Temp\selk.
-1F cinit CODE >3885:C:\Users\User\AppData\Local\Temp\selk.
-1F cinit CODE >3887:C:\Users\User\AppData\Local\Temp\selk.
-20 cinit CODE >3888:C:\Users\User\AppData\Local\Temp\selk.
-21 cinit CODE >3889:C:\Users\User\AppData\Local\Temp\selk.
+$dist/default/debug\whack_a_mole.X.debug.o
+F cinit CODE >3797:C:\Users\User\AppData\Local\Temp\s2g4.
+F cinit CODE >3800:C:\Users\User\AppData\Local\Temp\s2g4.
+F cinit CODE >3850:C:\Users\User\AppData\Local\Temp\s2g4.
+12 cinit CODE >3851:C:\Users\User\AppData\Local\Temp\s2g4.
+13 cinit CODE >3852:C:\Users\User\AppData\Local\Temp\s2g4.
+16 cinit CODE >3853:C:\Users\User\AppData\Local\Temp\s2g4.
+17 cinit CODE >3870:C:\Users\User\AppData\Local\Temp\s2g4.
+18 cinit CODE >3874:C:\Users\User\AppData\Local\Temp\s2g4.
+19 cinit CODE >3875:C:\Users\User\AppData\Local\Temp\s2g4.
+1A cinit CODE >3876:C:\Users\User\AppData\Local\Temp\s2g4.
+1B cinit CODE >3877:C:\Users\User\AppData\Local\Temp\s2g4.
+1C cinit CODE >3878:C:\Users\User\AppData\Local\Temp\s2g4.
+1D cinit CODE >3879:C:\Users\User\AppData\Local\Temp\s2g4.
+1F cinit CODE >3885:C:\Users\User\AppData\Local\Temp\s2g4.
+1F cinit CODE >3887:C:\Users\User\AppData\Local\Temp\s2g4.
+20 cinit CODE >3888:C:\Users\User\AppData\Local\Temp\s2g4.
+21 cinit CODE >3889:C:\Users\User\AppData\Local\Temp\s2g4.
 4 intentry CODE >165:C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 4 intentry CODE >28:C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
 6 intentry CODE >29:C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
@@ -457,14 +457,14 @@ FF text4 CODE >150:C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 2F1 maintext CODE >37:C:\Users\User\git\whack_a_mole\whack_a_mole.X\main.c
 2F7 maintext CODE >36:C:\Users\User\git\whack_a_mole\whack_a_mole.X\main.c
 2FE maintext CODE >39:C:\Users\User\git\whack_a_mole\whack_a_mole.X\main.c
-311 clrtext CODE >3859:C:\Users\User\AppData\Local\Temp\selk.
-311 clrtext CODE >3860:C:\Users\User\AppData\Local\Temp\selk.
-312 clrtext CODE >3861:C:\Users\User\AppData\Local\Temp\selk.
-312 clrtext CODE >3862:C:\Users\User\AppData\Local\Temp\selk.
-313 clrtext CODE >3863:C:\Users\User\AppData\Local\Temp\selk.
-314 clrtext CODE >3864:C:\Users\User\AppData\Local\Temp\selk.
-315 clrtext CODE >3865:C:\Users\User\AppData\Local\Temp\selk.
-316 clrtext CODE >3866:C:\Users\User\AppData\Local\Temp\selk.
+311 clrtext CODE >3859:C:\Users\User\AppData\Local\Temp\s2g4.
+311 clrtext CODE >3860:C:\Users\User\AppData\Local\Temp\s2g4.
+312 clrtext CODE >3861:C:\Users\User\AppData\Local\Temp\s2g4.
+312 clrtext CODE >3862:C:\Users\User\AppData\Local\Temp\s2g4.
+313 clrtext CODE >3863:C:\Users\User\AppData\Local\Temp\s2g4.
+314 clrtext CODE >3864:C:\Users\User\AppData\Local\Temp\s2g4.
+315 clrtext CODE >3865:C:\Users\User\AppData\Local\Temp\s2g4.
+316 clrtext CODE >3866:C:\Users\User\AppData\Local\Temp\s2g4.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -477,66 +477,66 @@ FF text4 CODE >150:C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___latbits 3 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+___latbits 3 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Hspace_0 800A 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__end_of_readPin 5B2 0 CODE 0 text3 dist/default/production\whack_a_mole.X.production.o
-__size_of_defineGPIODirection 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-writePin@value 70 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
-writePin@write 73 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
+__end_of_readPin 5B2 0 CODE 0 text3 dist/default/debug\whack_a_mole.X.debug.o
+__size_of_defineGPIODirection 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+writePin@value 70 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
+writePin@write 73 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\selk.o
-_main 5B2 0 CODE 0 maintext dist/default/production\whack_a_mole.X.production.o
-_time 35 0 BANK0 1 bssBANK0 dist/default/production\whack_a_mole.X.production.o
-btemp 7E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-start 1A 0 CODE 0 init C:\Users\User\AppData\Local\Temp\selk.o
-__end_of_timer0ISR 1A 0 CODE 0 intentry dist/default/production\whack_a_mole.X.production.o
-__size_of_main 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s2g4.o
+_main 5B2 0 CODE 0 maintext dist/default/debug\whack_a_mole.X.debug.o
+_time 35 0 BANK0 1 bssBANK0 dist/default/debug\whack_a_mole.X.debug.o
+btemp 7E 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+start 1A 0 CODE 0 init C:\Users\User\AppData\Local\Temp\s2g4.o
+__end_of_timer0ISR 1A 0 CODE 0 intentry dist/default/debug\whack_a_mole.X.debug.o
+__size_of_main 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__size_of_timer0ISR 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+__size_of_timer0ISR 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Hpowerup 0 0 CODE 0 powerup -
-_timer0ISR 8 0 CODE 0 intentry dist/default/production\whack_a_mole.X.production.o
+_timer0ISR 8 0 CODE 0 intentry dist/default/debug\whack_a_mole.X.debug.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-_timer0_config 600 0 CODE 0 text2 dist/default/production\whack_a_mole.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-_defineGPIODirection 46 0 CODE 0 text4 dist/default/production\whack_a_mole.X.production.o
+_timer0_config 600 0 CODE 0 text2 dist/default/debug\whack_a_mole.X.debug.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2g4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2g4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2g4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2g4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2g4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\s2g4.o
+_defineGPIODirection 46 0 CODE 0 text4 dist/default/debug\whack_a_mole.X.debug.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-__size_of_writePin 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-wtemp0 7E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+__size_of_writePin 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+wtemp0 7E 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-defineGPIODirection@i 77 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
-__pidataCOMMON 62E 0 CODE 0 idataCOMMON dist/default/production\whack_a_mole.X.production.o
+defineGPIODirection@i 77 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
+__pidataCOMMON 62E 0 CODE 0 idataCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
-readPin@read 72 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
+readPin@read 72 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
-_writePin 2AE 0 CODE 0 text1 dist/default/production\whack_a_mole.X.production.o
-___stackhi 27EF 0 ABS 0 - C:\Users\User\AppData\Local\Temp\selk.o
-___stacklo 201A 0 ABS 0 - C:\Users\User\AppData\Local\Temp\selk.o
+_writePin 2AE 0 CODE 0 text1 dist/default/debug\whack_a_mole.X.debug.o
+___stackhi 27EF 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s2g4.o
+___stacklo 201A 0 ABS 0 - C:\Users\User\AppData\Local\Temp\s2g4.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
-__end_of_writePin 4A4 0 CODE 0 text1 dist/default/production\whack_a_mole.X.production.o
-defineGPIODirection@inputLength 71 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
-_WPUAbits 1F39 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_WPUBbits 1F44 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_WPUCbits 1F4F 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-start_initialization 1E 0 CODE 0 cinit dist/default/production\whack_a_mole.X.production.o
-__size_of_timer0_config 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_TRISAbits 12 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_TRISBbits 13 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_TRISCbits 14 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-__end_of_defineGPIODirection 2AE 0 CODE 0 text4 dist/default/production\whack_a_mole.X.production.o
-clear_ram0 622 0 CODE 0 clrtext dist/default/production\whack_a_mole.X.production.o
-_readPin 4A4 0 CODE 0 text3 dist/default/production\whack_a_mole.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\selk.o
-__end_of_timer0_config 622 0 CODE 0 text2 dist/default/production\whack_a_mole.X.production.o
+__end_of_writePin 4A4 0 CODE 0 text1 dist/default/debug\whack_a_mole.X.debug.o
+defineGPIODirection@inputLength 71 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
+_WPUAbits 1F39 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_WPUBbits 1F44 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_WPUCbits 1F4F 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+start_initialization 1E 0 CODE 0 cinit dist/default/debug\whack_a_mole.X.debug.o
+__size_of_timer0_config 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_TRISAbits 12 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_TRISBbits 13 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_TRISCbits 14 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+__end_of_defineGPIODirection 2AE 0 CODE 0 text4 dist/default/debug\whack_a_mole.X.debug.o
+clear_ram0 622 0 CODE 0 clrtext dist/default/debug\whack_a_mole.X.debug.o
+_readPin 4A4 0 CODE 0 text3 dist/default/debug\whack_a_mole.X.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\s2g4.o
+__end_of_timer0_config 622 0 CODE 0 text2 dist/default/debug\whack_a_mole.X.debug.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -604,7 +604,7 @@ __Hsfr61 0 0 ABS 0 sfr61 -
 __Hsfr62 0 0 ABS 0 sfr62 -
 __Hsfr63 0 0 ABS 0 sfr63 -
 __Hstack 0 0 STACK 2 stack -
-defineGPIODirection@outputLength 72 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
+defineGPIODirection@outputLength 72 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Hbank10 0 0 ABS 0 bank10 -
 __Hbank11 0 0 ABS 0 bank11 -
 __Hbank12 0 0 ABS 0 bank12 -
@@ -661,11 +661,11 @@ __Hbank62 0 0 BANK62 1 bank62 -
 __Hbank63 0 0 BANK63 1 bank63 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-main@F11232 7C 0 COMMON 1 dataCOMMON dist/default/production\whack_a_mole.X.production.o
-main@F11234 7B 0 COMMON 1 dataCOMMON dist/default/production\whack_a_mole.X.production.o
+main@F11232 7C 0 COMMON 1 dataCOMMON dist/default/debug\whack_a_mole.X.debug.o
+main@F11234 7B 0 COMMON 1 dataCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10014 0 CONFIG 0 config -
-_pinStates 20 0 BANK0 1 bssBANK0 dist/default/production\whack_a_mole.X.production.o
+_pinStates 20 0 BANK0 1 bssBANK0 dist/default/debug\whack_a_mole.X.debug.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
@@ -733,10 +733,10 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-_PORTAbits C 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_PORTBbits D 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_PORTCbits E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_INTCONbits B 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+_PORTAbits C 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_PORTBbits D 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_PORTCbits E 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_INTCONbits B 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 1A 0 CODE 0 init -
@@ -765,18 +765,18 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-int$flags 7E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+int$flags 7E 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800A 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-defineGPIODirection@input 76 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
+defineGPIODirection@input 76 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\selk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\s2g4.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-_PIE0bits 716 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+_PIE0bits 716 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -831,55 +831,55 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext 5B2 0 CODE 0 maintext dist/default/production\whack_a_mole.X.production.o
+__pmaintext 5B2 0 CODE 0 maintext dist/default/debug\whack_a_mole.X.debug.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
-__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_LATAbits 18 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_LATBbits 19 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_LATCbits 1A 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-main@input 79 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_LATAbits 18 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_LATBbits 19 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_LATCbits 1A 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+main@input 79 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 7D 0 COMMON 1 bssCOMMON dist/default/production\whack_a_mole.X.production.o
+__pbssCOMMON 7D 0 COMMON 1 bssCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Lend_init 1A 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 3E 0 CODE 0 cinit dist/default/production\whack_a_mole.X.production.o
+end_of_initialization 3E 0 CODE 0 cinit dist/default/debug\whack_a_mole.X.debug.o
 __Hintentry 1A 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-defineGPIODirection@output 70 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
-__ptext1 2AE 0 CODE 0 text1 dist/default/production\whack_a_mole.X.production.o
-__ptext2 600 0 CODE 0 text2 dist/default/production\whack_a_mole.X.production.o
-__ptext3 4A4 0 CODE 0 text3 dist/default/production\whack_a_mole.X.production.o
-__ptext4 46 0 CODE 0 text4 dist/default/production\whack_a_mole.X.production.o
+defineGPIODirection@output 70 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
+__ptext1 2AE 0 CODE 0 text1 dist/default/debug\whack_a_mole.X.debug.o
+__ptext2 600 0 CODE 0 text2 dist/default/debug\whack_a_mole.X.debug.o
+__ptext3 4A4 0 CODE 0 text3 dist/default/debug\whack_a_mole.X.debug.o
+__ptext4 46 0 CODE 0 text4 dist/default/debug\whack_a_mole.X.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-main@output 7A 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
+main@output 7A 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__size_of_readPin 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-__end_of__initialization 3E 0 CODE 0 cinit dist/default/production\whack_a_mole.X.production.o
+__size_of_readPin 0 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+__end_of__initialization 3E 0 CODE 0 cinit dist/default/debug\whack_a_mole.X.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
-_T0CON0bits 59E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_T0CON1bits 59F 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/debug\whack_a_mole.X.debug.o
+_T0CON0bits 59E 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_T0CON1bits 59F 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 600 0 CODE 0 maintext dist/default/production\whack_a_mole.X.production.o
-_TMR0H 59D 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+__end_of_main 600 0 CODE 0 maintext dist/default/debug\whack_a_mole.X.debug.o
+_TMR0H 59D 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__pintentry 8 0 CODE 0 intentry dist/default/production\whack_a_mole.X.production.o
-__initialization 1E 0 CODE 0 cinit dist/default/production\whack_a_mole.X.production.o
-__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\whack_a_mole.X.production.o
-__pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/default/production\whack_a_mole.X.production.o
-_ANSELAbits 1F38 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_ANSELBbits 1F43 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-_ANSELCbits 1F4E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/debug\whack_a_mole.X.debug.o
+__initialization 1E 0 CODE 0 cinit dist/default/debug\whack_a_mole.X.debug.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/debug\whack_a_mole.X.debug.o
+__pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/default/debug\whack_a_mole.X.debug.o
+_ANSELAbits 1F38 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_ANSELBbits 1F43 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
+_ANSELCbits 1F4E 0 ABS 0 - dist/default/debug\whack_a_mole.X.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.

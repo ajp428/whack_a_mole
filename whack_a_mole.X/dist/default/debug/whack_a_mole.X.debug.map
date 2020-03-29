@@ -3,11 +3,11 @@ Microchip MPLAB XC8 Compiler V2.05 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
-  -cs -h+dist/default/production\whack_a_mole.X.production.sym \
-  --cmf=dist/default/production\whack_a_mole.X.production.cmf -z -Q16F18446 \
-  -oC:\Users\User\AppData\Local\Temp\selk.2 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/whack_a_mole.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=0201Ah-027EFh -pstack=STACK -ACODE=00h-07FFhx8 \
+  -cs -h+dist/default/debug\whack_a_mole.X.debug.sym \
+  --cmf=dist/default/debug\whack_a_mole.X.debug.cmf -z -Q16F18446 \
+  -oC:\Users\User\AppData\Local\Temp\s2g4.2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/debug/whack_a_mole.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
+  -ASTACK=0201Ah-027EFh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
   -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -46,8 +46,8 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\selk.o \
-  dist/default/production\whack_a_mole.X.production.o 
+  -DENTRY=2 -k C:\Users\User\AppData\Local\Temp\s2g4.o \
+  dist/default/debug\whack_a_mole.X.debug.o 
 
 Object code version is 3.11
 
@@ -56,11 +56,11 @@ Machine type is 16F18446
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\selk.o
+C:\Users\User\AppData\Local\Temp\s2g4.o
                 end_init                              D        D        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        3    1000E       0
-dist/default/production\whack_a_mole.X.production.o
+dist/default/debug\whack_a_mole.X.debug.o
                 cinit                                 F        F       14        8       0
                 intentry                              4        4        9        8       0
                 text4                                23       23      134        8       0

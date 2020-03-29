@@ -1,17 +1,27 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"31 ./pins.h
-[; ;./pins.h: 31: pins_t pinStates[17];
+"45 ./pins.h
+[; ;./pins.h: 45: pins_t pinStates[17];
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
+"22 main.c
+[; ;main.c: 22: }
+[c E11202 0 1 .. ]
+[n E11202 . STATE_PRESSED STATE_UNPRESSED  ]
+"24
+[c E11206 0 1 .. ]
+[n E11206 . STATE_ON STATE_OFF  ]
 [p mainexit ]
-"33
-[; ;./pins.h: 33: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
+"49 ./pins.h
+[; ;./pins.h: 49: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 [v _defineGPIODirection `(v ~T0 @X0 0 ef4`*E11183`*E11183`uc`uc ]
-"35
-[; ;./pins.h: 35: uint8_t readPin(pins_t read);
-[v _readPin `(uc ~T0 @X0 0 ef1`E11183 ]
-"37
-[; ;./pins.h: 37: void writePin(pins_t write, uint8_t value);
+"17 ./timer0.h
+[; ;./timer0.h: 17: void timer0_config();
+[v _timer0_config `(v ~T0 @X0 0 e? ]
+"52 ./pins.h
+[; ;./pins.h: 52: _Bool readPin(pins_t read);
+[v _readPin `(a ~T0 @X0 0 ef1`E11183 ]
+"55
+[; ;./pins.h: 55: void writePin(pins_t write, uint8_t value);
 [v _writePin `(v ~T0 @X0 0 ef2`E11183`uc ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
@@ -1375,65 +1385,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"31 ./pins.h
-[; ;./pins.h: 31: pins_t pinStates[17];
+"45 ./pins.h
+[; ;./pins.h: 45: pins_t pinStates[17];
 [v _pinStates `E11183 ~T0 @X0 -> 17 `i e ]
-"13 ./timer0.h
-[; ;./timer0.h: 13: uint32_t count;
-[v _count `ul ~T0 @X0 1 e ]
+"15 ./timer0.h
+[; ;./timer0.h: 15: time_t time;
+[v _time `us ~T0 @X0 1 e ]
 "18 main.c
+[; ;main.c: 18:         } else {
 [p x WDTE = OFF ]
 "20
-[v _timeTurnedOn `ul ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
+[; ;main.c: 20:         }
+[v _timeTurnedOff `us ~T0 @X0 1 e ]
+[i _timeTurnedOff
+-> -> 0 `i `us
+]
+"21
+[; ;main.c: 21:     }
+[v _timeButtonReleased `us ~T0 @X0 1 e ]
 "22
+[; ;main.c: 22: }
+[v _buttonState `E11202 ~T0 @X0 1 e ]
+"23
+[v _buttonLastState `E11202 ~T0 @X0 1 e ]
+"24
+[v _ledState `E11206 ~T0 @X0 1 e ]
+"25
+[v _ledLasteState `E11206 ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"27
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-[v F11218 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11218
+[v F11232 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
+[i F11232
 :U ..
-"23
+"28
 . `E11183 8
 ..
 ]
 [v _input `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _input F11218 ]
-[v F11220 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11220
+[e = _input F11232 ]
+[v F11234 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
+[i F11234
 :U ..
-"24
+"29
 . `E11183 16
 ..
 ]
 [v _output `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _output F11220 ]
-"26
+[e = _output F11234 ]
+"31
 [e ( _defineGPIODirection (4 , , , &U _input &U _output -> -> 1 `i `uc -> -> 1 `i `uc ]
-"28
+"33
+[e ( _timer0_config ..  ]
+"35
 [e :U 1517 ]
 {
-"29
-[e $ ! == -> ( _readPin (1 . `E11183 8 `i -> 0 `i 1519  ]
+"36
+[e $ ! == -> ( _readPin (1 . `E11183 8 `i -> 1 `i 1519  ]
 {
-"30
+"37
 [e ( _writePin (2 , . `E11183 16 -> -> 1 `i `uc ]
-"31
+"38
 }
 [e $U 1520  ]
 [e :U 1519 ]
 {
-"32
+"39
 [e ( _writePin (2 , . `E11183 16 -> -> 0 `i `uc ]
-"33
+"40
 }
 [e :U 1520 ]
-"34
+"41
 }
 [e :U 1516 ]
 [e $U 1517  ]
 [e :U 1518 ]
-"35
+"42
 [e :UE 1515 ]
 }

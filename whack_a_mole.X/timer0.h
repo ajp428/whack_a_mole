@@ -10,11 +10,13 @@
 
 #define _XTAL_FREQ 4000000
 
-uint32_t count;
+typedef uint16_t time_t;
+
+time_t time;
 
 void timer0_config();
 
-uint32_t getCount();
+uint32_t getTime();
 
 #endif	/* TIMER0_H */
 

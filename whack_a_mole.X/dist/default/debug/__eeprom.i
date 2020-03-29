@@ -1,4 +1,4 @@
-# 1 "pins.c"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,20 +6,25 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "pins.c" 2
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\pic\\__eeprom.c" 2
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
 
 
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
 
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 2 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 
@@ -27,155 +32,17 @@
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 2 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 145 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 176 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 212 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
-# 254 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 8 "pins.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
+# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 176 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 212 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -232,18 +99,15 @@ udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 104 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 size_t __ctype_get_mb_cur_max(void);
-# 9 "pins.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 1 3
-# 12 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 3
+
+
+
+
+
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
@@ -18182,473 +18046,184 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 10 "pins.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 
 
 
 
-typedef short int16_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+{
+ volatile unsigned char *cp = to;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\pic\\__eeprom.c"
+ while (NVMCON1bits.WR) {
+  continue;
+ }
+ NVMCON1bits.NVMREGS = 1;
+ NVMADRL = (unsigned char) from;
+ NVMADRH = 0x70;
+ while (size--) {
+  NVMCON1bits.RD = 1;
+  *cp++ = NVMDATL;
+  NVMADRL++;
+ }
 
 
 
-
-
-typedef long long int64_t;
-# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 217 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 11 "pins.c" 2
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 13 "pins.c" 2
-
-# 1 "./pins.h" 1
-# 12 "./pins.h"
-typedef enum{
-    PINA0 = 0,
-    PINA1 = 1,
-    PINA2 = 2,
-    PINA4 = 3,
-    PINA5 = 4,
-    PINB4 = 5,
-    PINB5 = 6,
-    PINB6 = 7,
-    PINB7 = 8,
-    PINC0 = 9,
-    PINC1 = 10,
-    PINC2 = 11,
-    PINC3 = 12,
-    PINC4 = 13,
-    PINC5 = 14,
-    PINC6 = 15,
-    PINC7 = 16
-} pins_t;
-
-
-typedef enum{
-    STATE_PRESSED,
-    STATE_UNPRESSED
-} buttonState_t;
-
-typedef enum{
-    STATE_ON,
-    STATE_OFF
-} ledState_t;
-
-
-
-pins_t pinStates[17];
-
-
-
-void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
-
-
-_Bool readPin(pins_t read);
-
-
-void writePin(pins_t write, uint8_t value);
-# 14 "pins.c" 2
-
-
-pins_t pinStates[17] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
-    uint8_t i;
-    for(i = 0; i < inputLength; i++) {
-        switch(input[i]) {
-            case PINA0 :
-                TRISAbits.TRISA0 = 1;
-                ANSELAbits.ANSA0 = 0;
-                WPUAbits.WPUA0 = 1;
-                break;
-            case PINA1 :
-                TRISAbits.TRISA1 = 1;
-                ANSELAbits.ANSA1 = 0;
-                WPUAbits.WPUA1 = 1;
-                break;
-            case PINA2 :
-                TRISAbits.TRISA2 = 1;
-                ANSELAbits.ANSA2 = 0;
-                WPUAbits.WPUA2 = 1;
-                break;
-            case PINA4 :
-                TRISAbits.TRISA4 = 1;
-                ANSELAbits.ANSA4 = 0;
-                WPUAbits.WPUA4 = 1;
-                break;
-            case PINA5 :
-                TRISAbits.TRISA5 = 1;
-                ANSELAbits.ANSA5 = 0;
-                WPUAbits.WPUA5 = 1;
-                break;
-            case PINB4 :
-                TRISBbits.TRISB4 = 1;
-                ANSELBbits.ANSB4 = 0;
-                WPUBbits.WPUB4 = 1;
-                break;
-            case PINB5 :
-                TRISBbits.TRISB5 = 1;
-                ANSELBbits.ANSB5 = 0;
-                WPUBbits.WPUB5 = 1;
-                break;
-            case PINB6 :
-                TRISBbits.TRISB6 = 1;
-                ANSELBbits.ANSB6 = 0;
-                WPUBbits.WPUB6 = 1;
-                break;
-            case PINB7 :
-                TRISBbits.TRISB7 = 1;
-                ANSELBbits.ANSB7 = 0;
-                WPUBbits.WPUB7 = 1;
-                break;
-            case PINC0 :
-                TRISCbits.TRISC0 = 1;
-                ANSELCbits.ANSC0 = 0;
-                WPUCbits.WPUC0 = 1;
-                break;
-            case PINC1 :
-                TRISCbits.TRISC1 = 1;
-                ANSELCbits.ANSC1 = 0;
-                WPUCbits.WPUC1 = 1;
-                break;
-            case PINC2 :
-                TRISCbits.TRISC2 = 1;
-                ANSELCbits.ANSC2 = 0;
-                WPUCbits.WPUC2 = 1;
-                break;
-            case PINC3 :
-                TRISCbits.TRISC3 = 1;
-                ANSELCbits.ANSC3 = 0;
-                WPUCbits.WPUC3 = 1;
-                break;
-            case PINC4 :
-                TRISCbits.TRISC4 = 1;
-                ANSELCbits.ANSC4 = 0;
-                WPUCbits.WPUC4 = 1;
-                break;
-            case PINC5 :
-                TRISCbits.TRISC5 = 1;
-                ANSELCbits.ANSC5 = 0;
-                WPUCbits.WPUC5 = 1;
-                break;
-            case PINC6 :
-                TRISCbits.TRISC6 = 1;
-                ANSELCbits.ANSC6 = 0;
-                WPUCbits.WPUC6 = 1;
-                break;
-            case PINC7 :
-                TRISCbits.TRISC7 = 1;
-                ANSELCbits.ANSC7 = 0;
-                WPUCbits.WPUC7 = 1;
-                break;
-        }
-    }
-
-    for(i = 0; i < outputLength; i++) {
-        switch(output[i]) {
-            case PINA0 :
-                TRISAbits.TRISA0 = 0;
-                break;
-            case PINA1 :
-                TRISAbits.TRISA1 = 0;
-                break;
-            case PINA2 :
-                TRISAbits.TRISA2 = 0;
-                break;
-            case PINA4 :
-                TRISAbits.TRISA4 = 0;
-                break;
-            case PINA5 :
-                TRISAbits.TRISA5 = 0;
-                break;
-            case PINB4 :
-                TRISBbits.TRISB4 = 0;
-                break;
-            case PINB5 :
-                TRISBbits.TRISB5 = 0;
-                break;
-            case PINB6 :
-                TRISBbits.TRISB6 = 0;
-                break;
-            case PINB7 :
-                TRISBbits.TRISB7 = 0;
-                break;
-            case PINC0 :
-                TRISCbits.TRISC0 = 0;
-                break;
-            case PINC1 :
-                TRISCbits.TRISC1 = 0;
-                break;
-            case PINC2 :
-                TRISCbits.TRISC2 = 0;
-                break;
-            case PINC3 :
-                TRISCbits.TRISC3 = 0;
-                break;
-            case PINC4 :
-                TRISCbits.TRISC4 = 0;
-                break;
-            case PINC5 :
-                TRISCbits.TRISC5 = 0;
-                break;
-            case PINC6 :
-                TRISCbits.TRISC6 = 0;
-                break;
-            case PINC7 :
-                TRISCbits.TRISC7 = 0;
-                break;
-        }
-    }
 }
 
-_Bool readPin(pins_t read) {
-    switch (read) {
-        case PINA0 :
-            if(PORTAbits.RA0 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINA1 :
-            if(PORTAbits.RA1 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINA2 :
-            if(PORTAbits.RA2 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINA4 :
-            if(PORTAbits.RA4 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINA5 :
-            if(PORTAbits.RA5 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINB4 :
-            if(PORTBbits.RB4 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINB5 :
-            if(PORTBbits.RB5 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINB6 :
-            if(PORTBbits.RB6 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINB7 :
-            if(PORTBbits.RB7 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC0 :
-            if(PORTCbits.RC0 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC1 :
-            if(PORTCbits.RC1 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC2 :
-            if(PORTCbits.RC2 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC3 :
-            if(PORTCbits.RC3 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC4 :
-            if(PORTCbits.RC4 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC5 :
-            if(PORTCbits.RC5 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC6:
-            if(PORTCbits.RC6 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-        case PINC7:
-            if(PORTCbits.RC7 == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
-    }
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+{
+ const unsigned char *ptr =from;
+# 69 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\pic\\__eeprom.c"
+ while (NVMCON1bits.WR) {
+  continue;
+ }
+ NVMCON1bits.NVMREGS = 1;
+ NVMADRL = (unsigned char) to - 1U;
+ NVMADRH = 0x70;
+ NVMDATH = 0;
+ while (size--) {
+  while (NVMCON1bits.WR) {
+   continue;
+  }
+  NVMDATL = *ptr++;
+  NVMADRL++;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  NVMCON1bits.WREN = 1;
+  NVMCON2 = 0x55;
+  NVMCON2 = 0xAA;
+  NVMCON1bits.WR = 1;
+  while (NVMCON1bits.WR) {
+   continue;
+  }
+  NVMCON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+
+
+
 }
 
-void writePin(pins_t write, uint8_t value) {
-    switch(write) {
-        case PINA0 :
-            LATAbits.LATA0 = value;
-            pinStates[PINA0] = value;
-            break;
-        case PINA1 :
-            LATAbits.LATA1 = value;
-            pinStates[PINA1] = value;
-            break;
-        case PINA2 :
-            LATAbits.LATA2 = value;
-            pinStates[PINA2] = value;
-            break;
-        case PINA4 :
-            LATAbits.LATA4 = value;
-            pinStates[PINA4] = value;
-            break;
-        case PINA5 :
-            LATAbits.LATA5 = value;
-            pinStates[PINA5] = value;
-            break;
-        case PINB4 :
-            LATBbits.LATB4 = value;
-            pinStates[PINB4] = value;
-            break;
-        case PINB5 :
-            LATBbits.LATB5 = value;
-            pinStates[PINB5] = value;
-            break;
-        case PINB6 :
-            LATBbits.LATB6 = value;
-            pinStates[PINB6] = value;
-            break;
-        case PINB7 :
-            LATBbits.LATB7 = value;
-            pinStates[PINB7] = value;
-            break;
-        case PINC0 :
-            LATCbits.LATC0 = value;
-            pinStates[PINC0] = value;
-            break;
-        case PINC1 :
-            LATCbits.LATC1 = value;
-            pinStates[PINC1] = value;
-            break;
-        case PINC2 :
-            LATCbits.LATC2 = value;
-            pinStates[PINC2] = value;
-            break;
-        case PINC3 :
-            LATCbits.LATC3 = value;
-            pinStates[PINC3] = value;
-            break;
-        case PINC4 :
-            LATCbits.LATC4 = value;
-            pinStates[PINC4] = value;
-            break;
-        case PINC5 :
-            LATCbits.LATC5 = value;
-            pinStates[PINC5] = value;
-            break;
-        case PINC6 :
-            LATCbits.LATC6 = value;
-            pinStates[PINC6] = value;
-            break;
-        case PINC7 :
-            LATCbits.LATC7 = value;
-            pinStates[PINC7] = value;
-            break;
-    }
+unsigned char
+__eetoc(__eeprom void *addr)
+{
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
+}
+
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
+}
+
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

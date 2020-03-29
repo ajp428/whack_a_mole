@@ -408,8 +408,8 @@ config 1000E 10013 CONFIG 1000E 0
 cstackCOMMON 70 7D COMMON 70 1
 bssBANK0 20 39 BANK0 20 1
 %locals
-dist/default/production\whack_a_mole.X.production.o
-C:\Users\User\AppData\Local\Temp\selk.
+dist/default/debug\whack_a_mole.X.debug.o
+C:\Users\User\AppData\Local\Temp\s2g4.
 3797 F 0 CODE 0
 3800 F 0 CODE 0
 3850 F 0 CODE 0
