@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\User\AppData\Local\Temp\selk.o
+$C:\Users\User\AppData\Local\Temp\sbc8.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 D D 2 2
 config CONFIG 0 8007 8007 3 2
@@ -180,23 +180,23 @@ STRING 319-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\whack_a_mole.X.production.o
-F cinit CODE >3797:C:\Users\User\AppData\Local\Temp\selk.
-F cinit CODE >3800:C:\Users\User\AppData\Local\Temp\selk.
-F cinit CODE >3850:C:\Users\User\AppData\Local\Temp\selk.
-12 cinit CODE >3851:C:\Users\User\AppData\Local\Temp\selk.
-13 cinit CODE >3852:C:\Users\User\AppData\Local\Temp\selk.
-16 cinit CODE >3853:C:\Users\User\AppData\Local\Temp\selk.
-17 cinit CODE >3870:C:\Users\User\AppData\Local\Temp\selk.
-18 cinit CODE >3874:C:\Users\User\AppData\Local\Temp\selk.
-19 cinit CODE >3875:C:\Users\User\AppData\Local\Temp\selk.
-1A cinit CODE >3876:C:\Users\User\AppData\Local\Temp\selk.
-1B cinit CODE >3877:C:\Users\User\AppData\Local\Temp\selk.
-1C cinit CODE >3878:C:\Users\User\AppData\Local\Temp\selk.
-1D cinit CODE >3879:C:\Users\User\AppData\Local\Temp\selk.
-1F cinit CODE >3885:C:\Users\User\AppData\Local\Temp\selk.
-1F cinit CODE >3887:C:\Users\User\AppData\Local\Temp\selk.
-20 cinit CODE >3888:C:\Users\User\AppData\Local\Temp\selk.
-21 cinit CODE >3889:C:\Users\User\AppData\Local\Temp\selk.
+F cinit CODE >3797:C:\Users\User\AppData\Local\Temp\sbc8.
+F cinit CODE >3800:C:\Users\User\AppData\Local\Temp\sbc8.
+F cinit CODE >3850:C:\Users\User\AppData\Local\Temp\sbc8.
+12 cinit CODE >3851:C:\Users\User\AppData\Local\Temp\sbc8.
+13 cinit CODE >3852:C:\Users\User\AppData\Local\Temp\sbc8.
+16 cinit CODE >3853:C:\Users\User\AppData\Local\Temp\sbc8.
+17 cinit CODE >3870:C:\Users\User\AppData\Local\Temp\sbc8.
+18 cinit CODE >3874:C:\Users\User\AppData\Local\Temp\sbc8.
+19 cinit CODE >3875:C:\Users\User\AppData\Local\Temp\sbc8.
+1A cinit CODE >3876:C:\Users\User\AppData\Local\Temp\sbc8.
+1B cinit CODE >3877:C:\Users\User\AppData\Local\Temp\sbc8.
+1C cinit CODE >3878:C:\Users\User\AppData\Local\Temp\sbc8.
+1D cinit CODE >3879:C:\Users\User\AppData\Local\Temp\sbc8.
+1F cinit CODE >3885:C:\Users\User\AppData\Local\Temp\sbc8.
+1F cinit CODE >3887:C:\Users\User\AppData\Local\Temp\sbc8.
+20 cinit CODE >3888:C:\Users\User\AppData\Local\Temp\sbc8.
+21 cinit CODE >3889:C:\Users\User\AppData\Local\Temp\sbc8.
 4 intentry CODE >165:C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 4 intentry CODE >28:C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
 6 intentry CODE >29:C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
@@ -457,14 +457,14 @@ FF text4 CODE >150:C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 2F1 maintext CODE >37:C:\Users\User\git\whack_a_mole\whack_a_mole.X\main.c
 2F7 maintext CODE >36:C:\Users\User\git\whack_a_mole\whack_a_mole.X\main.c
 2FE maintext CODE >39:C:\Users\User\git\whack_a_mole\whack_a_mole.X\main.c
-311 clrtext CODE >3859:C:\Users\User\AppData\Local\Temp\selk.
-311 clrtext CODE >3860:C:\Users\User\AppData\Local\Temp\selk.
-312 clrtext CODE >3861:C:\Users\User\AppData\Local\Temp\selk.
-312 clrtext CODE >3862:C:\Users\User\AppData\Local\Temp\selk.
-313 clrtext CODE >3863:C:\Users\User\AppData\Local\Temp\selk.
-314 clrtext CODE >3864:C:\Users\User\AppData\Local\Temp\selk.
-315 clrtext CODE >3865:C:\Users\User\AppData\Local\Temp\selk.
-316 clrtext CODE >3866:C:\Users\User\AppData\Local\Temp\selk.
+311 clrtext CODE >3859:C:\Users\User\AppData\Local\Temp\sbc8.
+311 clrtext CODE >3860:C:\Users\User\AppData\Local\Temp\sbc8.
+312 clrtext CODE >3861:C:\Users\User\AppData\Local\Temp\sbc8.
+312 clrtext CODE >3862:C:\Users\User\AppData\Local\Temp\sbc8.
+313 clrtext CODE >3863:C:\Users\User\AppData\Local\Temp\sbc8.
+314 clrtext CODE >3864:C:\Users\User\AppData\Local\Temp\sbc8.
+315 clrtext CODE >3865:C:\Users\User\AppData\Local\Temp\sbc8.
+316 clrtext CODE >3866:C:\Users\User\AppData\Local\Temp\sbc8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -488,11 +488,11 @@ writePin@value 70 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X
 writePin@write 73 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\selk.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sbc8.o
 _main 5B2 0 CODE 0 maintext dist/default/production\whack_a_mole.X.production.o
 _time 35 0 BANK0 1 bssBANK0 dist/default/production\whack_a_mole.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
-start 1A 0 CODE 0 init C:\Users\User\AppData\Local\Temp\selk.o
+start 1A 0 CODE 0 init C:\Users\User\AppData\Local\Temp\sbc8.o
 __end_of_timer0ISR 1A 0 CODE 0 intentry dist/default/production\whack_a_mole.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -501,12 +501,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 _timer0ISR 8 0 CODE 0 intentry dist/default/production\whack_a_mole.X.production.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
 _timer0_config 600 0 CODE 0 text2 dist/default/production\whack_a_mole.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\selk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbc8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbc8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbc8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbc8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbc8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\sbc8.o
 _defineGPIODirection 46 0 CODE 0 text4 dist/default/production\whack_a_mole.X.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_writePin 0 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
@@ -519,8 +519,8 @@ __LdataCOMMON 0 0 ABS 0 dataCOMMON -
 readPin@read 72 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _writePin 2AE 0 CODE 0 text1 dist/default/production\whack_a_mole.X.production.o
-___stackhi 27EF 0 ABS 0 - C:\Users\User\AppData\Local\Temp\selk.o
-___stacklo 201A 0 ABS 0 - C:\Users\User\AppData\Local\Temp\selk.o
+___stackhi 27EF 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sbc8.o
+___stacklo 201A 0 ABS 0 - C:\Users\User\AppData\Local\Temp\sbc8.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
 __end_of_writePin 4A4 0 CODE 0 text1 dist/default/production\whack_a_mole.X.production.o
 defineGPIODirection@inputLength 71 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
@@ -535,7 +535,7 @@ _TRISCbits 14 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
 __end_of_defineGPIODirection 2AE 0 CODE 0 text4 dist/default/production\whack_a_mole.X.production.o
 clear_ram0 622 0 CODE 0 clrtext dist/default/production\whack_a_mole.X.production.o
 _readPin 4A4 0 CODE 0 text3 dist/default/production\whack_a_mole.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\selk.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\sbc8.o
 __end_of_timer0_config 622 0 CODE 0 text2 dist/default/production\whack_a_mole.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -774,7 +774,7 @@ __S3 0 0 ABS 0 - -
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
 defineGPIODirection@input 76 0 COMMON 1 cstackCOMMON dist/default/production\whack_a_mole.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\selk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\sbc8.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _PIE0bits 716 0 ABS 0 - dist/default/production\whack_a_mole.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -

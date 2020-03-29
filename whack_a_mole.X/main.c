@@ -33,7 +33,7 @@ void main(void) {
     timer0_config();
     
     while(1) {
-        if(readPin(PINB7) == true) {
+        if(readPin(PINB7) == false) {
             writePin(PINC7, 1);
         } else {
             writePin(PINC7, 0);
