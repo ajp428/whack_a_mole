@@ -8,6 +8,7 @@
 #ifndef PINS_H
 #define	PINS_H
 
+// Enumerated type created to represent each GPIO pin
 typedef enum{
     PINA0 = 0,
     PINA1 = 1,
@@ -28,12 +29,24 @@ typedef enum{
     PINC7 = 16
 } pins_t;
 
+// Enumerated type created to keep track of a button's state for debouncing purposes
+typedef enum{
+    BUTTON_PRESSED,
+    BUTTON_UNPRESSED
+} buttonState_t;
+
+
+
 pins_t pinStates[17];
 
+// Function that takes the pins in the input array, configures as inputs
+// Also takes pins in output array, configures as outputs
 void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 
+// Reads and returns a pin's value
 uint8_t readPin(pins_t read);
 
+// Writes a value to a pin
 void writePin(pins_t write, uint8_t value);
 
 #endif

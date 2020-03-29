@@ -17,13 +17,16 @@
 #define _XTAL_FREQ 4000000
 #pragma config WDTE = OFF
 
-uint32_t timeTurnedOn;
+uint32_t timeTurnedOff = 0;
+buttonState_t state;
 
 void main(void) {
     pins_t input[] = {PINB7};
     pins_t output[] = {PINC7};
     
     defineGPIODirection(input, output, 1, 1);
+    
+    timer0_config();
     
     while(1) {
         if(readPin(PINB7) == 0) {

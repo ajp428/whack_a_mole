@@ -17,6 +17,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>pins.c</itemPath>
       <itemPath>timer0.c</itemPath>
+      <itemPath>button.c</itemPath>
+      <itemPath>button.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
