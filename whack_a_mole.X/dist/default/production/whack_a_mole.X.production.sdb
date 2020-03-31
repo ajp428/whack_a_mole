@@ -53,8 +53,14 @@ PINC5 14
 PINC6 15
 PINC7 16
 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
@@ -69,19 +75,19 @@ PINC7 16
 [v _readPin readPin `(a  1 e 1 0 ]
 "274
 [v _writePin writePin `(v  1 e 1 0 ]
-"18 C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
-[v _timer0_config timer0_config `(v  1 e 1 0 ]
-"28
+"347
+[v _shuffle shuffle `(v  1 e 1 0 ]
+"28 C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
 [v _timer0ISR timer0ISR `II(v  1 e 1 0 ]
-[s S577 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S589 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "426 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
-[u S582 . 1 `S577 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES582  1 e 1 @11 ]
-[s S263 . 1 `uc 1 RA0 1 0 :1:0 
+[u S594 . 1 `S589 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES594  1 e 1 @11 ]
+[s S265 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -89,18 +95,18 @@ PINC7 16
 `uc 1 RA5 1 0 :1:5 
 ]
 "461
-[u S270 . 1 `S263 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES270  1 e 1 @12 ]
-[s S280 . 1 `uc 1 . 1 0 :4:0 
+[u S272 . 1 `S265 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES272  1 e 1 @12 ]
+[s S282 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RB4 1 0 :1:4 
 `uc 1 RB5 1 0 :1:5 
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
 "510
-[u S286 . 1 `S280 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES286  1 e 1 @13 ]
-[s S295 . 1 `uc 1 RC0 1 0 :1:0 
+[u S288 . 1 `S282 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES288  1 e 1 @13 ]
+[s S297 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -110,9 +116,9 @@ PINC7 16
 `uc 1 RC7 1 0 :1:7 
 ]
 "552
-[u S304 . 1 `S295 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES304  1 e 1 @14 ]
-[s S104 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S306 . 1 `S297 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES306  1 e 1 @14 ]
+[s S106 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -120,18 +126,18 @@ PINC7 16
 `uc 1 TRISA5 1 0 :1:5 
 ]
 "612
-[u S111 . 1 `S104 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES111  1 e 1 @18 ]
-[s S155 . 1 `uc 1 . 1 0 :4:0 
+[u S113 . 1 `S106 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES113  1 e 1 @18 ]
+[s S157 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRISB4 1 0 :1:4 
 `uc 1 TRISB5 1 0 :1:5 
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "661
-[u S161 . 1 `S155 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES161  1 e 1 @19 ]
-[s S200 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S163 . 1 `S157 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES163  1 e 1 @19 ]
+[s S202 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -141,9 +147,9 @@ PINC7 16
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "703
-[u S209 . 1 `S200 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES209  1 e 1 @20 ]
-[s S316 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S211 . 1 `S202 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES211  1 e 1 @20 ]
+[s S318 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -151,18 +157,18 @@ PINC7 16
 `uc 1 LATA5 1 0 :1:5 
 ]
 "763
-[u S323 . 1 `S316 1 . 1 0 ]
-[v _LATAbits LATAbits `VES323  1 e 1 @24 ]
-[s S333 . 1 `uc 1 . 1 0 :4:0 
+[u S325 . 1 `S318 1 . 1 0 ]
+[v _LATAbits LATAbits `VES325  1 e 1 @24 ]
+[s S335 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LATB4 1 0 :1:4 
 `uc 1 LATB5 1 0 :1:5 
 `uc 1 LATB6 1 0 :1:6 
 `uc 1 LATB7 1 0 :1:7 
 ]
 "812
-[u S339 . 1 `S333 1 . 1 0 ]
-[v _LATBbits LATBbits `VES339  1 e 1 @25 ]
-[s S348 . 1 `uc 1 LATC0 1 0 :1:0 
+[u S341 . 1 `S335 1 . 1 0 ]
+[v _LATBbits LATBbits `VES341  1 e 1 @25 ]
+[s S350 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -172,37 +178,37 @@ PINC7 16
 `uc 1 LATC7 1 0 :1:7 
 ]
 "854
-[u S357 . 1 `S348 1 . 1 0 ]
-[v _LATCbits LATCbits `VES357  1 e 1 @26 ]
+[u S359 . 1 `S350 1 . 1 0 ]
+[v _LATCbits LATCbits `VES359  1 e 1 @26 ]
 "16789
 [v _TMR0H TMR0H `VEuc  1 e 1 @1437 ]
-[s S477 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S489 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "17071
-[s S483 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S495 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
-[s S489 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S501 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
-[u S495 . 1 `S477 1 . 1 0 `S483 1 . 1 0 `S489 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES495  1 e 1 @1438 ]
-[s S518 . 1 `uc 1 CKPS 1 0 :4:0 
+[u S507 . 1 `S489 1 . 1 0 `S495 1 . 1 0 `S501 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES507  1 e 1 @1438 ]
+[s S530 . 1 `uc 1 CKPS 1 0 :4:0 
 `uc 1 ASYNC 1 0 :1:4 
 `uc 1 CS 1 0 :3:5 
 ]
 "17178
-[s S522 . 1 `uc 1 CKPS0 1 0 :1:0 
+[s S534 . 1 `uc 1 CKPS0 1 0 :1:0 
 `uc 1 CKPS1 1 0 :1:1 
 `uc 1 CKPS2 1 0 :1:2 
 `uc 1 CKPS3 1 0 :1:3 
@@ -211,11 +217,11 @@ PINC7 16
 `uc 1 CS1 1 0 :1:6 
 `uc 1 CS2 1 0 :1:7 
 ]
-[s S531 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[s S543 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
-[s S535 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S547 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -224,17 +230,17 @@ PINC7 16
 `uc 1 T0CS1 1 0 :1:6 
 `uc 1 T0CS2 1 0 :1:7 
 ]
-[u S544 . 1 `S518 1 . 1 0 `S522 1 . 1 0 `S531 1 . 1 0 `S535 1 . 1 0 ]
-[v _T0CON1bits T0CON1bits `VES544  1 e 1 @1439 ]
-[s S590 . 1 `uc 1 INTE 1 0 :1:0 
+[u S556 . 1 `S530 1 . 1 0 `S534 1 . 1 0 `S543 1 . 1 0 `S547 1 . 1 0 ]
+[v _T0CON1bits T0CON1bits `VES556  1 e 1 @1439 ]
+[s S602 . 1 `uc 1 INTE 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIE 1 0 :1:4 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
 "19305
-[u S595 . 1 `S590 1 . 1 0 ]
-[v _PIE0bits PIE0bits `VES595  1 e 1 @1814 ]
-[s S121 . 1 `uc 1 ANSA0 1 0 :1:0 
+[u S607 . 1 `S602 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES607  1 e 1 @1814 ]
+[s S123 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -242,9 +248,9 @@ PINC7 16
 `uc 1 ANSA5 1 0 :1:5 
 ]
 "30578
-[u S128 . 1 `S121 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES128  1 e 1 @7992 ]
-[s S138 . 1 `uc 1 WPUA0 1 0 :1:0 
+[u S130 . 1 `S123 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES130  1 e 1 @7992 ]
+[s S140 . 1 `uc 1 WPUA0 1 0 :1:0 
 `uc 1 WPUA1 1 0 :1:1 
 `uc 1 WPUA2 1 0 :1:2 
 `uc 1 WPUA3 1 0 :1:3 
@@ -252,27 +258,27 @@ PINC7 16
 `uc 1 WPUA5 1 0 :1:5 
 ]
 "30623
-[u S145 . 1 `S138 1 . 1 0 ]
-[v _WPUAbits WPUAbits `VES145  1 e 1 @7993 ]
-[s S170 . 1 `uc 1 . 1 0 :4:0 
+[u S147 . 1 `S140 1 . 1 0 ]
+[v _WPUAbits WPUAbits `VES147  1 e 1 @7993 ]
+[s S172 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 ANSB4 1 0 :1:4 
 `uc 1 ANSB5 1 0 :1:5 
 `uc 1 ANSB6 1 0 :1:6 
 `uc 1 ANSB7 1 0 :1:7 
 ]
 "30962
-[u S176 . 1 `S170 1 . 1 0 ]
-[v _ANSELBbits ANSELBbits `VES176  1 e 1 @8003 ]
-[s S185 . 1 `uc 1 . 1 0 :4:0 
+[u S178 . 1 `S172 1 . 1 0 ]
+[v _ANSELBbits ANSELBbits `VES178  1 e 1 @8003 ]
+[s S187 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 WPUB4 1 0 :1:4 
 `uc 1 WPUB5 1 0 :1:5 
 `uc 1 WPUB6 1 0 :1:6 
 `uc 1 WPUB7 1 0 :1:7 
 ]
 "31001
-[u S191 . 1 `S185 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES191  1 e 1 @8004 ]
-[s S221 . 1 `uc 1 ANSC0 1 0 :1:0 
+[u S193 . 1 `S187 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES193  1 e 1 @8004 ]
+[s S223 . 1 `uc 1 ANSC0 1 0 :1:0 
 `uc 1 ANSC1 1 0 :1:1 
 `uc 1 ANSC2 1 0 :1:2 
 `uc 1 ANSC3 1 0 :1:3 
@@ -282,9 +288,9 @@ PINC7 16
 `uc 1 ANSC7 1 0 :1:7 
 ]
 "31277
-[u S230 . 1 `S221 1 . 1 0 ]
-[v _ANSELCbits ANSELCbits `VES230  1 e 1 @8014 ]
-[s S242 . 1 `uc 1 WPUC0 1 0 :1:0 
+[u S232 . 1 `S223 1 . 1 0 ]
+[v _ANSELCbits ANSELCbits `VES232  1 e 1 @8014 ]
+[s S244 . 1 `uc 1 WPUC0 1 0 :1:0 
 `uc 1 WPUC1 1 0 :1:1 
 `uc 1 WPUC2 1 0 :1:2 
 `uc 1 WPUC3 1 0 :1:3 
@@ -294,8 +300,10 @@ PINC7 16
 `uc 1 WPUC7 1 0 :1:7 
 ]
 "31339
-[u S251 . 1 `S242 1 . 1 0 ]
-[v _WPUCbits WPUCbits `VES251  1 e 1 @8015 ]
+[u S253 . 1 `S244 1 . 1 0 ]
+[v _WPUCbits WPUCbits `VES253  1 e 1 @8015 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\rand.c
+[v _seed seed `uo  1 s 8 seed ]
 "16 C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 [v _pinStates pinStates `[17]E11183  1 e 17 0 ]
 "16 C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
@@ -304,14 +312,14 @@ PINC7 16
 [v _main main `(v  1 e 1 0 ]
 {
 "29
-[v main@output output `[1]E11183  1 a 1 10 ]
+[v main@output output `[5]E11183  1 a 5 53 ]
 "28
-[v main@input input `[1]E11183  1 a 1 9 ]
+[v main@input input `[5]E11183  1 a 5 48 ]
 "27
-[v main@F11232 F11232 `[1]E11183  1 s 1 F11232 ]
+[v main@F11235 F11235 `[5]E11183  1 s 5 F11235 ]
 "28
-[v main@F11234 F11234 `[1]E11183  1 s 1 F11234 ]
-"42
+[v main@F11237 F11237 `[5]E11183  1 s 5 F11237 ]
+"43
 } 0
 "274 C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 [v _writePin writePin `(v  1 e 1 0 ]
@@ -322,10 +330,49 @@ PINC7 16
 [v writePin@write write `E11183  1 a 1 3 ]
 "345
 } 0
-"18 C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c
-[v _timer0_config timer0_config `(v  1 e 1 0 ]
+"347
+[v _shuffle shuffle `(v  1 e 1 0 ]
 {
-"26
+[v shuffle@array array `*.4E11183  1 a 1 wreg ]
+"351
+[v shuffle@j j `i  1 a 2 40 ]
+"352
+[v shuffle@temp temp `E11183  1 a 1 39 ]
+"349
+[v shuffle@i i `i  1 a 2 43 ]
+"347
+[v shuffle@array array `*.4E11183  1 a 1 wreg ]
+[v shuffle@size size `i  1 p 2 32 ]
+[v shuffle@array array `*.4E11183  1 a 1 42 ]
+"357
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+{
+"27
+} 0
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+{
+"93
+[v ___omul@product product `uo  1 a 8 1 ]
+"91
+[v ___omul@multiplier multiplier `uo  1 p 8 0 ]
+[v ___omul@multiplicand multiplicand `uo  1 p 8 8 ]
+"354
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 30 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 29 ]
+[v ___awdiv@counter counter `uc  1 a 1 28 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 24 ]
+[v ___awdiv@dividend dividend `i  1 p 2 26 ]
+"41
 } 0
 "167 C:\Users\User\git\whack_a_mole\whack_a_mole.X\pins.c
 [v _readPin readPin `(a  1 e 1 0 ]
@@ -338,16 +385,16 @@ PINC7 16
 "18
 [v _defineGPIODirection defineGPIODirection `(v  1 e 1 0 ]
 {
-[v defineGPIODirection@input input `*.1E11183  1 a 1 wreg ]
+[v defineGPIODirection@input input `*.4E11183  1 a 1 wreg ]
 "19
 [v defineGPIODirection@i i `uc  1 a 1 7 ]
 "18
-[v defineGPIODirection@input input `*.1E11183  1 a 1 wreg ]
-[v defineGPIODirection@output output `*.1E11183  1 p 1 0 ]
+[v defineGPIODirection@input input `*.4E11183  1 a 1 wreg ]
+[v defineGPIODirection@output output `*.4E11183  1 p 1 0 ]
 [v defineGPIODirection@inputLength inputLength `uc  1 p 1 1 ]
 [v defineGPIODirection@outputLength outputLength `uc  1 p 1 2 ]
 "20
-[v defineGPIODirection@input input `*.1E11183  1 a 1 6 ]
+[v defineGPIODirection@input input `*.4E11183  1 a 1 6 ]
 "165
 } 0
 "28 C:\Users\User\git\whack_a_mole\whack_a_mole.X\timer0.c

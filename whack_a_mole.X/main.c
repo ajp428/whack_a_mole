@@ -17,27 +17,34 @@
 #define _XTAL_FREQ 4000000
 #pragma config WDTE = OFF
 
-time_t timeTurnedOff = 0;
-time_t timeButtonReleased;
-buttonState_t buttonState;
-buttonState_t buttonLastState;
-ledState_t ledState;
-ledState_t ledLasteState;
+struct mole_t moles[5];
+int divisor = RAND_MAX / 5;
 
-void main(void) {
-    pins_t input[] = {PINB7};
-    pins_t output[] = {PINC7};
-    
-    defineGPIODirection(input, output, 1, 1);
-    
-    timer0_config();
-    
-    while(1) {
-        if(readPin(PINB7) == false) {
-            writePin(PINC7, 1);
-        } else {
-            writePin(PINC7, 0);
-        }
+void initMoles(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength) {
+    int i;
+    for(i = 0; i < 5; i++) {
+        moles[i].id = i;
+        moles[i].button = input[i];
+        moles[i].led = output[i];
     }
 }
 
+void main(void) {
+    pins_t input[] = {PINC4, PINC3, PINC6, PINC7, PINB7};
+    pins_t output[] = {PINC1, PINC2, PINB4, PINB5, PINB6};
+    
+    shuffle(input, 5);
+    shuffle(output, 5);
+    
+    defineGPIODirection(input, output, 5, 5);
+    
+    initMoles(input, output, 5, 5);
+    
+    while(1) {
+        if(countNumOn() == 0) {
+            int moleNum = rand() / divisor;
+            mole_t moleOn= moles[moleNum];
+            
+        }
+    }
+}

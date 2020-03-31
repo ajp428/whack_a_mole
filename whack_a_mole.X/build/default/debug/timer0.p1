@@ -1485,14 +1485,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1516 ]
 }
 "32
-[; ;timer0.c: 32: uint32_t getTime() {
-[v _getTime `(ul ~T0 @X0 1 ef ]
+[; ;timer0.c: 32: time_t getTime() {
+[v _getTime `(us ~T0 @X0 1 ef ]
 {
 [e :U _getTime ]
 [f ]
 "33
 [; ;timer0.c: 33:     return time;
-[e ) -> _time `ul ]
+[e ) _time ]
 [e $UE 1517  ]
 "34
 [; ;timer0.c: 34: }

@@ -40,6 +40,12 @@ typedef enum{
     STATE_OFF
 } ledState_t;
 
+struct mole_t {
+    uint8_t id;
+    pins_t button;
+    pins_t led;
+};
+
 // Array that keeps track of the state of the pins (high vs. low) for the purpose
 // of determining how many moles might be on)
 pins_t pinStates[17];
@@ -54,4 +60,7 @@ bool readPin(pins_t read);
 // Writes a value to a pin
 void writePin(pins_t write, uint8_t value);
 
+void shuffle(pins_t *array, int size);
+
+uint8_t countNumOn();
 #endif
