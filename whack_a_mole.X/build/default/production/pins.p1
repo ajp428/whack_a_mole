@@ -168,6 +168,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "854
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
 [v _LATCbits `VS50 ~T0 @X0 0 e@26 ]
+"41 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 41: int rand (void);
+[v _rand `(i ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -2775,4 +2778,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 "345
 [; ;pins.c: 345: }
 [e :UE 1616 ]
+}
+"347
+[; ;pins.c: 347: void shuffle(pins_t *array, int size) {
+[v _shuffle `(v ~T0 @X0 1 ef2`*E11183`i ]
+{
+[e :U _shuffle ]
+[v _array `*E11183 ~T0 @X0 1 r1 ]
+[v _size `i ~T0 @X0 1 r2 ]
+[f ]
+"348
+[; ;pins.c: 348:     if(size > 1) {
+[e $ ! > _size -> 1 `i 1637  ]
+{
+"349
+[; ;pins.c: 349:         int i;
+[v _i `i ~T0 @X0 1 a ]
+"350
+[; ;pins.c: 350:         for(i = 0; i < size - 1; i++) {
+{
+[e = _i -> 0 `i ]
+[e $U 1641  ]
+[e :U 1638 ]
+{
+"351
+[; ;pins.c: 351:             int j = i + rand() / ((0x7fff) / (size - i) + 1);
+[v _j `i ~T0 @X0 1 a ]
+[e = _j + _i / ( _rand ..  + / -> 32767 `i - _size _i -> 1 `i ]
+"352
+[; ;pins.c: 352:             pins_t temp = array[j];
+[v _temp `E11183 ~T0 @X0 1 a ]
+[e = _temp *U + _array * -> _j `x -> -> # *U _array `i `x ]
+"353
+[; ;pins.c: 353:             array[j] = array [i];
+[e = *U + _array * -> _j `x -> -> # *U _array `i `x *U + _array * -> _i `x -> -> # *U _array `i `x ]
+"354
+[; ;pins.c: 354:             array[i] = temp;
+[e = *U + _array * -> _i `x -> -> # *U _array `i `x _temp ]
+"355
+[; ;pins.c: 355:         }
+}
+[e ++ _i -> 1 `i ]
+[e :U 1641 ]
+[e $ < _i - _size -> 1 `i 1638  ]
+[e :U 1639 ]
+}
+"356
+[; ;pins.c: 356:     }
+}
+[e :U 1637 ]
+"357
+[; ;pins.c: 357: }
+[e :UE 1636 ]
 }

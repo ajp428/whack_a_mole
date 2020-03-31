@@ -343,3 +343,26 @@ void writePin(pins_t write, uint8_t value) {
             break;
     }
 }
+
+void shuffle(pins_t *array, int size) {
+    if(size > 1) {
+        int i;
+        for(i = 0; i < size - 1; i++) {
+            int j = i + rand() / (RAND_MAX / (size - i) + 1);
+            pins_t temp = array[j];
+            array[j] = array [i];
+            array[i] = temp;
+        }
+    }
+}
+
+uint8_t countNumOn() {
+    int numOn = 0;
+    int i;
+    for(i = 0; i < 17; i++) {
+        if(pinStates[i] == 1) {
+            numOn++;
+        }
+    }
+    return numOn;
+}

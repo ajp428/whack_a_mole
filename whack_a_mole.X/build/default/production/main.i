@@ -18319,6 +18319,8 @@ _Bool readPin(pins_t read);
 
 
 void writePin(pins_t write, uint8_t value);
+
+void shuffle(pins_t *array, int size);
 # 14 "main.c" 2
 
 # 1 "./timer0.h" 1
@@ -18329,7 +18331,7 @@ time_t time;
 
 void timer0_config();
 
-uint32_t getTime();
+time_t getTime();
 # 15 "main.c" 2
 
 
@@ -18344,12 +18346,13 @@ ledState_t ledState;
 ledState_t ledLasteState;
 
 void main(void) {
-    pins_t input[] = {PINB7};
-    pins_t output[] = {PINC7};
+    pins_t input[] = {PINC4, PINC3, PINC6, PINC7, PINB7};
+    pins_t output[] = {PINC1, PINC2, PINB4, PINB5, PINB6};
 
-    defineGPIODirection(input, output, 1, 1);
+    shuffle(input, 5);
+    shuffle(output, 5);
 
-    timer0_config();
+    defineGPIODirection(input, output, 5, 5);
 
     while(1) {
         if(readPin(PINB7) == 0) {

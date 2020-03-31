@@ -18281,7 +18281,7 @@ time_t time;
 
 void timer0_config();
 
-uint32_t getTime();
+time_t getTime();
 # 14 "timer0.c" 2
 
 
@@ -18301,6 +18301,6 @@ void __attribute__((picinterrupt(("")))) timer0ISR() {
     time++;
 }
 
-uint32_t getTime() {
+time_t getTime() {
     return time;
 }

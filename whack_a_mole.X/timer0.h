@@ -16,7 +16,7 @@ time_t time;
 
 void timer0_config();
 
-uint32_t getTime();
+time_t getTime();
 
 #endif	/* TIMER0_H */
 

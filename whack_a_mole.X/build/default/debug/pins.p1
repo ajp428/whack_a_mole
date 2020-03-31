@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"45 ./pins.h
-[; ;./pins.h: 45: pins_t pinStates[17];
+"51 ./pins.h
+[; ;./pins.h: 51: pins_t pinStates[17];
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
 "603 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
@@ -168,6 +168,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "854
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 854: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
 [v _LATCbits `VS50 ~T0 @X0 0 e@26 ]
+"41 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 41: int rand (void);
+[v _rand `(i ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1530,8 +1533,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32039
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f18446.h: 32039: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"45 ./pins.h
-[; ;./pins.h: 45: pins_t pinStates[17];
+"51 ./pins.h
+[; ;./pins.h: 51: pins_t pinStates[17];
 [v _pinStates `E11183 ~T0 @X0 -> 17 `i e ]
 "16 pins.c
 [; ;pins.c: 16: pins_t pinStates[17] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -1574,16 +1577,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pins.c: 20:     for(i = 0; i < inputLength; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 1519  ]
-[e :U 1516 ]
+[e $U 1520  ]
+[e :U 1517 ]
 {
 "21
 [; ;pins.c: 21:         switch(input[i]) {
-[e $U 1521  ]
+[e $U 1522  ]
 {
 "22
 [; ;pins.c: 22:             case PINA0 :
-[e :U 1522 ]
+[e :U 1523 ]
 "23
 [; ;pins.c: 23:                 TRISAbits.TRISA0 = 1;
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
@@ -1595,10 +1598,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUAbits 0 0 -> -> 1 `i `uc ]
 "26
 [; ;pins.c: 26:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "27
 [; ;pins.c: 27:             case PINA1 :
-[e :U 1523 ]
+[e :U 1524 ]
 "28
 [; ;pins.c: 28:                 TRISAbits.TRISA1 = 1;
 [e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
@@ -1610,10 +1613,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUAbits 0 1 -> -> 1 `i `uc ]
 "31
 [; ;pins.c: 31:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "32
 [; ;pins.c: 32:             case PINA2 :
-[e :U 1524 ]
+[e :U 1525 ]
 "33
 [; ;pins.c: 33:                 TRISAbits.TRISA2 = 1;
 [e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
@@ -1625,10 +1628,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUAbits 0 2 -> -> 1 `i `uc ]
 "36
 [; ;pins.c: 36:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "37
 [; ;pins.c: 37:             case PINA4 :
-[e :U 1525 ]
+[e :U 1526 ]
 "38
 [; ;pins.c: 38:                 TRISAbits.TRISA4 = 1;
 [e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
@@ -1640,10 +1643,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUAbits 0 4 -> -> 1 `i `uc ]
 "41
 [; ;pins.c: 41:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "42
 [; ;pins.c: 42:             case PINA5 :
-[e :U 1526 ]
+[e :U 1527 ]
 "43
 [; ;pins.c: 43:                 TRISAbits.TRISA5 = 1;
 [e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
@@ -1655,10 +1658,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUAbits 0 5 -> -> 1 `i `uc ]
 "46
 [; ;pins.c: 46:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "47
 [; ;pins.c: 47:             case PINB4 :
-[e :U 1527 ]
+[e :U 1528 ]
 "48
 [; ;pins.c: 48:                 TRISBbits.TRISB4 = 1;
 [e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
@@ -1670,10 +1673,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
 "51
 [; ;pins.c: 51:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "52
 [; ;pins.c: 52:             case PINB5 :
-[e :U 1528 ]
+[e :U 1529 ]
 "53
 [; ;pins.c: 53:                 TRISBbits.TRISB5 = 1;
 [e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
@@ -1685,10 +1688,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
 "56
 [; ;pins.c: 56:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "57
 [; ;pins.c: 57:             case PINB6 :
-[e :U 1529 ]
+[e :U 1530 ]
 "58
 [; ;pins.c: 58:                 TRISBbits.TRISB6 = 1;
 [e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
@@ -1700,10 +1703,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUBbits 0 3 -> -> 1 `i `uc ]
 "61
 [; ;pins.c: 61:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "62
 [; ;pins.c: 62:             case PINB7 :
-[e :U 1530 ]
+[e :U 1531 ]
 "63
 [; ;pins.c: 63:                 TRISBbits.TRISB7 = 1;
 [e = . . _TRISBbits 0 4 -> -> 1 `i `uc ]
@@ -1715,10 +1718,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUBbits 0 4 -> -> 1 `i `uc ]
 "66
 [; ;pins.c: 66:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "67
 [; ;pins.c: 67:             case PINC0 :
-[e :U 1531 ]
+[e :U 1532 ]
 "68
 [; ;pins.c: 68:                 TRISCbits.TRISC0 = 1;
 [e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
@@ -1730,10 +1733,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 0 -> -> 1 `i `uc ]
 "71
 [; ;pins.c: 71:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "72
 [; ;pins.c: 72:             case PINC1 :
-[e :U 1532 ]
+[e :U 1533 ]
 "73
 [; ;pins.c: 73:                 TRISCbits.TRISC1 = 1;
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
@@ -1745,10 +1748,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 1 -> -> 1 `i `uc ]
 "76
 [; ;pins.c: 76:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "77
 [; ;pins.c: 77:             case PINC2 :
-[e :U 1533 ]
+[e :U 1534 ]
 "78
 [; ;pins.c: 78:                 TRISCbits.TRISC2 = 1;
 [e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
@@ -1760,10 +1763,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 2 -> -> 1 `i `uc ]
 "81
 [; ;pins.c: 81:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "82
 [; ;pins.c: 82:             case PINC3 :
-[e :U 1534 ]
+[e :U 1535 ]
 "83
 [; ;pins.c: 83:                 TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
@@ -1775,10 +1778,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 3 -> -> 1 `i `uc ]
 "86
 [; ;pins.c: 86:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "87
 [; ;pins.c: 87:             case PINC4 :
-[e :U 1535 ]
+[e :U 1536 ]
 "88
 [; ;pins.c: 88:                 TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
@@ -1790,10 +1793,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 4 -> -> 1 `i `uc ]
 "91
 [; ;pins.c: 91:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "92
 [; ;pins.c: 92:             case PINC5 :
-[e :U 1536 ]
+[e :U 1537 ]
 "93
 [; ;pins.c: 93:                 TRISCbits.TRISC5 = 1;
 [e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
@@ -1805,10 +1808,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 5 -> -> 1 `i `uc ]
 "96
 [; ;pins.c: 96:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "97
 [; ;pins.c: 97:             case PINC6 :
-[e :U 1537 ]
+[e :U 1538 ]
 "98
 [; ;pins.c: 98:                 TRISCbits.TRISC6 = 1;
 [e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
@@ -1820,10 +1823,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 6 -> -> 1 `i `uc ]
 "101
 [; ;pins.c: 101:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "102
 [; ;pins.c: 102:             case PINC7 :
-[e :U 1538 ]
+[e :U 1539 ]
 "103
 [; ;pins.c: 103:                 TRISCbits.TRISC7 = 1;
 [e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
@@ -1835,238 +1838,238 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _WPUCbits 0 7 -> -> 1 `i `uc ]
 "106
 [; ;pins.c: 106:                 break;
-[e $U 1520  ]
+[e $U 1521  ]
 "107
 [; ;pins.c: 107:         }
 }
-[e $U 1520  ]
+[e $U 1521  ]
+[e :U 1522 ]
+[e [\ -> *U + _input * -> _i `ux -> -> # *U _input `ui `ux `ui , $ -> . `E11183 0 `ui 1523
+ , $ -> . `E11183 1 `ui 1524
+ , $ -> . `E11183 2 `ui 1525
+ , $ -> . `E11183 3 `ui 1526
+ , $ -> . `E11183 4 `ui 1527
+ , $ -> . `E11183 5 `ui 1528
+ , $ -> . `E11183 6 `ui 1529
+ , $ -> . `E11183 7 `ui 1530
+ , $ -> . `E11183 8 `ui 1531
+ , $ -> . `E11183 9 `ui 1532
+ , $ -> . `E11183 10 `ui 1533
+ , $ -> . `E11183 11 `ui 1534
+ , $ -> . `E11183 12 `ui 1535
+ , $ -> . `E11183 13 `ui 1536
+ , $ -> . `E11183 14 `ui 1537
+ , $ -> . `E11183 15 `ui 1538
+ , $ -> . `E11183 16 `ui 1539
+ 1521 ]
 [e :U 1521 ]
-[e [\ -> *U + _input * -> _i `ux -> -> # *U _input `ui `ux `ui , $ -> . `E11183 0 `ui 1522
- , $ -> . `E11183 1 `ui 1523
- , $ -> . `E11183 2 `ui 1524
- , $ -> . `E11183 3 `ui 1525
- , $ -> . `E11183 4 `ui 1526
- , $ -> . `E11183 5 `ui 1527
- , $ -> . `E11183 6 `ui 1528
- , $ -> . `E11183 7 `ui 1529
- , $ -> . `E11183 8 `ui 1530
- , $ -> . `E11183 9 `ui 1531
- , $ -> . `E11183 10 `ui 1532
- , $ -> . `E11183 11 `ui 1533
- , $ -> . `E11183 12 `ui 1534
- , $ -> . `E11183 13 `ui 1535
- , $ -> . `E11183 14 `ui 1536
- , $ -> . `E11183 15 `ui 1537
- , $ -> . `E11183 16 `ui 1538
- 1520 ]
-[e :U 1520 ]
 "108
 [; ;pins.c: 108:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1519 ]
-[e $ < -> _i `i -> _inputLength `i 1516  ]
-[e :U 1517 ]
+[e :U 1520 ]
+[e $ < -> _i `i -> _inputLength `i 1517  ]
+[e :U 1518 ]
 }
 "110
 [; ;pins.c: 110:     for(i = 0; i < outputLength; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 1542  ]
-[e :U 1539 ]
+[e $U 1543  ]
+[e :U 1540 ]
 {
 "111
 [; ;pins.c: 111:         switch(output[i]) {
-[e $U 1544  ]
+[e $U 1545  ]
 {
 "112
 [; ;pins.c: 112:             case PINA0 :
-[e :U 1545 ]
+[e :U 1546 ]
 "113
 [; ;pins.c: 113:                 TRISAbits.TRISA0 = 0;
 [e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
 "114
 [; ;pins.c: 114:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "115
 [; ;pins.c: 115:             case PINA1 :
-[e :U 1546 ]
+[e :U 1547 ]
 "116
 [; ;pins.c: 116:                 TRISAbits.TRISA1 = 0;
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
 "117
 [; ;pins.c: 117:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "118
 [; ;pins.c: 118:             case PINA2 :
-[e :U 1547 ]
+[e :U 1548 ]
 "119
 [; ;pins.c: 119:                 TRISAbits.TRISA2 = 0;
 [e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
 "120
 [; ;pins.c: 120:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "121
 [; ;pins.c: 121:             case PINA4 :
-[e :U 1548 ]
+[e :U 1549 ]
 "122
 [; ;pins.c: 122:                 TRISAbits.TRISA4 = 0;
 [e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
 "123
 [; ;pins.c: 123:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "124
 [; ;pins.c: 124:             case PINA5 :
-[e :U 1549 ]
+[e :U 1550 ]
 "125
 [; ;pins.c: 125:                 TRISAbits.TRISA5 = 0;
 [e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
 "126
 [; ;pins.c: 126:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "127
 [; ;pins.c: 127:             case PINB4 :
-[e :U 1550 ]
+[e :U 1551 ]
 "128
 [; ;pins.c: 128:                 TRISBbits.TRISB4 = 0;
 [e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
 "129
 [; ;pins.c: 129:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "130
 [; ;pins.c: 130:             case PINB5 :
-[e :U 1551 ]
+[e :U 1552 ]
 "131
 [; ;pins.c: 131:                 TRISBbits.TRISB5 = 0;
 [e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
 "132
 [; ;pins.c: 132:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "133
 [; ;pins.c: 133:             case PINB6 :
-[e :U 1552 ]
+[e :U 1553 ]
 "134
 [; ;pins.c: 134:                 TRISBbits.TRISB6 = 0;
 [e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
 "135
 [; ;pins.c: 135:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "136
 [; ;pins.c: 136:             case PINB7 :
-[e :U 1553 ]
+[e :U 1554 ]
 "137
 [; ;pins.c: 137:                 TRISBbits.TRISB7 = 0;
 [e = . . _TRISBbits 0 4 -> -> 0 `i `uc ]
 "138
 [; ;pins.c: 138:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "139
 [; ;pins.c: 139:             case PINC0 :
-[e :U 1554 ]
+[e :U 1555 ]
 "140
 [; ;pins.c: 140:                 TRISCbits.TRISC0 = 0;
 [e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
 "141
 [; ;pins.c: 141:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "142
 [; ;pins.c: 142:             case PINC1 :
-[e :U 1555 ]
+[e :U 1556 ]
 "143
 [; ;pins.c: 143:                 TRISCbits.TRISC1 = 0;
 [e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
 "144
 [; ;pins.c: 144:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "145
 [; ;pins.c: 145:             case PINC2 :
-[e :U 1556 ]
+[e :U 1557 ]
 "146
 [; ;pins.c: 146:                 TRISCbits.TRISC2 = 0;
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 "147
 [; ;pins.c: 147:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "148
 [; ;pins.c: 148:             case PINC3 :
-[e :U 1557 ]
+[e :U 1558 ]
 "149
 [; ;pins.c: 149:                 TRISCbits.TRISC3 = 0;
 [e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
 "150
 [; ;pins.c: 150:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "151
 [; ;pins.c: 151:             case PINC4 :
-[e :U 1558 ]
+[e :U 1559 ]
 "152
 [; ;pins.c: 152:                 TRISCbits.TRISC4 = 0;
 [e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
 "153
 [; ;pins.c: 153:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "154
 [; ;pins.c: 154:             case PINC5 :
-[e :U 1559 ]
+[e :U 1560 ]
 "155
 [; ;pins.c: 155:                 TRISCbits.TRISC5 = 0;
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "156
 [; ;pins.c: 156:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "157
 [; ;pins.c: 157:             case PINC6 :
-[e :U 1560 ]
+[e :U 1561 ]
 "158
 [; ;pins.c: 158:                 TRISCbits.TRISC6 = 0;
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 "159
 [; ;pins.c: 159:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "160
 [; ;pins.c: 160:             case PINC7 :
-[e :U 1561 ]
+[e :U 1562 ]
 "161
 [; ;pins.c: 161:                 TRISCbits.TRISC7 = 0;
 [e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
 "162
 [; ;pins.c: 162:                 break;
-[e $U 1543  ]
+[e $U 1544  ]
 "163
 [; ;pins.c: 163:         }
 }
-[e $U 1543  ]
+[e $U 1544  ]
+[e :U 1545 ]
+[e [\ -> *U + _output * -> _i `ux -> -> # *U _output `ui `ux `ui , $ -> . `E11183 0 `ui 1546
+ , $ -> . `E11183 1 `ui 1547
+ , $ -> . `E11183 2 `ui 1548
+ , $ -> . `E11183 3 `ui 1549
+ , $ -> . `E11183 4 `ui 1550
+ , $ -> . `E11183 5 `ui 1551
+ , $ -> . `E11183 6 `ui 1552
+ , $ -> . `E11183 7 `ui 1553
+ , $ -> . `E11183 8 `ui 1554
+ , $ -> . `E11183 9 `ui 1555
+ , $ -> . `E11183 10 `ui 1556
+ , $ -> . `E11183 11 `ui 1557
+ , $ -> . `E11183 12 `ui 1558
+ , $ -> . `E11183 13 `ui 1559
+ , $ -> . `E11183 14 `ui 1560
+ , $ -> . `E11183 15 `ui 1561
+ , $ -> . `E11183 16 `ui 1562
+ 1544 ]
 [e :U 1544 ]
-[e [\ -> *U + _output * -> _i `ux -> -> # *U _output `ui `ux `ui , $ -> . `E11183 0 `ui 1545
- , $ -> . `E11183 1 `ui 1546
- , $ -> . `E11183 2 `ui 1547
- , $ -> . `E11183 3 `ui 1548
- , $ -> . `E11183 4 `ui 1549
- , $ -> . `E11183 5 `ui 1550
- , $ -> . `E11183 6 `ui 1551
- , $ -> . `E11183 7 `ui 1552
- , $ -> . `E11183 8 `ui 1553
- , $ -> . `E11183 9 `ui 1554
- , $ -> . `E11183 10 `ui 1555
- , $ -> . `E11183 11 `ui 1556
- , $ -> . `E11183 12 `ui 1557
- , $ -> . `E11183 13 `ui 1558
- , $ -> . `E11183 14 `ui 1559
- , $ -> . `E11183 15 `ui 1560
- , $ -> . `E11183 16 `ui 1561
- 1543 ]
-[e :U 1543 ]
 "164
 [; ;pins.c: 164:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1542 ]
-[e $ < -> _i `i -> _outputLength `i 1539  ]
-[e :U 1540 ]
+[e :U 1543 ]
+[e $ < -> _i `i -> _outputLength `i 1540  ]
+[e :U 1541 ]
 }
 "165
 [; ;pins.c: 165: }
-[e :UE 1515 ]
+[e :UE 1516 ]
 }
 "167
 [; ;pins.c: 167: _Bool readPin(pins_t read) {
@@ -2077,460 +2080,460 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "168
 [; ;pins.c: 168:     switch (read) {
-[e $U 1564  ]
+[e $U 1565  ]
 {
 "169
 [; ;pins.c: 169:         case PINA0 :
-[e :U 1565 ]
+[e :U 1566 ]
 "170
 [; ;pins.c: 170:             if(PORTAbits.RA0 == 0) {
-[e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 1566  ]
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 1567  ]
 {
 "171
 [; ;pins.c: 171:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "172
 [; ;pins.c: 172:             } else {
 }
-[e $U 1567  ]
-[e :U 1566 ]
+[e $U 1568  ]
+[e :U 1567 ]
 {
 "173
 [; ;pins.c: 173:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "174
 [; ;pins.c: 174:             }
 }
-[e :U 1567 ]
+[e :U 1568 ]
 "175
 [; ;pins.c: 175:         case PINA1 :
-[e :U 1568 ]
+[e :U 1569 ]
 "176
 [; ;pins.c: 176:             if(PORTAbits.RA1 == 0) {
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 0 `i 1569  ]
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 0 `i 1570  ]
 {
 "177
 [; ;pins.c: 177:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "178
 [; ;pins.c: 178:             } else {
 }
-[e $U 1570  ]
-[e :U 1569 ]
+[e $U 1571  ]
+[e :U 1570 ]
 {
 "179
 [; ;pins.c: 179:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "180
 [; ;pins.c: 180:             }
 }
-[e :U 1570 ]
+[e :U 1571 ]
 "181
 [; ;pins.c: 181:         case PINA2 :
-[e :U 1571 ]
+[e :U 1572 ]
 "182
 [; ;pins.c: 182:             if(PORTAbits.RA2 == 0) {
-[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 1572  ]
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 1573  ]
 {
 "183
 [; ;pins.c: 183:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "184
 [; ;pins.c: 184:             } else {
 }
-[e $U 1573  ]
-[e :U 1572 ]
+[e $U 1574  ]
+[e :U 1573 ]
 {
 "185
 [; ;pins.c: 185:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "186
 [; ;pins.c: 186:             }
 }
-[e :U 1573 ]
+[e :U 1574 ]
 "187
 [; ;pins.c: 187:         case PINA4 :
-[e :U 1574 ]
+[e :U 1575 ]
 "188
 [; ;pins.c: 188:             if(PORTAbits.RA4 == 0) {
-[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 1575  ]
+[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 1576  ]
 {
 "189
 [; ;pins.c: 189:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "190
 [; ;pins.c: 190:             } else {
 }
-[e $U 1576  ]
-[e :U 1575 ]
+[e $U 1577  ]
+[e :U 1576 ]
 {
 "191
 [; ;pins.c: 191:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "192
 [; ;pins.c: 192:             }
 }
-[e :U 1576 ]
+[e :U 1577 ]
 "193
 [; ;pins.c: 193:         case PINA5 :
-[e :U 1577 ]
+[e :U 1578 ]
 "194
 [; ;pins.c: 194:             if(PORTAbits.RA5 == 0) {
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 1578  ]
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 1579  ]
 {
 "195
 [; ;pins.c: 195:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "196
 [; ;pins.c: 196:             } else {
 }
-[e $U 1579  ]
-[e :U 1578 ]
+[e $U 1580  ]
+[e :U 1579 ]
 {
 "197
 [; ;pins.c: 197:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "198
 [; ;pins.c: 198:             }
 }
-[e :U 1579 ]
+[e :U 1580 ]
 "199
 [; ;pins.c: 199:         case PINB4 :
-[e :U 1580 ]
+[e :U 1581 ]
 "200
 [; ;pins.c: 200:             if(PORTBbits.RB4 == 0) {
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 1581  ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 1582  ]
 {
 "201
 [; ;pins.c: 201:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "202
 [; ;pins.c: 202:             } else {
 }
-[e $U 1582  ]
-[e :U 1581 ]
+[e $U 1583  ]
+[e :U 1582 ]
 {
 "203
 [; ;pins.c: 203:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "204
 [; ;pins.c: 204:             }
 }
-[e :U 1582 ]
+[e :U 1583 ]
 "205
 [; ;pins.c: 205:         case PINB5 :
-[e :U 1583 ]
+[e :U 1584 ]
 "206
 [; ;pins.c: 206:             if(PORTBbits.RB5 == 0) {
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 1584  ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 1585  ]
 {
 "207
 [; ;pins.c: 207:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "208
 [; ;pins.c: 208:             } else {
 }
-[e $U 1585  ]
-[e :U 1584 ]
+[e $U 1586  ]
+[e :U 1585 ]
 {
 "209
 [; ;pins.c: 209:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "210
 [; ;pins.c: 210:             }
 }
-[e :U 1585 ]
+[e :U 1586 ]
 "211
 [; ;pins.c: 211:         case PINB6 :
-[e :U 1586 ]
+[e :U 1587 ]
 "212
 [; ;pins.c: 212:             if(PORTBbits.RB6 == 0) {
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 1587  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 1588  ]
 {
 "213
 [; ;pins.c: 213:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "214
 [; ;pins.c: 214:             } else {
 }
-[e $U 1588  ]
-[e :U 1587 ]
+[e $U 1589  ]
+[e :U 1588 ]
 {
 "215
 [; ;pins.c: 215:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "216
 [; ;pins.c: 216:             }
 }
-[e :U 1588 ]
+[e :U 1589 ]
 "217
 [; ;pins.c: 217:         case PINB7 :
-[e :U 1589 ]
+[e :U 1590 ]
 "218
 [; ;pins.c: 218:             if(PORTBbits.RB7 == 0) {
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 1590  ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 1591  ]
 {
 "219
 [; ;pins.c: 219:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "220
 [; ;pins.c: 220:             } else {
 }
-[e $U 1591  ]
-[e :U 1590 ]
+[e $U 1592  ]
+[e :U 1591 ]
 {
 "221
 [; ;pins.c: 221:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "222
 [; ;pins.c: 222:             }
 }
-[e :U 1591 ]
+[e :U 1592 ]
 "223
 [; ;pins.c: 223:         case PINC0 :
-[e :U 1592 ]
+[e :U 1593 ]
 "224
 [; ;pins.c: 224:             if(PORTCbits.RC0 == 0) {
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 1593  ]
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 1594  ]
 {
 "225
 [; ;pins.c: 225:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "226
 [; ;pins.c: 226:             } else {
 }
-[e $U 1594  ]
-[e :U 1593 ]
+[e $U 1595  ]
+[e :U 1594 ]
 {
 "227
 [; ;pins.c: 227:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "228
 [; ;pins.c: 228:             }
 }
-[e :U 1594 ]
+[e :U 1595 ]
 "229
 [; ;pins.c: 229:         case PINC1 :
-[e :U 1595 ]
+[e :U 1596 ]
 "230
 [; ;pins.c: 230:             if(PORTCbits.RC1 == 0) {
-[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 1596  ]
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 1597  ]
 {
 "231
 [; ;pins.c: 231:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "232
 [; ;pins.c: 232:             } else {
 }
-[e $U 1597  ]
-[e :U 1596 ]
+[e $U 1598  ]
+[e :U 1597 ]
 {
 "233
 [; ;pins.c: 233:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "234
 [; ;pins.c: 234:             }
 }
-[e :U 1597 ]
+[e :U 1598 ]
 "235
 [; ;pins.c: 235:         case PINC2 :
-[e :U 1598 ]
+[e :U 1599 ]
 "236
 [; ;pins.c: 236:             if(PORTCbits.RC2 == 0) {
-[e $ ! == -> . . _PORTCbits 0 2 `i -> 0 `i 1599  ]
+[e $ ! == -> . . _PORTCbits 0 2 `i -> 0 `i 1600  ]
 {
 "237
 [; ;pins.c: 237:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "238
 [; ;pins.c: 238:             } else {
 }
-[e $U 1600  ]
-[e :U 1599 ]
+[e $U 1601  ]
+[e :U 1600 ]
 {
 "239
 [; ;pins.c: 239:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "240
 [; ;pins.c: 240:             }
 }
-[e :U 1600 ]
+[e :U 1601 ]
 "241
 [; ;pins.c: 241:         case PINC3 :
-[e :U 1601 ]
+[e :U 1602 ]
 "242
 [; ;pins.c: 242:             if(PORTCbits.RC3 == 0) {
-[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 1602  ]
+[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 1603  ]
 {
 "243
 [; ;pins.c: 243:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "244
 [; ;pins.c: 244:             } else {
 }
-[e $U 1603  ]
-[e :U 1602 ]
+[e $U 1604  ]
+[e :U 1603 ]
 {
 "245
 [; ;pins.c: 245:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "246
 [; ;pins.c: 246:             }
 }
-[e :U 1603 ]
+[e :U 1604 ]
 "247
 [; ;pins.c: 247:         case PINC4 :
-[e :U 1604 ]
+[e :U 1605 ]
 "248
 [; ;pins.c: 248:             if(PORTCbits.RC4 == 0) {
-[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1605  ]
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 1606  ]
 {
 "249
 [; ;pins.c: 249:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "250
 [; ;pins.c: 250:             } else {
 }
-[e $U 1606  ]
-[e :U 1605 ]
+[e $U 1607  ]
+[e :U 1606 ]
 {
 "251
 [; ;pins.c: 251:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "252
 [; ;pins.c: 252:             }
 }
-[e :U 1606 ]
+[e :U 1607 ]
 "253
 [; ;pins.c: 253:         case PINC5 :
-[e :U 1607 ]
+[e :U 1608 ]
 "254
 [; ;pins.c: 254:             if(PORTCbits.RC5 == 0) {
-[e $ ! == -> . . _PORTCbits 0 5 `i -> 0 `i 1608  ]
+[e $ ! == -> . . _PORTCbits 0 5 `i -> 0 `i 1609  ]
 {
 "255
 [; ;pins.c: 255:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "256
 [; ;pins.c: 256:             } else {
 }
-[e $U 1609  ]
-[e :U 1608 ]
+[e $U 1610  ]
+[e :U 1609 ]
 {
 "257
 [; ;pins.c: 257:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "258
 [; ;pins.c: 258:             }
 }
-[e :U 1609 ]
+[e :U 1610 ]
 "259
 [; ;pins.c: 259:         case PINC6:
-[e :U 1610 ]
+[e :U 1611 ]
 "260
 [; ;pins.c: 260:             if(PORTCbits.RC6 == 0) {
-[e $ ! == -> . . _PORTCbits 0 6 `i -> 0 `i 1611  ]
+[e $ ! == -> . . _PORTCbits 0 6 `i -> 0 `i 1612  ]
 {
 "261
 [; ;pins.c: 261:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "262
 [; ;pins.c: 262:             } else {
 }
-[e $U 1612  ]
-[e :U 1611 ]
+[e $U 1613  ]
+[e :U 1612 ]
 {
 "263
 [; ;pins.c: 263:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "264
 [; ;pins.c: 264:             }
 }
-[e :U 1612 ]
+[e :U 1613 ]
 "265
 [; ;pins.c: 265:         case PINC7:
-[e :U 1613 ]
+[e :U 1614 ]
 "266
 [; ;pins.c: 266:             if(PORTCbits.RC7 == 0) {
-[e $ ! == -> . . _PORTCbits 0 7 `i -> 0 `i 1614  ]
+[e $ ! == -> . . _PORTCbits 0 7 `i -> 0 `i 1615  ]
 {
 "267
 [; ;pins.c: 267:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "268
 [; ;pins.c: 268:             } else {
 }
-[e $U 1615  ]
-[e :U 1614 ]
+[e $U 1616  ]
+[e :U 1615 ]
 {
 "269
 [; ;pins.c: 269:                 return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1562  ]
+[e $UE 1563  ]
 "270
 [; ;pins.c: 270:             }
 }
-[e :U 1615 ]
+[e :U 1616 ]
 "271
 [; ;pins.c: 271:     }
 }
-[e $U 1563  ]
+[e $U 1564  ]
+[e :U 1565 ]
+[e [\ -> _read `ui , $ -> . `E11183 0 `ui 1566
+ , $ -> . `E11183 1 `ui 1569
+ , $ -> . `E11183 2 `ui 1572
+ , $ -> . `E11183 3 `ui 1575
+ , $ -> . `E11183 4 `ui 1578
+ , $ -> . `E11183 5 `ui 1581
+ , $ -> . `E11183 6 `ui 1584
+ , $ -> . `E11183 7 `ui 1587
+ , $ -> . `E11183 8 `ui 1590
+ , $ -> . `E11183 9 `ui 1593
+ , $ -> . `E11183 10 `ui 1596
+ , $ -> . `E11183 11 `ui 1599
+ , $ -> . `E11183 12 `ui 1602
+ , $ -> . `E11183 13 `ui 1605
+ , $ -> . `E11183 14 `ui 1608
+ , $ -> . `E11183 15 `ui 1611
+ , $ -> . `E11183 16 `ui 1614
+ 1564 ]
 [e :U 1564 ]
-[e [\ -> _read `ui , $ -> . `E11183 0 `ui 1565
- , $ -> . `E11183 1 `ui 1568
- , $ -> . `E11183 2 `ui 1571
- , $ -> . `E11183 3 `ui 1574
- , $ -> . `E11183 4 `ui 1577
- , $ -> . `E11183 5 `ui 1580
- , $ -> . `E11183 6 `ui 1583
- , $ -> . `E11183 7 `ui 1586
- , $ -> . `E11183 8 `ui 1589
- , $ -> . `E11183 9 `ui 1592
- , $ -> . `E11183 10 `ui 1595
- , $ -> . `E11183 11 `ui 1598
- , $ -> . `E11183 12 `ui 1601
- , $ -> . `E11183 13 `ui 1604
- , $ -> . `E11183 14 `ui 1607
- , $ -> . `E11183 15 `ui 1610
- , $ -> . `E11183 16 `ui 1613
- 1563 ]
-[e :U 1563 ]
 "272
 [; ;pins.c: 272: }
-[e :UE 1562 ]
+[e :UE 1563 ]
 }
 "274
 [; ;pins.c: 274: void writePin(pins_t write, uint8_t value) {
@@ -2542,11 +2545,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "275
 [; ;pins.c: 275:     switch(write) {
-[e $U 1618  ]
+[e $U 1619  ]
 {
 "276
 [; ;pins.c: 276:         case PINA0 :
-[e :U 1619 ]
+[e :U 1620 ]
 "277
 [; ;pins.c: 277:             LATAbits.LATA0 = value;
 [e = . . _LATAbits 0 0 _value ]
@@ -2555,10 +2558,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 0 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "279
 [; ;pins.c: 279:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "280
 [; ;pins.c: 280:         case PINA1 :
-[e :U 1620 ]
+[e :U 1621 ]
 "281
 [; ;pins.c: 281:             LATAbits.LATA1 = value;
 [e = . . _LATAbits 0 1 _value ]
@@ -2567,10 +2570,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 1 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "283
 [; ;pins.c: 283:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "284
 [; ;pins.c: 284:         case PINA2 :
-[e :U 1621 ]
+[e :U 1622 ]
 "285
 [; ;pins.c: 285:             LATAbits.LATA2 = value;
 [e = . . _LATAbits 0 2 _value ]
@@ -2579,10 +2582,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 2 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "287
 [; ;pins.c: 287:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "288
 [; ;pins.c: 288:         case PINA4 :
-[e :U 1622 ]
+[e :U 1623 ]
 "289
 [; ;pins.c: 289:             LATAbits.LATA4 = value;
 [e = . . _LATAbits 0 4 _value ]
@@ -2591,10 +2594,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 3 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "291
 [; ;pins.c: 291:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "292
 [; ;pins.c: 292:         case PINA5 :
-[e :U 1623 ]
+[e :U 1624 ]
 "293
 [; ;pins.c: 293:             LATAbits.LATA5 = value;
 [e = . . _LATAbits 0 5 _value ]
@@ -2603,10 +2606,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 4 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "295
 [; ;pins.c: 295:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "296
 [; ;pins.c: 296:         case PINB4 :
-[e :U 1624 ]
+[e :U 1625 ]
 "297
 [; ;pins.c: 297:             LATBbits.LATB4 = value;
 [e = . . _LATBbits 0 1 _value ]
@@ -2615,10 +2618,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 5 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "299
 [; ;pins.c: 299:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "300
 [; ;pins.c: 300:         case PINB5 :
-[e :U 1625 ]
+[e :U 1626 ]
 "301
 [; ;pins.c: 301:             LATBbits.LATB5 = value;
 [e = . . _LATBbits 0 2 _value ]
@@ -2627,10 +2630,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 6 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "303
 [; ;pins.c: 303:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "304
 [; ;pins.c: 304:         case PINB6 :
-[e :U 1626 ]
+[e :U 1627 ]
 "305
 [; ;pins.c: 305:             LATBbits.LATB6 = value;
 [e = . . _LATBbits 0 3 _value ]
@@ -2639,10 +2642,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 7 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "307
 [; ;pins.c: 307:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "308
 [; ;pins.c: 308:         case PINB7 :
-[e :U 1627 ]
+[e :U 1628 ]
 "309
 [; ;pins.c: 309:             LATBbits.LATB7 = value;
 [e = . . _LATBbits 0 4 _value ]
@@ -2651,10 +2654,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 8 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "311
 [; ;pins.c: 311:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "312
 [; ;pins.c: 312:         case PINC0 :
-[e :U 1628 ]
+[e :U 1629 ]
 "313
 [; ;pins.c: 313:             LATCbits.LATC0 = value;
 [e = . . _LATCbits 0 0 _value ]
@@ -2663,10 +2666,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 9 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "315
 [; ;pins.c: 315:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "316
 [; ;pins.c: 316:         case PINC1 :
-[e :U 1629 ]
+[e :U 1630 ]
 "317
 [; ;pins.c: 317:             LATCbits.LATC1 = value;
 [e = . . _LATCbits 0 1 _value ]
@@ -2675,10 +2678,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 10 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "319
 [; ;pins.c: 319:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "320
 [; ;pins.c: 320:         case PINC2 :
-[e :U 1630 ]
+[e :U 1631 ]
 "321
 [; ;pins.c: 321:             LATCbits.LATC2 = value;
 [e = . . _LATCbits 0 2 _value ]
@@ -2687,10 +2690,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 11 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "323
 [; ;pins.c: 323:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "324
 [; ;pins.c: 324:         case PINC3 :
-[e :U 1631 ]
+[e :U 1632 ]
 "325
 [; ;pins.c: 325:             LATCbits.LATC3 = value;
 [e = . . _LATCbits 0 3 _value ]
@@ -2699,10 +2702,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 12 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "327
 [; ;pins.c: 327:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "328
 [; ;pins.c: 328:         case PINC4 :
-[e :U 1632 ]
+[e :U 1633 ]
 "329
 [; ;pins.c: 329:             LATCbits.LATC4 = value;
 [e = . . _LATCbits 0 4 _value ]
@@ -2711,10 +2714,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 13 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "331
 [; ;pins.c: 331:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "332
 [; ;pins.c: 332:         case PINC5 :
-[e :U 1633 ]
+[e :U 1634 ]
 "333
 [; ;pins.c: 333:             LATCbits.LATC5 = value;
 [e = . . _LATCbits 0 5 _value ]
@@ -2723,10 +2726,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 14 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "335
 [; ;pins.c: 335:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "336
 [; ;pins.c: 336:         case PINC6 :
-[e :U 1634 ]
+[e :U 1635 ]
 "337
 [; ;pins.c: 337:             LATCbits.LATC6 = value;
 [e = . . _LATCbits 0 6 _value ]
@@ -2735,10 +2738,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 15 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "339
 [; ;pins.c: 339:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "340
 [; ;pins.c: 340:         case PINC7 :
-[e :U 1635 ]
+[e :U 1636 ]
 "341
 [; ;pins.c: 341:             LATCbits.LATC7 = value;
 [e = . . _LATCbits 0 7 _value ]
@@ -2747,32 +2750,131 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = *U + &U _pinStates * -> . `E11183 16 `ux -> -> # *U &U _pinStates `ui `ux -> _value `E11183 ]
 "343
 [; ;pins.c: 343:             break;
-[e $U 1617  ]
+[e $U 1618  ]
 "344
 [; ;pins.c: 344:     }
 }
-[e $U 1617  ]
+[e $U 1618  ]
+[e :U 1619 ]
+[e [\ -> _write `ui , $ -> . `E11183 0 `ui 1620
+ , $ -> . `E11183 1 `ui 1621
+ , $ -> . `E11183 2 `ui 1622
+ , $ -> . `E11183 3 `ui 1623
+ , $ -> . `E11183 4 `ui 1624
+ , $ -> . `E11183 5 `ui 1625
+ , $ -> . `E11183 6 `ui 1626
+ , $ -> . `E11183 7 `ui 1627
+ , $ -> . `E11183 8 `ui 1628
+ , $ -> . `E11183 9 `ui 1629
+ , $ -> . `E11183 10 `ui 1630
+ , $ -> . `E11183 11 `ui 1631
+ , $ -> . `E11183 12 `ui 1632
+ , $ -> . `E11183 13 `ui 1633
+ , $ -> . `E11183 14 `ui 1634
+ , $ -> . `E11183 15 `ui 1635
+ , $ -> . `E11183 16 `ui 1636
+ 1618 ]
 [e :U 1618 ]
-[e [\ -> _write `ui , $ -> . `E11183 0 `ui 1619
- , $ -> . `E11183 1 `ui 1620
- , $ -> . `E11183 2 `ui 1621
- , $ -> . `E11183 3 `ui 1622
- , $ -> . `E11183 4 `ui 1623
- , $ -> . `E11183 5 `ui 1624
- , $ -> . `E11183 6 `ui 1625
- , $ -> . `E11183 7 `ui 1626
- , $ -> . `E11183 8 `ui 1627
- , $ -> . `E11183 9 `ui 1628
- , $ -> . `E11183 10 `ui 1629
- , $ -> . `E11183 11 `ui 1630
- , $ -> . `E11183 12 `ui 1631
- , $ -> . `E11183 13 `ui 1632
- , $ -> . `E11183 14 `ui 1633
- , $ -> . `E11183 15 `ui 1634
- , $ -> . `E11183 16 `ui 1635
- 1617 ]
-[e :U 1617 ]
 "345
 [; ;pins.c: 345: }
-[e :UE 1616 ]
+[e :UE 1617 ]
+}
+"347
+[; ;pins.c: 347: void shuffle(pins_t *array, int size) {
+[v _shuffle `(v ~T0 @X0 1 ef2`*E11183`i ]
+{
+[e :U _shuffle ]
+[v _array `*E11183 ~T0 @X0 1 r1 ]
+[v _size `i ~T0 @X0 1 r2 ]
+[f ]
+"348
+[; ;pins.c: 348:     if(size > 1) {
+[e $ ! > _size -> 1 `i 1638  ]
+{
+"349
+[; ;pins.c: 349:         int i;
+[v _i `i ~T0 @X0 1 a ]
+"350
+[; ;pins.c: 350:         for(i = 0; i < size - 1; i++) {
+{
+[e = _i -> 0 `i ]
+[e $U 1642  ]
+[e :U 1639 ]
+{
+"351
+[; ;pins.c: 351:             int j = i + rand() / ((0x7fff) / (size - i) + 1);
+[v _j `i ~T0 @X0 1 a ]
+[e = _j + _i / ( _rand ..  + / -> 32767 `i - _size _i -> 1 `i ]
+"352
+[; ;pins.c: 352:             pins_t temp = array[j];
+[v _temp `E11183 ~T0 @X0 1 a ]
+[e = _temp *U + _array * -> _j `x -> -> # *U _array `i `x ]
+"353
+[; ;pins.c: 353:             array[j] = array [i];
+[e = *U + _array * -> _j `x -> -> # *U _array `i `x *U + _array * -> _i `x -> -> # *U _array `i `x ]
+"354
+[; ;pins.c: 354:             array[i] = temp;
+[e = *U + _array * -> _i `x -> -> # *U _array `i `x _temp ]
+"355
+[; ;pins.c: 355:         }
+}
+[e ++ _i -> 1 `i ]
+[e :U 1642 ]
+[e $ < _i - _size -> 1 `i 1639  ]
+[e :U 1640 ]
+}
+"356
+[; ;pins.c: 356:     }
+}
+[e :U 1638 ]
+"357
+[; ;pins.c: 357: }
+[e :UE 1637 ]
+}
+"359
+[; ;pins.c: 359: uint8_t countNumOn() {
+[v _countNumOn `(uc ~T0 @X0 1 ef ]
+{
+[e :U _countNumOn ]
+[f ]
+"360
+[; ;pins.c: 360:     int numOn = 0;
+[v _numOn `i ~T0 @X0 1 a ]
+[e = _numOn -> 0 `i ]
+"361
+[; ;pins.c: 361:     int i;
+[v _i `i ~T0 @X0 1 a ]
+"362
+[; ;pins.c: 362:     for(i = 0; i < 17; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 17 `i 1644  ]
+[e $U 1645  ]
+[e :U 1644 ]
+{
+"363
+[; ;pins.c: 363:         if(pinStates[i] == 1) {
+[e $ ! == -> *U + &U _pinStates * -> -> _i `ui `ux -> -> # *U &U _pinStates `ui `ux `ui -> -> 1 `i `ui 1647  ]
+{
+"364
+[; ;pins.c: 364:             numOn++;
+[e ++ _numOn -> 1 `i ]
+"365
+[; ;pins.c: 365:         }
+}
+[e :U 1647 ]
+"366
+[; ;pins.c: 366:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 17 `i 1644  ]
+[e :U 1645 ]
+}
+"367
+[; ;pins.c: 367:     return numOn;
+[e ) -> _numOn `uc ]
+[e $UE 1643  ]
+"368
+[; ;pins.c: 368: }
+[e :UE 1643 ]
 }

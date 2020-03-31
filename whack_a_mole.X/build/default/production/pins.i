@@ -18319,6 +18319,8 @@ _Bool readPin(pins_t read);
 
 
 void writePin(pins_t write, uint8_t value);
+
+void shuffle(pins_t *array, int size);
 # 14 "pins.c" 2
 
 
@@ -18650,5 +18652,17 @@ void writePin(pins_t write, uint8_t value) {
             LATCbits.LATC7 = value;
             pinStates[PINC7] = value;
             break;
+    }
+}
+
+void shuffle(pins_t *array, int size) {
+    if(size > 1) {
+        int i;
+        for(i = 0; i < size - 1; i++) {
+            int j = i + rand() / ((0x7fff) / (size - i) + 1);
+            pins_t temp = array[j];
+            array[j] = array [i];
+            array[i] = temp;
+        }
     }
 }
