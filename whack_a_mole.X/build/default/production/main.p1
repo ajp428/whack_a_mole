@@ -4,20 +4,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [c E11183 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
 [n E11183 . PINA0 PINA1 PINA2 PINA4 PINA5 PINB4 PINB5 PINB6 PINB7 PINC0 PINC1 PINC2 PINC3 PINC4 PINC5 PINC6 PINC7  ]
 "22 main.c
-[; ;main.c: 22: }
+[; ;main.c: 22:     }
 [c E11202 0 1 .. ]
 [n E11202 . STATE_PRESSED STATE_UNPRESSED  ]
 "24
 [c E11206 0 1 .. ]
 [n E11206 . STATE_ON STATE_OFF  ]
 [p mainexit ]
-"49 ./pins.h
+"57 ./pins.h
+[; ;./pins.h: 57: void shuffle(pins_t *array, int size);
+[v _shuffle `(v ~T0 @X0 0 ef2`*E11183`i ]
+"49
 [; ;./pins.h: 49: void defineGPIODirection(pins_t input[], pins_t output[], uint8_t inputLength, uint8_t outputLength);
 [v _defineGPIODirection `(v ~T0 @X0 0 ef4`*E11183`*E11183`uc`uc ]
-"17 ./timer0.h
-[; ;./timer0.h: 17: void timer0_config();
-[v _timer0_config `(v ~T0 @X0 0 e? ]
-"52 ./pins.h
+"52
 [; ;./pins.h: 52: _Bool readPin(pins_t read);
 [v _readPin `(a ~T0 @X0 0 ef1`E11183 ]
 "55
@@ -1392,21 +1392,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./timer0.h: 15: time_t time;
 [v _time `us ~T0 @X0 1 e ]
 "18 main.c
-[; ;main.c: 18:         } else {
+[; ;main.c: 18:             writePin(PINC7, 1);
 [p x WDTE = OFF ]
 "20
-[; ;main.c: 20:         }
+[; ;main.c: 20:             writePin(PINC7, 0);
 [v _timeTurnedOff `us ~T0 @X0 1 e ]
 [i _timeTurnedOff
 -> -> 0 `i `us
 ]
 "21
-[; ;main.c: 21:     }
+[; ;main.c: 21:         }
 [v _timeButtonReleased `us ~T0 @X0 1 e ]
 "22
-[; ;main.c: 22: }
+[; ;main.c: 22:     }
 [v _buttonState `E11202 ~T0 @X0 1 e ]
 "23
+[; ;main.c: 23: }
 [v _buttonLastState `E11202 ~T0 @X0 1 e ]
 "24
 [v _ledState `E11206 ~T0 @X0 1 e ]
@@ -1418,51 +1419,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-[v F11232 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11232
+[v F11235 `E11183 ~T0 @X0 -> 5 `i s ]
+[i F11235
 :U ..
 "28
+. `E11183 13
+. `E11183 12
+. `E11183 15
+. `E11183 16
 . `E11183 8
 ..
 ]
-[v _input `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _input F11232 ]
-[v F11234 `E11183 ~T0 @X0 -> -> 1 `i `ux s ]
-[i F11234
+[v _input `E11183 ~T0 @X0 -> 5 `i a ]
+[e = _input F11235 ]
+[v F11237 `E11183 ~T0 @X0 -> 5 `i s ]
+[i F11237
 :U ..
 "29
-. `E11183 16
+. `E11183 10
+. `E11183 11
+. `E11183 5
+. `E11183 6
+. `E11183 7
 ..
 ]
-[v _output `E11183 ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _output F11234 ]
+[v _output `E11183 ~T0 @X0 -> 5 `i a ]
+[e = _output F11237 ]
 "31
-[e ( _defineGPIODirection (4 , , , &U _input &U _output -> -> 1 `i `uc -> -> 1 `i `uc ]
-"33
-[e ( _timer0_config ..  ]
-"35
+[e ( _shuffle (2 , &U _input -> 5 `i ]
+"32
+[e ( _shuffle (2 , &U _output -> 5 `i ]
+"34
+[e ( _defineGPIODirection (4 , , , &U _input &U _output -> -> 5 `i `uc -> -> 5 `i `uc ]
+"36
 [e :U 1517 ]
 {
-"36
+"37
 [e $ ! == -> ( _readPin (1 . `E11183 8 `i -> 0 `i 1519  ]
 {
-"37
-[e ( _writePin (2 , . `E11183 16 -> -> 1 `i `uc ]
 "38
+[e ( _writePin (2 , . `E11183 16 -> -> 1 `i `uc ]
+"39
 }
 [e $U 1520  ]
 [e :U 1519 ]
 {
-"39
-[e ( _writePin (2 , . `E11183 16 -> -> 0 `i `uc ]
 "40
+[e ( _writePin (2 , . `E11183 16 -> -> 0 `i `uc ]
+"41
 }
 [e :U 1520 ]
-"41
+"42
 }
 [e :U 1516 ]
 [e $U 1517  ]
 [e :U 1518 ]
-"42
+"43
 [e :UE 1515 ]
 }

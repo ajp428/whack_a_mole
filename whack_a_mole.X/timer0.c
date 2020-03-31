@@ -29,7 +29,7 @@ void __interrupt() timer0ISR() {
     time++;
 }
 
-uint32_t getTime() {
+time_t getTime() {
     return time;
 }
 
