@@ -1,6 +1,9 @@
 void setup() {
-  // put your setup code here, to run once:
+  //TODO define input pins
 
+  //TODO define output pins
+
+  //TODO configure clock for 1 ms counter
 }
 
 void loop() {
