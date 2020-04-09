@@ -51,7 +51,7 @@ void loop() {
 
   rNum=random(0,5);
   digitalWrite(ledPins[rNum], HIGH);
-  delay(easy);                          // Replace delay with timer comparison
+  millis(easy);                          // Replace delay with timer comparison
   Serial.println(rNum);                 
   
   PBs1 = digitalRead(PushB1);
