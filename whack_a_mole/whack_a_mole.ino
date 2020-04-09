@@ -23,7 +23,7 @@ const int hard=325;
 const int stupid=250;
 
 
-int ledPins[]={2,3,4,5,6,7,8,12};   // Why are there more than 6?
+int ledPins[]={2,3,4,5,6,7};   // Why are there more than 6?
 int pinCount=8;          
 
 void setup() {
@@ -103,11 +103,11 @@ void loop() {
   digitalWrite(ledPins[rNum], LOW);
   if (Bs-1==rNum){
     wins++;
+    Serial.println("Win!!!");
     for (int k=0; k<=3; k++) {
-      Serial.println("Win!!!");
-      digitalWrite(ledPins[11], HIGH);    // I don't think we can access that element of the array
+      digitalWrite(8, HIGH);    // I don't think we can access that element of the array
       delay(50);
-      digitalWrite(ledPins[11], LOW);
+      digitalWrite(8, LOW);
       delay(50);
     }
   }
@@ -116,22 +116,23 @@ void loop() {
     if (wins>highScore) { 
         highScore=wins;
         wins=0;
+        for (int w=0; w<highScore; w++) {
+        digitalWrite(8, HIGH);
+        digitalWrite(12, HIGH);
+        delay(200);
+        digitalWrite(8, LOW);
+        digitalWrite(12, LOW);
+        delay(200);
+        }  
     }
+    Serial.println("Fail");
     for (int i=0; i<=3; i++) {   
-      //Serial.println("Fail");
-      digitalWrite(ledPins[12], HIGH);
+      digitalWrite(12, HIGH);
       delay(50);
-      digitalWrite(ledPins[12], LOW);
+      digitalWrite(12, LOW);
       delay(50);
     }
-    for (int w=0; w<highScore; w++) {
-        //digitalWrite(ledPins[8], HIGH);
-        digitalWrite(ledPins[12], HIGH);
-        delay(200);
-        //digitalWrite(ledPins[8], LOW);
-        digitalWrite(ledPins[12], LOW);
-        delay(200);
-    }  
+
   }
   //Serial.println(highScore);  
   }
