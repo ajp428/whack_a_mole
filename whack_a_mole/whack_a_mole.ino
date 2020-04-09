@@ -103,11 +103,13 @@ void loop() {
     ledStates[rNum] = true;
     timeLastTurnedOn = millis();
     Serial.println(rNum);
+    Serial.println(millis());
   } else {
     if(millis() - timeLastTurnedOn > 1000) {
       digitalWrite(ledPins[rNum], LOW);
       ledStates[rNum] = false;
       Serial.println("Fail");
+      Serial.println(millis());
         for (int i=0; i<=3; i++) {   
           digitalWrite(12, HIGH);
           delay(50);
