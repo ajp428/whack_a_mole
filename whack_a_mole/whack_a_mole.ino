@@ -54,7 +54,7 @@ void setup() {
 void loop() {
 
   if(millis() < timeLastTurnedOn) {
-    timeLastTurnedOn = millis();
+    timeLastTurnedOn = 0;
     return;
   }
 
