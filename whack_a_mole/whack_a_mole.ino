@@ -53,7 +53,7 @@ void setup() {
 
 void loop() {
 
-  if(millis() < timeLastTurnedOn) {
+  if(millis() < timeLastTurnedOn || millis() > 30000) {
     timeLastTurnedOn = 0;
     return;
   }
