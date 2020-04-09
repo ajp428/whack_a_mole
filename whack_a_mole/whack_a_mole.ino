@@ -4,6 +4,7 @@ int PushB3 = A2;
 int PushB4 = A3;
 int PushB5 = A4;
 int PushB6 = A5;
+
 int PBs1;           // Read variable for pins
 int PBs2;         
 int PBs3;
@@ -11,20 +12,25 @@ int PBs4;
 int PBs5;
 int PBs6;
 
+bool pushButtonStates[7];
+
 int Bs;             // Button state
 
 int rNum;
-int wins=0;         
-int highScore=0;
+int wins = 0;         
+int highScore = 0;
 
-const int easy=1000;
-const int medium=500;
-const int hard=325;
-const int stupid=250;
+const int easy = 1000;
+const int medium = 500;
+const int hard = 325;
+const int stupid = 250;
 
 
-int ledPins[]={2,3,4,5,6,7};   // Why are there more than 6?
-int pinCount=8;          
+int ledPins[] = {2,3,4,5,6,7};   // Why are there more than 6?
+int pinCount = 8;          
+
+int timeLastTurnedOn = 0;
+bool ledStates[] = {false, false, false, false, false, false};
 
 void setup() {
 
@@ -49,25 +55,15 @@ void setup() {
 
 void loop() {
 
-  rNum=random(0,5);
-  digitalWrite(ledPins[rNum], HIGH);
-  delay(easy);                          // Replace delay with timer comparison
-  Serial.println(rNum);                 
-  
   PBs1 = digitalRead(PushB1);
- 
   PBs2 = digitalRead(PushB2);
-
   PBs3 = digitalRead(PushB3);
-
   PBs4 = digitalRead(PushB4);
-
   PBs5 = digitalRead(PushB5);
- 
   PBs6 = digitalRead(PushB6);
 
-  Bs=0;                   // What does this do?
-  switch (PBs1) {         // Why not just if statements?
+  Bs=0;
+  switch (PBs1) {         
     case 0:
     Bs=1;
     break;
@@ -98,41 +94,59 @@ void loop() {
     break;
   }
 
-
-
-  digitalWrite(ledPins[rNum], LOW);
-  if (Bs-1==rNum){
-    wins++;
-    Serial.println("Win!!!");
-    for (int k=0; k<=3; k++) {
-      digitalWrite(8, HIGH);    // I don't think we can access that element of the array
-      delay(50);
-      digitalWrite(8, LOW);
-      delay(50);
+  if(numOn() == -1) {
+    rNum = random(0,5);
+    digitalWrite(ledPins[rNum], HIGH);
+    ledStates[rNum] = true;
+    timeLastTurnedOn = millis();
+    Serial.println(rNum);
+    return;
+  } else {
+    if(millis() - timeLastTurnedOn > 1000) {
+      digitalWrite(ledPins[rNum], LOW);
+      ledStates[rNum] = false;
+      Serial.println("Fail");
+        for (int i=0; i<=3; i++) {   
+          digitalWrite(12, HIGH);
+          delay(50);
+          digitalWrite(12, LOW);
+          delay(50);
+        }
+    } else {
+      if (Bs - 1 == rNum) {
+        wins++;
+        Serial.println("Win!!!");
+        for (int k = 0; k <= 3; k++) {
+          digitalWrite(8, HIGH);
+          delay(50);
+          digitalWrite(8, LOW);
+          delay(50);
+        }
+      }
     }
   }
-  else
-  {
-    if (wins>highScore) { 
+
+  if (wins>highScore) { 
         highScore=wins;
         wins=0;
         for (int w=0; w<highScore; w++) {
-        digitalWrite(8, HIGH);
-        digitalWrite(12, HIGH);
-        delay(200);
-        digitalWrite(8, LOW);
-        digitalWrite(12, LOW);
-        delay(200);
+          digitalWrite(8, HIGH);
+          digitalWrite(12, HIGH);
+          delay(200);
+          digitalWrite(8, LOW);
+          digitalWrite(12, LOW);
+          delay(200);
         }  
-    }
-    Serial.println("Fail");
-    for (int i=0; i<=3; i++) {   
-      digitalWrite(12, HIGH);
-      delay(50);
-      digitalWrite(12, LOW);
-      delay(50);
-    }
-
   }
   //Serial.println(highScore);  
+}
+
+int numOn() {
+  int i;
+  for(i = 0; i < 6; i++) {
+    if(ledStates[i]) {
+      return i;
+    }
   }
+  return -1;
+}
