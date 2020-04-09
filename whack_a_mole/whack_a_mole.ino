@@ -12,8 +12,6 @@ int PBs4;
 int PBs5;
 int PBs6;
 
-bool pushButtonStates[7];
-
 int Bs;             // Button state
 
 int rNum;
@@ -54,6 +52,11 @@ void setup() {
 }
 
 void loop() {
+
+  if(millis() < timeLastTurnedOn) {
+    timeLastTurnedOn = millis();
+    return;
+  }
 
   PBs1 = digitalRead(PushB1);
   PBs2 = digitalRead(PushB2);
@@ -100,7 +103,6 @@ void loop() {
     ledStates[rNum] = true;
     timeLastTurnedOn = millis();
     Serial.println(rNum);
-    return;
   } else {
     if(millis() - timeLastTurnedOn > 1000) {
       digitalWrite(ledPins[rNum], LOW);
