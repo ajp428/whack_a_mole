@@ -1,4 +1,4 @@
-int PushB1 = A0;    // Pushbutton pins?
+int PushB1 = A0;    // Pushbutton pins
 int PushB2 = A1;
 int PushB3 = A2;
 int PushB4 = A3;
