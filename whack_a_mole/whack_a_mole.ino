@@ -24,8 +24,7 @@ const int hard = 325;
 const int stupid = 250;
 
 
-int ledPins[] = {2,3,4,5,6,7};   // Why are there more than 6?
-int pinCount = 8;          
+int ledPins[] = {2,3,4,5,6,7};   // Why are there more than 6?         
 
 uint32_t timeLastTurnedOn = 0;
 bool ledStates[] = {false, false, false, false, false, false};
