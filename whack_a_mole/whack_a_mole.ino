@@ -3,8 +3,8 @@
  * 
  * This code implements the game whack-a-mole. It includes all of the logic
  * for initializing input and output pins on the Arduino Uno, and then 
- * turning on LEDs at predetermined intervals and scanning for button input.
- * Note that switches are physically connected active low.
+ * turning on LEDs at predetermined intervals and scanning for button input
+ * Note that switches are physically connected active low
  * 
  * Created April 2020
  * 
