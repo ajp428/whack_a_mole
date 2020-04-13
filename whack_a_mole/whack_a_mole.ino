@@ -35,6 +35,7 @@ const int medium = 500;
 const int hard = 325;
 const int stupid = 250;
 
+int difficulty = 0;
 
 int ledPins[] = {2,3,4,5,6,7};         
 
@@ -60,9 +61,15 @@ void setup() {
   pinMode(8, OUTPUT);
   pinMode(12, OUTPUT);
 
+  
+
 }
 
 void loop() {
+
+  while(difficulty == 0) {
+    setDifficulty();
+  }
 
   if(millis() < timeLastTurnedOn) { // Checking for timer overflow
     timeLastTurnedOn = 0;
@@ -109,14 +116,14 @@ void loop() {
   }
 
   if(numOn() == -1) {                   // If no LEDs, turn one on
-    rNum = random(0,5);
+    rNum = random(0, 5);
     digitalWrite(ledPins[rNum], HIGH);
     ledStates[rNum] = true;
     timeLastTurnedOn = millis();
     Serial.println(rNum);
     Serial.println(millis());
   } else {      // If an LED is on, see if enough time has elapsed
-    if(millis() - timeLastTurnedOn > 1000) {
+    if(millis() - timeLastTurnedOn > difficulty) {
       digitalWrite(ledPins[rNum], LOW);
       ledStates[rNum] = false;
       Serial.println("Fail");
@@ -164,4 +171,21 @@ int numOn() { // Custom function to determine which LED was on
     }
   }
   return -1;
+}
+
+void setDifficulty() {
+  int easyDiff = digitalRead(PushB1);
+  int medDiff = digitalRead(PushB2);
+  int hardDiff = digitalRead(PushB3);
+  int stupidDiff = digitalRead(PushB4);
+
+  if(easyDiff == 1) {
+    difficulty = easy;
+  } else if(medDiff == 1) {
+    difficulty = medium;
+  } else if (hardDiff == 1) {
+    difficulty  = hard;
+  } else if (stupidDiff == 1) {
+    difficulty = stupid;
+  }
 }
