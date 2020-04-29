@@ -10,13 +10,22 @@
  * 
  * Authors: Daniel Andrews, Ezra Bailey-Kelly, Andrew Phares
  */
+#include "Nokia_5110.h"
 
-int PushB1 = A0;    // Pushbutton pins
-int PushB2 = A1;
-int PushB3 = A2;
-int PushB4 = A3;
-int PushB5 = A4;
-int PushB6 = A5;
+#define RST 6
+#define CE 5
+#define DC 4
+#define DIN 3
+#define CLK 2
+
+Nokia_5110 lcd = Nokia_5110(RST, CE, DC, DIN, CLK);
+
+int PushB1 = 7;    // Pushbutton pins
+int PushB2 = 8;
+int PushB3 = 9;
+int PushB4 = 10;
+int PushB5 = 11;
+int PushB6 = 12;
 
 int PBs1;           // Read variable for pins
 int PBs2;         
@@ -38,13 +47,12 @@ const int stupid = 250;
 
 int difficulty = 0;
 
-int ledPins[] = {2,3,4,5,6,7};         
+int ledPins[] = {A0,A1,A2,A3,A4,A5};         
 
 uint32_t timeLastTurnedOn = 0;      // Timer to keep track of when a currently on LED was turned on
 bool ledStates[] = {false, false, false, false, false, false}; // An array to keep track of which LED was on
 
 void setup() {
-
   Serial.begin(9600);
   pinMode(PushB1, INPUT);   // Setting input pins
   pinMode(PushB2, INPUT);
@@ -62,20 +70,37 @@ void setup() {
   pinMode(8, OUTPUT);
   pinMode(12, OUTPUT);
 
-  
-
 }
 
 void loop() {
+  lcd.setCursor(0, 0);
+  lcd.print("    SELECT    ");
+  lcd.setCursor(0, 1);
+  lcd.print("  DIFFICULTY  ");
+  lcd.setCursor(0, 2);
+  lcd.print("   1: Easy    ");
+  lcd.setCursor(0, 3);
+  lcd.print("  2: Medium   ");
+  lcd.setCursor(0, 4);
+  lcd.print("   3: Hard    ");
+  lcd.setCursor(0, 5);
+  lcd.print("  4: Stupid   ");
 
   while(difficulty == 0) {
     setDifficulty();
   }
 
+  clearScreen();
+
   if(millis() < timeLastTurnedOn) { // Checking for timer overflow
     timeLastTurnedOn = 0;
     return;
   }
+
+  lcd.setCursor(0, 0);
+  lcd.print("CURRENT SCORE:");
+  lcd.setCursor(0, 2);
+  lcd.print(wins);
 
   PBs1 = digitalRead(PushB1);       // Read to see if a button has been pressed
   PBs2 = digitalRead(PushB2);
@@ -175,6 +200,7 @@ int numOn() { // Custom function to determine which LED was on
 }
 
 void setDifficulty() {
+  
   int easyDiff = digitalRead(PushB1);
   int medDiff = digitalRead(PushB2);
   int hardDiff = digitalRead(PushB3);
@@ -189,4 +215,19 @@ void setDifficulty() {
   } else if (stupidDiff == 1) {
     difficulty = stupid;
   }
+}
+
+void clearScreen() {
+  lcd.setCursor(0, 0);
+  lcd.print("              ");
+  lcd.setCursor(0, 1);
+  lcd.print("              ");
+  lcd.setCursor(0, 2);
+  lcd.print("              ");
+  lcd.setCursor(0, 3);
+  lcd.print("              ");
+  lcd.setCursor(0, 4);
+  lcd.print("              ");
+  lcd.setCursor(0, 5);
+  lcd.print("              ");
 }
