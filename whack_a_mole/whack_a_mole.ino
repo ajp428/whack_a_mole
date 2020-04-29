@@ -53,7 +53,7 @@ uint32_t timeLastTurnedOn = 0;      // Timer to keep track of when a currently o
 bool ledStates[] = {false, false, false, false, false, false}; // An array to keep track of which LED was on
 
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
   pinMode(PushB1, INPUT);   // Setting input pins
   pinMode(PushB2, INPUT);
   pinMode(PushB3, INPUT);
@@ -70,7 +70,7 @@ void setup() {
   pinMode(8, OUTPUT);
   pinMode(12, OUTPUT);
 
-  selectDifficultyLCD();
+  setDifficultyLCD();
   while(difficulty == 0) {
     setDifficulty();
   }
