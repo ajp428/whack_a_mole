@@ -69,15 +69,17 @@ void setup() {
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(12, OUTPUT);
-
-  setDifficultyLCD();
-  while(difficulty == 0) {
-    setDifficulty();
-  }
-  lcd.clear();
 }
 
 void loop() {
+  if(difficulty == 0) {
+    setDifficultyLCD();
+    while(difficulty == 0) {
+      setDifficulty();
+    }
+    lcd.clear();
+  }
+  
   if(millis() < timeLastTurnedOn) { // Checking for timer overflow
     timeLastTurnedOn = 0;
     return;
@@ -213,18 +215,3 @@ void setDifficulty() {
     difficulty = stupid;
   }
 }
-
-/*void clearScreen() {
-  lcd.setCursor(0, 0);
-  lcd.print("              ");
-  lcd.setCursor(0, 1);
-  lcd.print("              ");
-  lcd.setCursor(0, 2);
-  lcd.print("              ");
-  lcd.setCursor(0, 3);
-  lcd.print("              ");
-  lcd.setCursor(0, 4);
-  lcd.print("              ");
-  lcd.setCursor(0, 5);
-  lcd.print("              ");
-}*/
