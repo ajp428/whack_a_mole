@@ -111,11 +111,11 @@ void loop() {
     Bs=3;
     break;
   }
-  switch (PBs4) {
+  /*switch (PBs4) {
     case 0:
     Bs=4;
     break;
-  }
+  }*/
   switch (PBs5) {
     case 0:
     Bs=5;
