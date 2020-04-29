@@ -70,28 +70,14 @@ void setup() {
   pinMode(8, OUTPUT);
   pinMode(12, OUTPUT);
 
-}
-
-void loop() {
-  lcd.setCursor(0, 0);
-  lcd.print("    SELECT    ");
-  lcd.setCursor(0, 1);
-  lcd.print("  DIFFICULTY  ");
-  lcd.setCursor(0, 2);
-  lcd.print("   1: Easy    ");
-  lcd.setCursor(0, 3);
-  lcd.print("  2: Medium   ");
-  lcd.setCursor(0, 4);
-  lcd.print("   3: Hard    ");
-  lcd.setCursor(0, 5);
-  lcd.print("  4: Stupid   ");
-
+  selectDifficultyLCD();
   while(difficulty == 0) {
     setDifficulty();
   }
-
   clearScreen();
+}
 
+void loop() {
   if(millis() < timeLastTurnedOn) { // Checking for timer overflow
     timeLastTurnedOn = 0;
     return;
@@ -199,20 +185,34 @@ int numOn() { // Custom function to determine which LED was on
   return -1;
 }
 
+void setDifficultyLCD() {
+  lcd.setCursor(0, 0);
+  lcd.print("    SELECT    ");
+  lcd.setCursor(0, 1);
+  lcd.print("  DIFFICULTY  ");
+  lcd.setCursor(0, 2);
+  lcd.print("   1: Easy    ");
+  lcd.setCursor(0, 3);
+  lcd.print("  2: Medium   ");
+  lcd.setCursor(0, 4);
+  lcd.print("   3: Hard    ");
+  lcd.setCursor(0, 5);
+  lcd.print("  4: Stupid   ");
+}
+
 void setDifficulty() {
-  
   int easyDiff = digitalRead(PushB1);
   int medDiff = digitalRead(PushB2);
   int hardDiff = digitalRead(PushB3);
   int stupidDiff = digitalRead(PushB4);
 
-  if(easyDiff == 1) {
+  if(easyDiff == 0) {
     difficulty = easy;
-  } else if(medDiff == 1) {
+  } else if(medDiff == 0) {
     difficulty = medium;
-  } else if (hardDiff == 1) {
+  } else if (hardDiff == 0) {
     difficulty  = hard;
-  } else if (stupidDiff == 1) {
+  } else if (stupidDiff == 0) {
     difficulty = stupid;
   }
 }
