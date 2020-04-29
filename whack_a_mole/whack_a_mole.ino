@@ -74,7 +74,7 @@ void setup() {
   while(difficulty == 0) {
     setDifficulty();
   }
-  clearScreen();
+  lcd.clear();
 }
 
 void loop() {
@@ -132,14 +132,11 @@ void loop() {
     digitalWrite(ledPins[rNum], HIGH);
     ledStates[rNum] = true;
     timeLastTurnedOn = millis();
-    Serial.println(rNum);
-    Serial.println(millis());
   } else {      // If an LED is on, see if enough time has elapsed
     if(millis() - timeLastTurnedOn > difficulty) {
       digitalWrite(ledPins[rNum], LOW);
       ledStates[rNum] = false;
       Serial.println("Fail");
-      Serial.println(millis());
         for (int i=0; i<=3; i++) {   
           digitalWrite(12, HIGH);
           delay(50);
@@ -217,7 +214,7 @@ void setDifficulty() {
   }
 }
 
-void clearScreen() {
+/*void clearScreen() {
   lcd.setCursor(0, 0);
   lcd.print("              ");
   lcd.setCursor(0, 1);
@@ -230,4 +227,4 @@ void clearScreen() {
   lcd.print("              ");
   lcd.setCursor(0, 5);
   lcd.print("              ");
-}
+}*/
