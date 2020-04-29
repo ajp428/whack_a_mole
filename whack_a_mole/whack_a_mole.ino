@@ -53,7 +53,7 @@ uint32_t timeLastTurnedOn = 0;      // Timer to keep track of when a currently o
 bool ledStates[] = {false, false, false, false, false, false}; // An array to keep track of which LED was on
 
 void setup() {
-  //Serial.begin(9600);
+  Serial.begin(9600);
   pinMode(PushB1, INPUT);   // Setting input pins
   pinMode(PushB2, INPUT);
   pinMode(PushB3, INPUT);
@@ -204,7 +204,7 @@ void setDifficulty() {
   int easyDiff = digitalRead(PushB1);
   int medDiff = digitalRead(PushB2);
   int hardDiff = digitalRead(PushB3);
-  int stupidDiff = digitalRead(PushB4);
+  int stupidDiff = digitalRead(PushB5);
 
   if(easyDiff == 0) {
     difficulty = easy;
