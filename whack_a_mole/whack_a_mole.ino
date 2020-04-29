@@ -139,12 +139,13 @@ void loop() {
       digitalWrite(ledPins[rNum], LOW);
       ledStates[rNum] = false;
       Serial.println("Fail");
-        for (int i=0; i<=3; i++) {   
-          digitalWrite(12, HIGH);
-          delay(50);
-          digitalWrite(12, LOW);
-          delay(50);
-        }
+      Serial.println(rNum);
+      for (int i=0; i<=3; i++) {   
+        digitalWrite(12, HIGH);
+        delay(50);
+        digitalWrite(12, LOW);
+        delay(50);
+      }
     } else {  // If the button was pressed, increment the score
       if (Bs - 1 == rNum) {
         wins++;
