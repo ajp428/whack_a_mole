@@ -186,17 +186,17 @@ int numOn() { // Custom function to determine which LED was on
 
 void setDifficultyLCD() {
   lcd.setCursor(0, 0);
-  lcd.print("    SELECT    ");
+  lcd.print("SELECT");
   lcd.setCursor(0, 1);
-  lcd.print("  DIFFICULTY  ");
+  lcd.print("DIFFICULTY");
   lcd.setCursor(0, 2);
-  lcd.print("   1: Easy    ");
+  lcd.print("1: Easy");
   lcd.setCursor(0, 3);
-  lcd.print("  2: Medium   ");
+  lcd.print("2: Medium");
   lcd.setCursor(0, 4);
-  lcd.print("   3: Hard    ");
+  lcd.print("3: Hard");
   lcd.setCursor(0, 5);
-  lcd.print("  4: Stupid   ");
+  lcd.print("4: Stupid");
 }
 
 void setDifficulty() {
