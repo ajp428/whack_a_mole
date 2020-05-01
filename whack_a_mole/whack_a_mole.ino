@@ -102,6 +102,8 @@ void loop() {
       Serial.println("Fail");
       Serial.println(rNum);
       analogWrite(9, 128);
+      delay(100);
+      analogWrite(9, 0);
     } else {  
       // If the button was pressed, increment the score
       if (buttonPressed == rNum) {
