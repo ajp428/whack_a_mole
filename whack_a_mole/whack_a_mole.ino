@@ -79,11 +79,11 @@ void loop() {
   yState = analogRead(joyYPin);
 
   buttonPressed = -1;
-  if(yState < 500) {
-    buttonPressed = 0;
+  if(yState > 550) {
+    buttonPressed = 0;        
   } else if (xState > 550) {
     buttonPressed = 1;
-  } else if (yState > 550) {
+  } else if (yState < 500) {
     buttonPressed = 2;
   } else if (xState < 500) {
     buttonPressed = 3;
@@ -143,11 +143,11 @@ void setDifficulty() {
   xState = analogRead(joyXPin);
   yState = analogRead(joyYPin);
 
-  if(yState < 500) {
+  if(yState > 550) {
     difficulty = easy;
   } else if(xState > 550) {
     difficulty = medium;
-  } else if (yState > 550) {
+  } else if (yState < 500) {
     difficulty  = hard;
   } else if (xState < 500) {
     difficulty = stupid;
