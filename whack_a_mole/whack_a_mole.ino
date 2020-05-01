@@ -49,11 +49,11 @@ void setup() {
   pinMode(joyYPin, INPUT);
 
   // Setting output pins
-  pinMode(A0, OUTPUT);       
-  pinMode(A1, OUTPUT);
-  pinMode(A2, OUTPUT);
-  pinMode(A3, OUTPUT);
-  pinMode(9, OUTPUT);
+  pinMode(A0, OUTPUT); // Up LED
+  pinMode(A1, OUTPUT); // Right LED
+  pinMode(A2, OUTPUT); // Down LED
+  pinMode(A3, OUTPUT); // Left LED
+  pinMode(9, OUTPUT);  // Buzzer pin
 }
 
 void loop() {
