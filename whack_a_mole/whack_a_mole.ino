@@ -66,7 +66,7 @@ void loop() {
     lcd.clear();
   }
 
-  if(digitalRead(resetPin) == 0) {
+  if(digitalRead(resetPin) == 1) {
     difficulty = 0;
     wins = 0;
   }
