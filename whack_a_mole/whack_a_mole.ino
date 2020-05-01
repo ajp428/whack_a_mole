@@ -109,6 +109,8 @@ void loop() {
       if (buttonPressed == rNum) {
         wins++;
         Serial.println("Win!!!");
+        digitalWrite(ledPins[rNum], LOW);
+        ledStates[rNum] = false;
       }
     }
   }
