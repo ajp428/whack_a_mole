@@ -90,7 +90,7 @@ void loop() {
   }
   
   if(numOn() == -1) {                   // If no LEDs, turn one on
-    rNum = random(0, 3);
+    rNum = random(0, 4);
     digitalWrite(ledPins[rNum], HIGH);
     ledStates[rNum] = true;
     timeLastTurnedOn = millis();
