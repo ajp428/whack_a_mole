@@ -143,13 +143,13 @@ void setDifficulty() {
   xState = analogRead(joyXPin);
   yState = analogRead(joyYPin);
 
-  if(yState > 550) {
+  if(yState > 900) {
     difficulty = easy;
-  } else if(xState > 550) {
+  } else if(xState > 900) {
     difficulty = medium;
-  } else if (yState < 500) {
+  } else if (yState < 100) {
     difficulty  = hard;
-  } else if (xState < 500) {
+  } else if (xState < 100) {
     difficulty = stupid;
   } else {
     difficulty = 0;
