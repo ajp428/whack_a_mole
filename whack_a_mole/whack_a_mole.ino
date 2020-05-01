@@ -22,7 +22,6 @@ Nokia_5110 lcd = Nokia_5110(RST, CE, DC, DIN, CLK);
 
 int joyXPin = A7;
 int joyYPin = A6;
-int resetPin = 12;
 
 int xState;
 int yState;
