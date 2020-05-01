@@ -37,7 +37,7 @@ const int stupid = 250;
 
 int difficulty = 0;
 
-int ledPins[] = {A0,A1,A2,A3}; // A0 = up, A1 = right, A2 = down, A3 = left         
+int ledPins[] = {7, 8, 10, 11}; // A0 = up, A1 = right, A2 = down, A3 = left         
 
 uint32_t timeLastTurnedOn = 0;      // Timer to keep track of when a currently on LED was turned on
 bool ledStates[] = {false, false, false, false}; // An array to keep track of which LED was on
@@ -49,10 +49,10 @@ void setup() {
   pinMode(joyYPin, INPUT);
 
   // Setting output pins
-  pinMode(A0, OUTPUT); // Up LED
-  pinMode(A1, OUTPUT); // Right LED
-  pinMode(A2, OUTPUT); // Down LED
-  pinMode(A3, OUTPUT); // Left LED
+  pinMode(7, OUTPUT); // Up LED
+  pinMode(8, OUTPUT); // Right LED
+  pinMode(10, OUTPUT); // Down LED
+  pinMode(11, OUTPUT); // Left LED
   pinMode(9, OUTPUT);  // Buzzer pin
 }
 
