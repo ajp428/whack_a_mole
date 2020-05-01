@@ -53,6 +53,7 @@ void setup() {
   pinMode(A1, OUTPUT);
   pinMode(A2, OUTPUT);
   pinMode(A3, OUTPUT);
+  pinMode(9, OUTPUT);
 }
 
 void loop() {
@@ -78,13 +79,13 @@ void loop() {
   yState = analogRead(joyYPin);
 
   buttonPressed = -1;
-  if(yState == 0) {
+  if(yState < 500) {
     buttonPressed = 0;
-  } else if (xState == 1023) {
+  } else if (xState > 550) {
     buttonPressed = 1;
-  } else if (yState == 1023) {
+  } else if (yState > 550) {
     buttonPressed = 2;
-  } else if (xState == 0) {
+  } else if (xState < 500) {
     buttonPressed = 3;
   }
   
@@ -100,6 +101,7 @@ void loop() {
       ledStates[rNum] = false;
       Serial.println("Fail");
       Serial.println(rNum);
+      analogWrite(9, 128);
     } else {  
       // If the button was pressed, increment the score
       if (buttonPressed == rNum) {
@@ -139,13 +141,13 @@ void setDifficulty() {
   xState = analogRead(joyXPin);
   yState = analogRead(joyYPin);
 
-  if(yState == 0) {
+  if(yState < 500) {
     difficulty = easy;
-  } else if(xState == 1023) {
+  } else if(xState > 550) {
     difficulty = medium;
-  } else if (yState == 1023) {
+  } else if (yState > 550) {
     difficulty  = hard;
-  } else if (xState == 0) {
+  } else if (xState < 500) {
     difficulty = stupid;
   }
 }
