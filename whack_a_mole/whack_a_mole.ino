@@ -151,5 +151,7 @@ void setDifficulty() {
     difficulty  = hard;
   } else if (xState < 500) {
     difficulty = stupid;
+  } else {
+    difficulty = 0;
   }
 }
