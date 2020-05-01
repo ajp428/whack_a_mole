@@ -22,6 +22,7 @@ Nokia_5110 lcd = Nokia_5110(RST, CE, DC, DIN, CLK);
 
 int joyXPin = A7;
 int joyYPin = A6;
+int resetPin = 12;
 
 int xState;
 int yState;
@@ -63,6 +64,11 @@ void loop() {
       setDifficulty();
     }
     lcd.clear();
+  }
+
+  if(digitalRead(resetPin) == 0) {
+    difficulty = 0;
+    wins = 0;
   }
   
   if(millis() < timeLastTurnedOn) { // Checking for timer overflow
