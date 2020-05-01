@@ -65,11 +65,6 @@ void loop() {
     }
     lcd.clear();
   }
-
-  if(digitalRead(resetPin) == 1) {
-    difficulty = 0;
-    wins = 0;
-  }
   
   if(millis() < timeLastTurnedOn) { // Checking for timer overflow
     timeLastTurnedOn = 0;
